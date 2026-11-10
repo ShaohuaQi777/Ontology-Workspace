@@ -1,0 +1,13 @@
+{
+  "base_version": "0.7.0",
+  "version": "0.7.0+ontologyworkspace.1",
+  "base_record_sha256": "fe093e0861495f0d1cd4495d9f9aa522d7267f1d0b355725343357e039842c86",
+  "base_source": "official PyPI 0.7.0 downloaded archive cache; installed Python sources independently match cache",
+  "license": "MIT",
+  "patches": {
+    "semantica/ontology/document.py": {
+      "source": "patches/semantica/ontology_document.py",
+      "sha256": "34424fa357ac759ff0305db30516c6fb2d7a03c0f7baef8261132b7bc8a11aa6"
+    }
+  }
+}
