@@ -48,10 +48,10 @@ def test_remote_context_and_dtd_rejected_without_network(monkeypatch, data, form
     assert attempts == []
 
 
-def test_inline_jsonld_namespace_does_not_fetch():
+def test_jsonld_is_explicitly_deferred_until_full_preservation():
     source = json.dumps({'@context': {'ex': 'https://example.invalid/'}, '@id': 'ex:n1', 'ex:p': 'value'})
-    document = OntologyDocument.from_rdf(source, format='json-ld')
-    assert len(Graph().parse(data=document.serialize(), format='turtle')) == 1
+    with pytest.raises(ValueError, match='Unsupported RDF format'):
+        OntologyDocument.from_rdf(source, format='json-ld')
 
 
 @pytest.mark.parametrize('uri', ['javascript:private', '../private', 'https://example.invalid/missing', 'bad uri'])

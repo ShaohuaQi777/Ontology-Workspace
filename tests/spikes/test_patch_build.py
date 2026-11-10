@@ -10,7 +10,8 @@ import pytest
 from scripts.build_semantica_patch import build_patch
 
 BASE = Path('.cache/uv/archive-v0/MJdIOXhjvucbhRDB')
-VERSION = '0.7.0+ontologyworkspace.1'
+import json
+VERSION = json.loads(Path('patches/semantica/manifest.json').read_text())['version']
 
 
 def test_patch_wheel_version_record_and_module(tmp_path):

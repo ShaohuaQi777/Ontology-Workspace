@@ -5,35 +5,15 @@ Platform governance and authorization remain outside this semantic SDK module.
 No imports/context/URI fetching, arbitrary path input, or reasoning is performed.
 """
 from __future__ import annotations
-import json
 import re
 from urllib.parse import urlsplit
 from rdflib import Graph, Literal, URIRef
 from rdflib.namespace import OWL, RDF, RDFS
+from .lexical_parsers import parse_lexical
 
 MAX_BYTES = 1024 * 1024
-FORMATS = {'turtle', 'nt', 'xml', 'json-ld'}
-
-
-def _check_contexts(value):
-    pending = [value]
-    count = 0
-    while pending:
-        node = pending.pop()
-        count += 1
-        if count > 10000:
-            raise ValueError('Document structure exceeds limits')
-        if isinstance(node, dict):
-            if '@import' in node:
-                raise ValueError('Remote JSON-LD context imports are forbidden')
-            if '@context' in node:
-                context = node['@context']
-                values = context if isinstance(context, list) else [context]
-                if any(isinstance(item, str) for item in values):
-                    raise ValueError('Remote or file JSON-LD contexts are forbidden')
-            pending.extend(node.values())
-        elif isinstance(node, list):
-            pending.extend(node)
+# XML/JSON-LD deferred: dataset and lexical preservation must be safe first.
+FORMATS = {'turtle', 'nt'}
 
 
 def _subject_uri(value):
@@ -85,22 +65,10 @@ class OntologyDocument:
             raise ValueError('Unsupported RDF format')
         if base_uri is not None:
             _subject_uri(base_uri)
-        if format == 'xml' and re.search(r'<!\s*(?:DOCTYPE|ENTITY)', data, re.IGNORECASE):
-            raise ValueError('XML DTD and entities are forbidden')
-        if format == 'json-ld':
-            decoded = None
-            invalid_json = False
-            try:
-                decoded = json.loads(data)
-            except (ValueError, RecursionError):
-                invalid_json = True
-            if invalid_json:
-                raise ValueError('Invalid JSON-LD document')
-            _check_contexts(decoded)
         graph = Graph()
         failed = False
         try:
-            graph.parse(data=data, format=format, publicID=base_uri)
+            parse_lexical(graph, data, format, base_uri)
         except Exception:
             failed = True
         if failed:
@@ -110,7 +78,8 @@ class OntologyDocument:
     def serialize(self, *, format: str = 'turtle') -> str:
         if format not in FORMATS:
             raise ValueError('Unsupported RDF format')
-        result = self._graph.serialize(format=format)
+        # N-Triples is also valid Turtle. Avoid numeric shorthand normalization.
+        result = self._graph.serialize(format='nt')
         if type(result) is not str:
             raise ValueError('Unsupported RDF serialization result')
         return result
@@ -126,7 +95,7 @@ class OntologyDocument:
             raise ValueError('Invalid language tag')
         graph = self._copy_graph(self._graph)
         for old in list(graph.objects(subject, RDFS.label)):
-            if isinstance(old, Literal) and old.language == language:
+            if isinstance(old, Literal) and (old.language or '').casefold() == (language or '').casefold():
                 graph.remove((subject, RDFS.label, old))
         graph.add((subject, RDFS.label, Literal(label, lang=language)))
         return type(self)(graph)
