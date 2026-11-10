@@ -1,0 +1,2264 @@
+{
+  "index_url": "https://pypi.tuna.tsinghua.edu.cn/simple",
+  "backend_version": "0.7.0",
+  "packages": [
+    {
+      "name": "annotated-types",
+      "version": "0.8.0"
+    },
+    {
+      "name": "anyio",
+      "version": "4.16.0"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0"
+    },
+    {
+      "name": "beautifulsoup4",
+      "version": "4.15.0"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.10.23"
+    },
+    {
+      "name": "cffi",
+      "version": "2.1.1"
+    },
+    {
+      "name": "chardet",
+      "version": "7.7.0"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2"
+    },
+    {
+      "name": "click",
+      "version": "8.5.1"
+    },
+    {
+      "name": "cloudpickle",
+      "version": "3.1.2"
+    },
+    {
+      "name": "cryptography",
+      "version": "50.0.2"
+    },
+    {
+      "name": "et_xmlfile",
+      "version": "2.0.0"
+    },
+    {
+      "name": "grpcio",
+      "version": "1.85.1"
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0"
+    },
+    {
+      "name": "html5rdf",
+      "version": "1.2.1"
+    },
+    {
+      "name": "httpcore",
+      "version": "1.0.9"
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1"
+    },
+    {
+      "name": "idna",
+      "version": "3.20"
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.3.1"
+    },
+    {
+      "name": "joblib",
+      "version": "1.6.0"
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1"
+    },
+    {
+      "name": "loguru",
+      "version": "0.7.3"
+    },
+    {
+      "name": "lxml",
+      "version": "6.1.3"
+    },
+    {
+      "name": "markdown-it-py",
+      "version": "4.2.0"
+    },
+    {
+      "name": "mdurl",
+      "version": "0.1.2"
+    },
+    {
+      "name": "narwhals",
+      "version": "2.28.0"
+    },
+    {
+      "name": "networkx",
+      "version": "3.7"
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.4"
+    },
+    {
+      "name": "openpyxl",
+      "version": "3.1.5"
+    },
+    {
+      "name": "owlrl",
+      "version": "7.6.2"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3"
+    },
+    {
+      "name": "pandas",
+      "version": "3.1.1"
+    },
+    {
+      "name": "pdfminer.six",
+      "version": "20260107"
+    },
+    {
+      "name": "pdfplumber",
+      "version": "0.11.10"
+    },
+    {
+      "name": "pillow",
+      "version": "13.0.0"
+    },
+    {
+      "name": "pluggy",
+      "version": "1.7.0"
+    },
+    {
+      "name": "prettytable",
+      "version": "3.18.0"
+    },
+    {
+      "name": "protobuf",
+      "version": "7.36.2"
+    },
+    {
+      "name": "pyarrow",
+      "version": "26.0.1"
+    },
+    {
+      "name": "pycparser",
+      "version": "3.12"
+    },
+    {
+      "name": "pydantic",
+      "version": "2.14.3"
+    },
+    {
+      "name": "pydantic_core",
+      "version": "2.50.4"
+    },
+    {
+      "name": "Pygments",
+      "version": "2.21.0"
+    },
+    {
+      "name": "pyoxigraph",
+      "version": "0.5.13"
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.3"
+    },
+    {
+      "name": "pypdfium2",
+      "version": "5.15.2"
+    },
+    {
+      "name": "pyshacl",
+      "version": "0.40.2"
+    },
+    {
+      "name": "pytest",
+      "version": "9.2.0"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "4.0.0"
+    },
+    {
+      "name": "python-docx",
+      "version": "1.2.0"
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.2.4"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3"
+    },
+    {
+      "name": "rdflib",
+      "version": "7.6.0"
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0"
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2"
+    },
+    {
+      "name": "rich",
+      "version": "15.0.0"
+    },
+    {
+      "name": "rpds-py",
+      "version": "2026.9.1"
+    },
+    {
+      "name": "scikit-learn",
+      "version": "1.9.1"
+    },
+    {
+      "name": "scipy",
+      "version": "1.18.1"
+    },
+    {
+      "name": "semantica",
+      "version": "0.7.0"
+    },
+    {
+      "name": "soupsieve",
+      "version": "4.0.1"
+    },
+    {
+      "name": "SQLAlchemy",
+      "version": "2.1.8"
+    },
+    {
+      "name": "structlog",
+      "version": "26.1.0"
+    },
+    {
+      "name": "threadpoolctl",
+      "version": "3.8.0"
+    },
+    {
+      "name": "toml",
+      "version": "0.10.2"
+    },
+    {
+      "name": "tqdm",
+      "version": "4.70.1"
+    },
+    {
+      "name": "typing-inspection",
+      "version": "0.4.5"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0"
+    },
+    {
+      "name": "tzdata",
+      "version": "2026.6"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0"
+    },
+    {
+      "name": "wcwidth",
+      "version": "0.9.4"
+    }
+  ],
+  "python_source_files": [
+    {
+      "file": "semantica/__init__.py",
+      "sha256": "3aa34f2dba1de32146fb9c567caaf8acaab83d87bb66a625f6cd6190f9deecf0",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/change_management/__init__.py",
+      "sha256": "3ca75f78d8ff81ed0e396ab0b7147fa0fffa440f0e0ce116bfef30265d8688e3",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/change_management/change_log.py",
+      "sha256": "ca8ea681a25120ed4b1fada1482d6782870b3cd8520a5fceacd47ea35dbd5b18",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/change_management/managers.py",
+      "sha256": "9e883789998c9d40731bafcb4b06d7c9b373977da4168fdbf83a76e0374db838",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/change_management/ontology_version_manager.py",
+      "sha256": "6f8009d30ca5e82f3438646091d45f3d7a5756ee83eb934043493eaf4f09a7c5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/change_management/version_storage.py",
+      "sha256": "1eb08197bbe4dc37a3d5c1e6358fd5f50c43cc008bf6e6f31921cedcf39ace22",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/cli.py",
+      "sha256": "96996c1511acbc46366a964cdcbe0d469c409a4d2e8d5309438bacf424ad9768",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/conflicts/__init__.py",
+      "sha256": "4fcfaedccf119ca25eff67443b07e60e62ec4491ee85a759f59cf196f9dbf820",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/conflicts/config.py",
+      "sha256": "d6fd3608467d96c12322ee59115a8aefb84fa774347f94f005d247e91e0092e5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/conflicts/conflict_analyzer.py",
+      "sha256": "162cf79fb61cf411b429e88d6aa2386f43d4b908e0bdc600492e99dc67d40332",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/conflicts/conflict_detector.py",
+      "sha256": "e0f849aa3691831ecf76dd3ff66d7e71935fb2a44d498a39ceab39b3f5411cff",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/conflicts/conflict_resolver.py",
+      "sha256": "3dcd49b518e3aca99c2382fd8cd9e2a8e6f6fb361d035e2b605c3cc3b5246c92",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/conflicts/conflicts_provenance.py",
+      "sha256": "0f57c89bd85c36c20497495273a3620eb86e223fc0cfd9975a7b60163db25cac",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/conflicts/investigation_guide.py",
+      "sha256": "a174cf1d490aeea5799d04c28597dd5b95dc823d06ba1f5969fe6184671c6ea5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/conflicts/methods.py",
+      "sha256": "d8965481713b52e7a995ec31d09205fd33b202cdfcfdd4821f8119c6c5e1b952",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/conflicts/registry.py",
+      "sha256": "c034c6ee99f66bec6fbca62d69d2f0173113749951bd5226e42088d6136e6135",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/conflicts/source_tracker.py",
+      "sha256": "953709026f3767c9ac940a1fbeb44b014baf6525ab2a00b80096205ea146a9b8",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/__init__.py",
+      "sha256": "5677746c67b62b4360d62254b4177011103c73cfa82d8891fca45653d44575b4",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/_markdown_filesystem.py",
+      "sha256": "5c806fb9df67a612fa2f9306eee9061b88a5e6550b1ba0173f4f86f79e0cb011",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/agent_context.py",
+      "sha256": "d5c6ff530aa6623c8706d711fa2c5a6c5c7a1b4c4adfcffda8b4c4699b5e1729",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/agent_memory.py",
+      "sha256": "24acad0ce388ca6b6551dc6a6d25aec9a9d4f7a3f8e2ff3b0119c6156548f5eb",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/causal_analyzer.py",
+      "sha256": "e7cd1dc98667a786432aa299974fb7b5861441d1c4e7ac3c148b66a30ec37a7a",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/context_graph.py",
+      "sha256": "1e0e50e2afdd17fffa38a50e3d3d2b43a11874ef22ffc5b844e94efb83688945",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/context_provenance.py",
+      "sha256": "cacd7768e180b4fa7e568e26abcf14a04583a2ffe069273a29fde5ee67fcd5cf",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/context_retriever.py",
+      "sha256": "d2bf519ed124001f5dc578f6133d6942c5170782048e1fb3afd810877954049a",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/decision_context.py",
+      "sha256": "31b97c4f53af32940873cb8a36cd18974f7d81a4336349b2f1922160235fa5b4",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/decision_methods.py",
+      "sha256": "fa916e0184dff199c15f872d2162040e52b5a593e017640936c68371d4568366",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/decision_models.py",
+      "sha256": "bf9e12ace1639e7d4a0bdc8927a70a093bc197fc49964c03d26db7d5139dbae2",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/decision_query.py",
+      "sha256": "8d07bda0261608ddf08a024d7f0c96eab6600ff882ba1c27226636f4851f39c1",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/decision_recorder.py",
+      "sha256": "a70989fa9f1488f3634c8856aa87b2345fe9419562b1897916321b0cb9617118",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/drift_search.py",
+      "sha256": "e9a54e17da3cb85b2ad313578a6d67c15a2c66f8a99ca84886a900300c04a977",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/entity_linker.py",
+      "sha256": "3cfbf2f2715b265fda637f7f76cfe11966dc5159e43a5858f959cf196d20aade",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/erasure.py",
+      "sha256": "aa70a99d3924bd429bb0e034c5fb03639f2210cfeeaad46a2c0652847e866b4c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/global_retriever.py",
+      "sha256": "7dd2ca1f0bb17b2dda09c92121eecabd38df7c04dffa82d0a747fdf450eb5d7b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/graph_schema.py",
+      "sha256": "56b9dd5dd53c8349eb17225c94dee70fb6b9a0e456aef04fe8a31f0694286d1c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/markdown.py",
+      "sha256": "3aeda281c78e6449b60005de57768f2ae66a5db010a681ef67a2d2e2faebe019",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/methods.py",
+      "sha256": "14361c5aab5b12fa745a71e756d6ec656bd424e001ad62351e150a645a50f025",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/policy_engine.py",
+      "sha256": "6281dff164f3a0502a7626ef4379209efddf13a984265f5f56239f171db8e397",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/registry.py",
+      "sha256": "21ae2aa6bbc09a21817ee8229f887e01b8020cf04983f5238d10437fbce2fafa",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/tiers.py",
+      "sha256": "fd5bd4e36dc987fe5d9f7d32237a3001ff898bc9dcb778759adc68067889b61c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/context/truth_maintenance_filter.py",
+      "sha256": "1f88d594d799394046934569e17b968cd092564a48d5fa8789acd85efd2f333f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/core/__init__.py",
+      "sha256": "4c8e6fcf8202750ef32f2d0f9367a4fd80f519803b31362ac5e3426b3d54659d",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/core/config_manager.py",
+      "sha256": "7372b66f25fadf9b4e75a80d5eff20d871d45bdd621fe66a3a585917e774551c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/core/lifecycle.py",
+      "sha256": "ec6f4e82e25acafa29987f6fdb668d57a6c680d076d86f2b05ccb9ebf4b31d2f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/core/methods.py",
+      "sha256": "97d1116875f5d9ec47339f7cb77e2b38780c063a1ad79613a197b7c3eab27aa8",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/core/orchestrator.py",
+      "sha256": "ba146abe46d2b1dac869bf1b9b093ead35beeae7c819da10958a37e53fa4dafb",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/core/plugin_registry.py",
+      "sha256": "7dc27563574c38f28533d901f25518835e8f385ce37a09753fdf17cd4187e87e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/core/registry.py",
+      "sha256": "8b1b1c947c039a34789be2eeea4b11efb6238f7e5c10a08132a6a9c13f9230e5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/deduplication/__init__.py",
+      "sha256": "dbfc0d14d9d84d9b8fdc70e88848abf898d2223f9baa1ee9919a65796a17c1c3",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/deduplication/cluster_builder.py",
+      "sha256": "92e2860dce3baa57643f08947e6d038048d760edd660d5021e9f6c413e7eda26",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/deduplication/config.py",
+      "sha256": "047bacefed6cafd0708de720829cd6246533209feedf3ebacb8e42fda306cc8c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/deduplication/deduplication_provenance.py",
+      "sha256": "58a8f116b5eb92837d699465435873a3c7c533ba679cbb536b7309619fc67151",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/deduplication/duplicate_detector.py",
+      "sha256": "cc7deb8881e2f51baa4b21615b9ff3f9277872c59589ac48f81e9cf0745b1b87",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/deduplication/entity_merger.py",
+      "sha256": "ccfd8c14097e7f6dcbbae54ff45e4516d96de6c34628d39753bba5d09771f040",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/deduplication/merge_strategy.py",
+      "sha256": "56aff738bc4813e8b93f6a3a4a8a67476958c54f4a9e37578236cf6dcca3ce0c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/deduplication/methods.py",
+      "sha256": "8336e778543a863f477a48e22df108acdbbaeb50424235ae7391824e3e228289",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/deduplication/registry.py",
+      "sha256": "2d653b82e71fa4dbac75c2d90a7dc1d820e8347c03309c516272243e6acfd18f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/deduplication/similarity_calculator.py",
+      "sha256": "c8e276f4c1a7af5569f67422586ae40befbd8a9318560acd0509c1ac2d138ab8",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/embeddings/__init__.py",
+      "sha256": "d4ee8d12d0eb24cea2f34604d2539b439c580dfa70882cd35daf450a628aa60c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/embeddings/config.py",
+      "sha256": "c4c8e76826c176cfa39604ad4e8f2e6aefa48e6312f5bb87d87a3a0bd52552e0",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/embeddings/embedding_generator.py",
+      "sha256": "891228e7e1ccd26bbe818abe40ee245812fdc338074414b1b57bf2da2d44fc8b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/embeddings/embeddings_provenance.py",
+      "sha256": "df495839b4df0edc8bc5979e6894efb2f5bb5a39a66aaeb5651386811aeb3bc3",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/embeddings/graph_embedding_manager.py",
+      "sha256": "a68183cd72981b86e0ed45d252af6f2a5b6f5b6bff973242b2b5cbd25335f635",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/embeddings/methods.py",
+      "sha256": "288358db4848392ea30d86b44547c84c61f714d791a543137bfea017007b2eb3",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/embeddings/pooling_strategies.py",
+      "sha256": "76edde179a490cd89adf2d51653d3ee0c1345705d095c218dd04a7979b7536fb",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/embeddings/provider_stores.py",
+      "sha256": "16cdce6aa9164fdf78c0591851dc5d2d370c918fe7b285da258d58728e2332fc",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/embeddings/registry.py",
+      "sha256": "1042a033e50a54448cad4dc9b725671cc0bdcdd682be48c9a4755cb6e7e3abe6",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/embeddings/text_embedder.py",
+      "sha256": "a1efc1e139ebbf94b58a61d86306ec00809b04f1caf971218feeb965928e3e90",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/embeddings/vector_embedding_manager.py",
+      "sha256": "60ebc85c4af79989f0a16b3ec66622be570ad92bb78ace6e06351421923c74c6",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/evals/__init__.py",
+      "sha256": "4d376d73c0b44aef40f5626cee4000526c8e281bf349183689abdab56d9c4293",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/evals/decision_evaluators.py",
+      "sha256": "c4e894531be905bf389a64a3ea2514343081341cb44fdc2412809ed4e1d9f466",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/evals/evaluators.py",
+      "sha256": "55316de5c7b3bd83aa15abe03e98ba32b563f3b5059097bc3da1b4a2fc95870e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/evals/registry.py",
+      "sha256": "48bbefeb76a952392690b06e47e3f61a7fd5183d68606597d6873d3d9b4b5d27",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/evals/runner.py",
+      "sha256": "508b58742ec18f5affb377b1b677da5d99a4309614deaa451e8704c8d52dadd3",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/evals/types.py",
+      "sha256": "9cfaec4d1d6a0e4731cbb8ea43fd8d0a98ca7f6851f8feeb4ac344e14111b9c2",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/__init__.py",
+      "sha256": "17ae11d05ce8fb2b79b4da4d071051b39f13686c4045e1983c5bb3dcf9f1022f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/__main__.py",
+      "sha256": "c1bc260fbcc3929a5a10a197cf88790a6ed2dcb40dadaa7b01774acb8d48e46d",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/app.py",
+      "sha256": "9aacb5126c9d036d29aef44fd758ae585a020c50202598d7239aa9f7a0c2cf5b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/dependencies.py",
+      "sha256": "f99ff76f0050dec391482ed3d43ef307719e34377704a6d680170716dc73b84b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/markdown_resources.py",
+      "sha256": "fee1f072bffcbd2f7663588a0e2e60ae6aa03642545bf358f4d982f597fad074",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/routes/__init__.py",
+      "sha256": "b58715f11df60621a2df5b9e4f3590585361fdfe5ed7f2a29c9fcb188796d094",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/routes/analytics.py",
+      "sha256": "ce2d435ffa3ab93c566667b0c77d6d402f4268d04fe64a54bf303448c5f1d89b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/routes/annotations.py",
+      "sha256": "357991795385ce424756a538c775d1946730e654524b39e22b02a680c05ffcb9",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/routes/decisions.py",
+      "sha256": "2323fc8777a7034b0cb80994628adc6daca514467f92cc392ec7da6456fbc53c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/routes/enrich.py",
+      "sha256": "0b9296ca9f6ac6060f589678850387fe1f8b67ec3b07bd9cc8531ce11a645733",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/routes/export_import.py",
+      "sha256": "90b0efe93ed6dc4be31cc95d0b320646742f93b3c761f27b38d96578ef05ea23",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/routes/graph.py",
+      "sha256": "6e9a9a5e442b94e12d8f0a38d883476707275ea7dcfe47f062e2658bf6e50472",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/routes/markdown.py",
+      "sha256": "d23d82fa69200893102e953ef7196b8cda21c4b5d60145e70f55fb74a11349e6",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/routes/memories.py",
+      "sha256": "6841f06c5b2053fa631f6222dbd36be3300f0b58199f47811b9d0118d0136536",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/routes/ontology.py",
+      "sha256": "ceec6e0775a8040e8151908379c4b09e6565fd668ad6fc7aafc14fdc3a3f77eb",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/routes/provenance.py",
+      "sha256": "79494ea42b4f540827aed8acfcc3056743005f6c6583aada0a2923b0f47a4e5a",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/routes/sparql.py",
+      "sha256": "3dd5794cfdac52930b55aa9291fbd6815b335b135e6399eda40b2465a71cecfa",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/routes/temporal.py",
+      "sha256": "e8135b15f1d5f05bc6d3fd379550da546b6179cca5cf444a675e9d2dae2e22c8",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/routes/vocabulary.py",
+      "sha256": "f7146ebebffa011d45b3e31e2fad481cb999d0605942a66f1a4aa70342d995ec",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/runtime.py",
+      "sha256": "16c1ec32bb5a9e4e145eb310a7fe1c6666e494ef5fe57113546f42d110a7700a",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/schemas.py",
+      "sha256": "5ee94e6cd643db9d9130bf5c4d9ab4606ca82d741f3ffd782dc97f563033a2ab",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/search_index.py",
+      "sha256": "4f4a5e172149cdf59568d4a67e396de8a5bf16290d5bffb8dce5f968fc2e9f79",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/session.py",
+      "sha256": "6d0bb57dd29d4eb989a1b0d5e31363c22624b32b695892920e3670c55358fd16",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/utils/__init__.py",
+      "sha256": "16d16e43b50e7b620cffc1ead5b62955b27a2feea5cb003111e8ef40a67c17f5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/utils/rdf_parser.py",
+      "sha256": "cfae54a7eb94aee4a15f582e9d000994134752b2c85ef44c86aa48154898c93a",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/explorer/ws.py",
+      "sha256": "3595ccaf6864608225feec3a1dcb64337fe22eafcfd338d7010febf2f6fda89c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/__init__.py",
+      "sha256": "fc4790904209d502461672fc33171f7105d1a85ebec31f1dbe4b557eda6e2642",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/arango_aql_exporter.py",
+      "sha256": "002f6ee7a601ba8850207afd72673193f8b9b28dade18b4dd0af85c1ad5bb713",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/arrow_exporter.py",
+      "sha256": "576dc9c0cb1d970910e0e2c66861426127d879e3fef0d02d3f7d5b6432ace0d2",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/config.py",
+      "sha256": "0a0709517e5726d40a6493554b6447ae07f71dc6ca91f0b1c23c219f20e8a369",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/csv_exporter.py",
+      "sha256": "f21672d0b1fdec665132d3f824bf7444046b6112ef46a1ff252ceb21372b015f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/distance_exporter.py",
+      "sha256": "4f9d4e52296c7073296621308cae4f3ee9a9bc0b5619fb35b91a0ed388ad9d21",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/export_provenance.py",
+      "sha256": "092311276872e7a7386385ffe4ccb20ff9a0d859af7b15b62b28cfce6b778254",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/graph_exporter.py",
+      "sha256": "18c15847bd22364c84da310391b3c4861e65246fc3889c5b4dc377feee825c58",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/json_exporter.py",
+      "sha256": "634d24a5ff3ced54e3d5ac7f281c91938d80fb12383c95670a6e5f3f25815135",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/lpg_exporter.py",
+      "sha256": "0a91d31f831c20d6d92327679c7dc165df7069ebddfa934a21074a2022123fc4",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/methods.py",
+      "sha256": "cd8d53e40e293ca9a1cffd20a28a979e85b4e43505025683330c0ca611f0cd4e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/neo4j_csv_exporter.py",
+      "sha256": "4a852b74ae8041b3539734eb93edc1453178f23cc9c426d8d7593cc68ef953e7",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/owl_exporter.py",
+      "sha256": "c7daea71950e7af131c331910e1b03a153d2e9978d337d05bc49742ca6640cd5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/parquet_exporter.py",
+      "sha256": "06ac5d20db4d146b69710eca476ec935b07c1f59d771e112e5cc533e7fc0ffed",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/rdf_exporter.py",
+      "sha256": "7ec627261d5b0a26d0de0168ecd2bf4cb6dbdb691d4d563680c9300d39732fef",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/registry.py",
+      "sha256": "94e6ec363699faaa9d5f608f78207c8baa9502d74b76ee96696f4e93af2ead54",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/report_generator.py",
+      "sha256": "0fc06cf90f3831e800afba23e003646cd60c88d5c228b4aaf2aef8179b02395e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/vector_exporter.py",
+      "sha256": "3f7483d9536374dd845d977092ac2fcec9c77ae8f030b7f03a4e91ba3b6872ba",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/export/yaml_exporter.py",
+      "sha256": "e70c3716fd49b3c6dde8d82113b22cbcac148e016392bf34b6b0a267cc0ba4fd",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/graph_store/__init__.py",
+      "sha256": "2bac4274d6a7092f62e8ab9c971aa3fdb0608c2d1d299834259a0bd5e0c93af5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/graph_store/age_store.py",
+      "sha256": "e62503036eac497ce9bf2342f70782601c95bc024b1300c772aa82684ffde636",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/graph_store/amazon_neptune.py",
+      "sha256": "a9f148266c6707282f946a637825992cc9207cb03dfa66ebbc7731578690e6d1",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/graph_store/config.py",
+      "sha256": "bda966056155dc932f1837368c735464855bd441622d51796a735148960ff7bd",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/graph_store/falkordb_store.py",
+      "sha256": "cd73b50ecaf23a51d0640dcd594f21d4e1e7b9f581712dc91dedc4b112f53405",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/graph_store/graph_store.py",
+      "sha256": "0e2e6ff77a4d42feaadf494f852984084fbb80e3eb4c16bc2be3048ddf75016e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/graph_store/graph_store_provenance.py",
+      "sha256": "ffa461e60f82baaf245f5220af9b85098e309ec14338680fbac4940c3aa30a2f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/graph_store/methods.py",
+      "sha256": "8c2c3b63cb5824ef471ffac4f762d781e8a3519addc5fa184092ca283e8877e0",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/graph_store/neo4j_store.py",
+      "sha256": "bc0e1edabb2f0c922aa70d7615c584662ae588aa5d76522fda80c903d1e71d41",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/graph_store/query_sanitize.py",
+      "sha256": "1a45b14d1d8691cffaf2ed710201fe24de420db215ea6fed623a4de8da2df879",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/graph_store/registry.py",
+      "sha256": "f6b2d69726a4d5ca9309dc2b431bf517288f0a8901e433acd9218acbab13b5a3",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/__init__.py",
+      "sha256": "bcdcbb926f9777830f7b67b9e2e9645eeb9edc608ae1dd9c44de8e70d61316b1",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/airflow_ingestor.py",
+      "sha256": "af729a68537f2173ec787609c3c6234384b819f69ad2d0587e58a5a4124f5043",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/api_ingestor.py",
+      "sha256": "45b138c330c06ad0d552dd8359eca65bd7608065a3e2e9eddf2e94a6671dcb99",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/arrow_ingestor.py",
+      "sha256": "1dfdf6a8f6d5bfae3785c2937d80273310f9f376bb676873182c16dd02b835c1",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/bigquery_ingestor.py",
+      "sha256": "e7ca7d15225a06239de7de89b41d01556b707e9505e224cb683434d93b47efa0",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/config.py",
+      "sha256": "eb644ba21b911e0730349aa6757ec08fc9325ffe6419e78cbd3dc04d604fc60d",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/databricks_ingestor.py",
+      "sha256": "470742eb3a754b21d66dbd3af1c56510021767a43a85b4acc01e2956f6e85d55",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/db_ingestor.py",
+      "sha256": "f60b2d18bb54fb5af67ae8a4cee1787a6e9653eba46925b2e74b8da51a6c2fde",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/duckdb_ingestor.py",
+      "sha256": "1c69410d7c708db73549bfefe3b4412ccb9af7a22e579bf725fdb16fd38d736b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/elastic_ingestor.py",
+      "sha256": "c73ee890e85466453089cf0e96325752afa7b015297fcc6acf7d75a721985af2",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/email_ingestor.py",
+      "sha256": "5b3e50b1fbee2809c712fc0e1547831459732188d9fbec04b3262e9966bd7db6",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/feed_ingestor.py",
+      "sha256": "64ec00745bcd0b0e61d807bc39e48ca039557f4f627cf8f51bd4dc043ac242c3",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/file_ingestor.py",
+      "sha256": "6847815acf4e53e2eaff9e927d454aba2df3ce782fc6ac5a8030086e0f5e1253",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/gdrive_ingestor.py",
+      "sha256": "516f14697f02f21a86c28460bd3e22b3c209d50e0eef121e01a640617a94ee1f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/huggingface_ingestor.py",
+      "sha256": "1cedcaf3c58c6c16d11c25ce5bd0d69deae531596970304069f66b9b09d9d94c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/ingest_provenance.py",
+      "sha256": "5ad4a4bc5a0097be5939168e403ae29d38fa7d84a917ee4b6d7dd7d3e042b50f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/mcp_client.py",
+      "sha256": "6de5d59422c55fbae22d03c817432dd65fd21cf875c6d5dba262474876862a5b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/mcp_ingestor.py",
+      "sha256": "5488a88b9e8557bfd41b28e17debc2d35f96d06bdcc0b0c00899ee1f6d507a2e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/methods.py",
+      "sha256": "2cc4a7afb2e9711848f222edcff6afeadd047f9fdd991ed07fbadead0d2f7f82",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/mongo_ingestor.py",
+      "sha256": "8ec6235f5997d32f421060055dc633898184e82e242aab4cb06e617e91c0f490",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/ontology_ingestor.py",
+      "sha256": "31123d29f7632045395c083ab4edc6085fb5d9411c2354d24409e5d9fc775210",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/pandas_ingestor.py",
+      "sha256": "4f58be8170063ef0558fad07806d1e518433b299fa51100a6ab6c7d9e5641dbd",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/parquet_ingestor.py",
+      "sha256": "212fa57cdc914ac41f27fed0aefd5acaf731c845743df2ba5cf4b9c49e82bb15",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/powerbi_ingestor.py",
+      "sha256": "7412b427b8ff61584cac10a0b9c70c4c0f40ad8ea45c76ac3b9be88b4cc1795e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/public_api_ingestor.py",
+      "sha256": "d0c9b1169468b8e8ae9bdda94684c2c852d2cbf079ef210d443662f0db9f29a3",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/redshift_ingestor.py",
+      "sha256": "8c71ede3d570280fd7ff4119860e2e2dfc2ae2b8cd153e9dcf43b4b71601f8ac",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/registry.py",
+      "sha256": "b143152004f094860b69e200fe1f5dc5cb14c5259629f207b439e8e73d72590c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/repo_ingestor.py",
+      "sha256": "c85228167b1b2d3febc954170119a254784ec19eb98e817b4ee5fe6b0e026ab0",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/salesforce_ingestor.py",
+      "sha256": "11e26802396531d554ca0406b430d5a1d427fa78f25f26e8c6d0b2ce420173ec",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/sap_ingestor.py",
+      "sha256": "3dd2c6c8480355ab1f8d7addfb38260976feaadc1f8f10fbf4be6e9091d3e4e2",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/snowflake_ingestor.py",
+      "sha256": "f28019d731ace235b012ed9293f33da16cd0496a5af1b5c0b0caf18433b08d9e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/ssrf.py",
+      "sha256": "985c379caa5293bb473ac45b74b9a83d8ec741c0c27846439c526f48af72246f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/stream_ingestor.py",
+      "sha256": "3106a8bf4059daa2e346445c74f275a0dcdc1620c1c3dcf56eb5ec69856e382f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/web_ingestor.py",
+      "sha256": "6dc0ccaf0451b971955b204ca38beacf1ac635744418437a6c7cb51d5dfddaa9",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ingest/xml_ingestor.py",
+      "sha256": "7c5be963b42363484f879a651f45bd9540ae7cbb20c1b7b59cd273227d74393e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/__init__.py",
+      "sha256": "14a256c2a8bb7ebc9d0c6bad12b7732d2be377950f305f338665734370151963",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/_graph_view.py",
+      "sha256": "d4f0cc3391cd7077f67fb0568ae9a080d5308fcee3b730b82d9dc21533e4cbba",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/centrality_calculator.py",
+      "sha256": "837b01eef950d5a5430c9fa344ed04d970c5f4a913433723c62061a88f439bd7",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/community_detector.py",
+      "sha256": "9b04198d8581afa0689355b4851ab8299b42b6b46e6a69c08ca42ebd61139e26",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/community_hierarchy.py",
+      "sha256": "5c04b39098918f06d9f5531e0d7d31039d64762f755e56dfadc0ce2c7b94721c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/community_summarizer.py",
+      "sha256": "a8a9f5efca9dc7aa1e58b405d063e1fb27f3a3ffad5ae486c0caaa56bf03b700",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/config.py",
+      "sha256": "2a7d78ac50234e49064954df3c32157131ce63935ec28e9030a3b6545f2f68a6",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/connectivity_analyzer.py",
+      "sha256": "5e87910c2ff0587b3bbcd1db2ee24536622a186165773a62d1b0e3db1da2fd16",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/entity_resolver.py",
+      "sha256": "924c55293e5f88165b40fade1420c77cb4f9077aab583d5345abccb47acf4670",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/graph_analyzer.py",
+      "sha256": "f4d291f01b7ccce646716a60b89f5d7eeb179af6910ceef694ae0ef59c8c36ae",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/graph_builder.py",
+      "sha256": "c3d697d5dc4a3156781072bfe4d4970ea75d1e1320423f5cc6111aaabfd5f580",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/graph_validator.py",
+      "sha256": "be6474c63cfd601a5208f424eaed07d3e732df1577debe3b7ab62c2e48f000e7",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/kg_provenance.py",
+      "sha256": "eaa97cfe28db366046e31e3a8369232ba45c4597a44adbd57a76f838c2d1224d",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/knowledge_graph.py",
+      "sha256": "fcb8a95cf037cb211bfb1d8d10dc6d8d708f14325f9178c9654fdd96ae1cca52",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/link_predictor.py",
+      "sha256": "e0d222fbb302a819e6ecf95e339d4cf56d611614775da7285f5817aee97de177",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/methods.py",
+      "sha256": "a28744f2a2b68e998e1bd0b490cb2ca5308bd349e034c32ead965ba878d0d48f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/node_embeddings.py",
+      "sha256": "73885248ff256d993f90b7d56ca13256937a51cc8da2596550889644f6ef3b6b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/path_finder.py",
+      "sha256": "22ed2f5eb4293530cee6cd33b9b86a2ab65ade31a74a2af14ac1d9b6dd2798c8",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/provenance_tracker.py",
+      "sha256": "e18b2bfa6d640f429bd8c079a8d3f0508c2543e74ca74230b459b178f85b5df5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/registry.py",
+      "sha256": "2058c76f8d0a9124a2fbc7391983a26c6f49ee480058b1a08fd3da4c88d9b25a",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/seed_manager.py",
+      "sha256": "846bb37aa3a13acbf263548f4aa82ece3d02f89ea48b04b55828c9e429c8b788",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/similarity_calculator.py",
+      "sha256": "da265bf3ba844439567cf47587119a6a819dfdb6a690563c4fa8617567bd5e77",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/temporal_model.py",
+      "sha256": "77565e904672d81b4c26ba5e9eba1b133d9e17b7e9c2bea66d80dd1a6f057cd1",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/temporal_normalizer.py",
+      "sha256": "c60e1e41fab987ad22afb6074570c4a2d808eaad62a09f2384278d9bfcd1f102",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/temporal_query.py",
+      "sha256": "086435fc9e6e67102984836a5441da6b44c7adc95dbdc318d7399e4481b370a7",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/temporal_query_rewriter.py",
+      "sha256": "5b1c203e1fd78b250955009c1d26f44b917e4ea86559bb519ab5796c60244415",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/kg/temporal_reasoning.py",
+      "sha256": "b0b2e6fc308c08c2d2d8aa1da3672372f7916a43b3113ea60c11bd24b16ba6df",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/llms/__init__.py",
+      "sha256": "6ea7fe9ad96f8b91a2861ed1923892e0ea90137971e8ec3bbdb2a8196e4698af",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/llms/anthropic.py",
+      "sha256": "0309e6456592f43644a117e76ad13664a311bb95bb26e2984818c972be8454d0",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/llms/deepseek.py",
+      "sha256": "8cb6baa704564912f4c798f61380bdceab480ab48cefe1baa4d79f73d3578679",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/llms/gemini.py",
+      "sha256": "7528e44da4dbf9d29dd8c6739a25e4cfc215ffc574a22c0b3be95958c160ef91",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/llms/groq.py",
+      "sha256": "fe5c95a9a9c0d7b3399115b6b98f1bc4266c626d0f4b38d347ea6f567512e643",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/llms/huggingface.py",
+      "sha256": "13b44b01f30a33bcb7652951a5a303b68fb439523ee9713a5d3e43410dd23bca",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/llms/litellm.py",
+      "sha256": "d4087c255f00a995fdd04d8b5cf3cad4c43d6310e2222f010fb41df051acfd6b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/llms/llms_provenance.py",
+      "sha256": "8a259c4e5b848a950beffe5dc71d5899e440f40e4b8c44a78ba191e9a3f4cbce",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/llms/novita.py",
+      "sha256": "d961ad2648fe3c1becb47d9784061b014485eb223e011ad609509da43320560e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/llms/ollama.py",
+      "sha256": "d84f3c7d12324a7221215f708b8289fc898d40941dbfc5ff4c4bc197b001c85c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/llms/openai.py",
+      "sha256": "74e0459c0ccfacfd9fd40629a8ce964dcba07148ae11e382d30e3ebf7f688ef1",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/mcp_server/__init__.py",
+      "sha256": "31cf6c666ac5c534977a18d71ab9bdf5c8d733698a883f29fdadba4d56bde36f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/mcp_server/__main__.py",
+      "sha256": "5f3a2b61238c4950c32b484450558b569ab375aba6c738b39f17ea68a8c4c183",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/normalize/__init__.py",
+      "sha256": "62b25633269098519978f01d2cd2805a14efe1cea4b0a428ce306e536c128c77",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/normalize/config.py",
+      "sha256": "503f58dd490ce1f366d460e1a32e09a00023e33a73663c93d1dae809c5c264fb",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/normalize/data_cleaner.py",
+      "sha256": "99c90d0585c845b7d464e3ed0315c1bed1f988ed3cda1d600162a8b8b25f77a5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/normalize/date_normalizer.py",
+      "sha256": "2fe2e2bb23dfd4950cafc1413fb9ce9b66d9e441e81b5314fd21d65e5ce1e6fa",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/normalize/encoding_handler.py",
+      "sha256": "cf6515451cce1d3d2dba96eabd0b968337b3bde6a5689750ae57e23fa039ff29",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/normalize/entity_normalizer.py",
+      "sha256": "9929955ac7a349e07ed4034c56fa396e78a2c7bdf51ae9841f71e300e9512d23",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/normalize/language_detector.py",
+      "sha256": "4d46c2befa524700c777a95fae6543709f1472d836791521d1a95afb2c484d64",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/normalize/methods.py",
+      "sha256": "4149372bc5bc6b49452d5e6558e720bae58d4bb49bc1cb5fcae7e4041893de70",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/normalize/normalize_provenance.py",
+      "sha256": "006011283d79aa267f542036f1d8034e76563b997798fa35e24432ef94e7a4e7",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/normalize/number_normalizer.py",
+      "sha256": "0a41d0ba8bbe50955ad409296262f572782aea57edc34137c35d8af9e5090dda",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/normalize/registry.py",
+      "sha256": "a7b0fba393d58fe1c5db16abb6e674ccab7a54e219d6060ca2c320c5d4917ecd",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/normalize/text_cleaner.py",
+      "sha256": "9690bc8921976ad7aa1b6d5100f7c32917a418ac4cde80c691f720e2fc733f4d",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/normalize/text_normalizer.py",
+      "sha256": "d42835a47c45f939fd3f110cee0cc8dcfe2bf3ae0fa60ef4b07e06556a864ae5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/__init__.py",
+      "sha256": "acf09c13ba20c53a1d0e09ec25a032b40b96ecb1c218b18471c5593456e93d13",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/associative_class.py",
+      "sha256": "9df6c4047895028da7dadaa70fe0559bd169f16c09ea4db17f860f2371e4da9b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/bootstrap_schema.py",
+      "sha256": "9b08d0cfdff90424b3148b4ae844a7bbb5827fb228d9ffe51b7f56670bace2f1",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/class_inferrer.py",
+      "sha256": "808dd6d85d69badae02ba83a99823b7b0241b38411624d2a66504f9acbfa5b97",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/competency_questions.py",
+      "sha256": "91627fec4a8d8b80a64a248c334d61dcdb7a9749241368359e216287cf1a39ef",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/config.py",
+      "sha256": "1cb11fd103d7e8925b523b7ff9d28414ebdcc06320e9310c5523cb1a3689a163",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/domain_ontologies.py",
+      "sha256": "1d0a92868f0a8817af8025def0593963346aec288e4a2e36a019be2cadbcae2f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/engine.py",
+      "sha256": "7664a49eaa1c19b0cdf4bafb089acb2ba15316965be4add946fa8e4f6c8eeb94",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/llm_generator.py",
+      "sha256": "39048d31efee56748ef247e9c7b3ce084390ecc7a609fb1f496e647965e1a55d",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/methods.py",
+      "sha256": "515875ecaf20d3f3153cf88b6b1969104c00fb88af023dd222fc3a5efb5c1607",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/module_manager.py",
+      "sha256": "7f122748af6884089697c066b7f38ddcb73b74b960f3fea3ec77c2ec9432a769",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/namespace_manager.py",
+      "sha256": "2c0a09fb8a6353a339961237e44ba75866139cf845c94dc13837b3d7db509ef2",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/naming_conventions.py",
+      "sha256": "f4101434d10e3428d38a05d398e6ce4798ee0e9ec2d9f9cf2d939175fe7df6a3",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/ontology_documentation.py",
+      "sha256": "0d3a203d271ae8ab93d7a777e45b51b782ee895da0d7df38c2c277a8435fc654",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/ontology_evaluator.py",
+      "sha256": "a09c98ad343f8c04f919ded8329d58d0ffcc3d80662f2ea0d99ef78ada54c4d5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/ontology_generator.py",
+      "sha256": "f2c6085b07f7858315b40af1e81eba4d66967e3ca3fac0364f0f72a23cbc47fe",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/ontology_provenance.py",
+      "sha256": "e75a8fa23529b2848050226a8c981b613c66f87cadd43b4cee2684716a0c46ae",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/ontology_validator.py",
+      "sha256": "4e3679dcf042d123f77bee2a4ad00aa581972f24738000cae1d9dac07111997f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/owl_generator.py",
+      "sha256": "1254e3ae9de81625d5aef3ba3839305b9d3c42d1dbfe4737af9faeacfdd2320e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/property_generator.py",
+      "sha256": "cfc67014b2cae3d808b6f8277ee82107438f429e1ec3a0aefca11c3276bec14c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/quality_gate.py",
+      "sha256": "7937db13885ab517e66ae7f111552e92247bbb9fcedb15af8e5903c0d60fab75",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/registry.py",
+      "sha256": "27f53b1bb47034ffc9e79314f4ea025e1faefc350c724c8b77815c0655494a0f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/relationship_utils.py",
+      "sha256": "94488e241930bd633800022014d3f4db50e013c0cf3c32d6b7abc3326e649f91",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/requirements_spec.py",
+      "sha256": "ac18772057f728ac39e6b4ea7819ccf6e4309c49d1175048890daceb6aa6ddf9",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/reuse_manager.py",
+      "sha256": "0802546fc792fad92ba0a0f91316e10649b154c0e45fd6a6cfa93347aeda9911",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/ontology/vocabulary/__init__.py",
+      "sha256": "635a4a483ed0bc227f65c0b6b61166be659ba2f1bbed2e684a3d29afed52753f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/__init__.py",
+      "sha256": "ce06bf6a7e92f516a048c26741a3356c36833eed63ab8c9173db4f35ebc30cb7",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/code_parser.py",
+      "sha256": "1465cefd9fe9b68f25ab8cb82eb266acc4acade9581d98a5e9ec6bde55c535c5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/config.py",
+      "sha256": "fc23395a44bed31989e0f24bdcbb41758b411cbc0c816ea0765bf9a51b8bf0d1",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/csv_parser.py",
+      "sha256": "75967f4ea37f24c282f8743c2021a57c67a824daa008a340c3ed10d27633b811",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/docling_parser.py",
+      "sha256": "c5eb916e0caff693887fbe3fa53e9a9ffcd37f55e57c47adc09df3ef5f6feb58",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/document_parser.py",
+      "sha256": "ad9f01587889b7664734f433c5ac61d09bb625cc44357831cd92d0705d5338e0",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/docx_parser.py",
+      "sha256": "4d2657f9040f3aa6cf8abd2cece3277ba78709cb13d0ad8df5a83b57f7ced46b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/email_parser.py",
+      "sha256": "1f28de30c2024128559cc036f373cba7ed72463eb77092e33703af84d9144916",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/excel_parser.py",
+      "sha256": "59f82d418183960ffd6a00fc0dded7bbeeb7d5c22b51de973ce8215e05dd115f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/html_parser.py",
+      "sha256": "59487b3c1253279a714c20de673bb09280cbb1c3f9710fc576fdae0e1f0482e1",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/image_parser.py",
+      "sha256": "f846dd63fae4a47ba70c0bc9f717fe17bf4fff20da78868fbd158bd9bc0a3bf2",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/json_parser.py",
+      "sha256": "805628b612000812ad9ad02824b57424322779498f4059dfe83e1c9ba1091f6c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/mcp_parser.py",
+      "sha256": "4d478f71a4b0a01341dc4e4e5a0ece02f23c84841c748377d04fa981a8a5854d",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/media_parser.py",
+      "sha256": "0f3dae1032d626de23f96aa5e7b9de619351e7e352f93a9344a3acd2ad1159dd",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/methods.py",
+      "sha256": "032148a0525532dd6fa6e63a9676cbf8f31b09aee5e6de8121a8f52ff0a0edc4",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/parse_provenance.py",
+      "sha256": "662d6c0558573b4f2dd7ee05a260794b96738b2730710de4730edd355185eab9",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/pdf_parser.py",
+      "sha256": "37b4e037fb878385cd8907b95ecbc81b65063f1228e182315ad0ea3498201af6",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/pptx_parser.py",
+      "sha256": "0446be86c3f0aa7a79b60635dc441d3456bbc31ca5da5a1f012387aeb5a35abf",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/registry.py",
+      "sha256": "b537bf5add8b40729605828f4e079acf6a547dccdd08a3747a66ad84bda32fd5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/structured_data_parser.py",
+      "sha256": "6e09008b6802fbb96ab683b6cd89d859133f3ead3c3d6c611342ee1146c111d7",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/web_parser.py",
+      "sha256": "c754167202072df92fc77929c3425cb248a0254bdb361e8efb863f886a455f90",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/parse/xml_parser.py",
+      "sha256": "a56f5682273cc4b44a94501f170060d2da58ffedbfec26d54b0a8fc539c23f52",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/pipeline/__init__.py",
+      "sha256": "f057ebb9848856caf073f430246a3c4f2eadc6e9f021615fdd18139a6b73c34b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/pipeline/execution_engine.py",
+      "sha256": "9347abd8b9affd0754531a685dc100e7a79b9254d89bfeb9b323205bd1b6a2ee",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/pipeline/failure_handler.py",
+      "sha256": "ff697f40800494e7e730794d6bbe26cf997c9721e46fafb8015a8e8c22f50ae1",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/pipeline/parallelism_manager.py",
+      "sha256": "add460878622623e410a091bc7685d260b2cff2348d220789f4ba0b9244be2db",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/pipeline/pipeline_builder.py",
+      "sha256": "d4891e479e1d2f8af06cd5ba7e09bf89326480b9ad49a8ee164f14dff6770516",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/pipeline/pipeline_provenance.py",
+      "sha256": "5bf171c534869b11f4743f8af6666fb79ca8039bc23d4f12db627b17df6490af",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/pipeline/pipeline_templates.py",
+      "sha256": "3afa9b6b41ca2243362c5126bdd9fe1e00767ba12fd38ed93ac5d27e782cf96b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/pipeline/pipeline_validator.py",
+      "sha256": "585a38593d771038d9033526b1869bc4566c9f9591efe70d6e4b563ec875fbb3",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/pipeline/resource_scheduler.py",
+      "sha256": "df982ec550124295fcd39fb4d55d1ff8f41cbc47b4ada6c88b68c35a71e84205",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/provenance/__init__.py",
+      "sha256": "f2ec0b2b9ca0d4ec341f1373a89fd05d0e8265e55c0e27bc15848eaa68e45b6c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/provenance/bridge_axiom.py",
+      "sha256": "76b09ed4d32e19574365eb92a6d116d4edd8f4c642aa533df58091defe467003",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/provenance/integrity.py",
+      "sha256": "7af67d2e8526a93a7124f52c0b489d75e53ba77e592d80d6c119d0fdde19692e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/provenance/manager.py",
+      "sha256": "5b897806b26c86b163539054430acbdd673682a87c530a92df77605b8c3e2fc5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/provenance/schemas.py",
+      "sha256": "89fa15470f9a6a64ea729801a5b437efe2a19df1474ca6f13855493f745672d0",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/provenance/storage.py",
+      "sha256": "514464dca885f17d34ef30c21b5edb655b12e5297fdd4ef0b7b7dbbf34767fd4",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/__init__.py",
+      "sha256": "848cfd4f36f2e4d1ce0f895e741123f0fad42c0b3f98555230932570dbd31b3f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/_rule_matching.py",
+      "sha256": "dd01fc1dc3c7b3695faa935b4d5a7972a8fee0928aa115e9d6da3e98efbab49f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/_truth_maintenance_validation.py",
+      "sha256": "ef516243cec1da96aa5e9a22223648d94f082cdf0bc1f0c5edcca993a51dd1b0",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/abductive_reasoner.py",
+      "sha256": "9625510ca919c7e62befe94b552442d56e86c96ad05588769f216aae7744f295",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/datalog_reasoner.py",
+      "sha256": "901676257437fd056203ea572bb750f84c528b1693a5ef8149c68d5725a3c78d",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/deductive_reasoner.py",
+      "sha256": "8591edfbc66b58c1e8b8ceeede17797eed515f770f70909bba04347cc48d7c89",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/explanation_generator.py",
+      "sha256": "bec47e3c3eabda2141566ec6d9f94900054d6b771efb81aed1b68c8a46b4dcb1",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/graph_reasoner.py",
+      "sha256": "d1e5ae05dd68be2234ad7ca62513c6a74fb72f59e499ccee4b7c6245e6266015",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/reasoner.py",
+      "sha256": "a5fad94a00bfd065f49b59d6fe8fc59a5aba872de1fc0a4c982ac85e24ed7e4c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/reasoning_provenance.py",
+      "sha256": "8f9a1691c3c4e4c041200b8d0e0fb6cdee69ab1a20fac4b0ea9153037ee4f60e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/rete_engine.py",
+      "sha256": "0ce59128934dfb211699b3a9cf179229da4bc5b20de63dfde316fd2ca4204515",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/sparql_reasoner.py",
+      "sha256": "822dd56220cf9d5f9083774d721455aa8f3cb873b009da7a26eb566a2d7440a5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/temporal_reasoning.py",
+      "sha256": "58065d4fa80dbad51126c7fb986e3496e3143ea401f323236f77acabc15f55be",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/truth_maintenance.py",
+      "sha256": "a70b1f861bcba9af1c5a2d1e9b6cf0249f4292fc4bb220354a551f0a1b78157b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/reasoning/truth_maintenance_types.py",
+      "sha256": "c998e5d54a8fba4670c8d6050cab3e76a99f7ab676306e125eab0de4eb951b25",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/seed/__init__.py",
+      "sha256": "e5217d863e48a58ba2b1c7ec3e1417c8b6b573410f065e0a9d28e40bc76cef8f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/seed/seed_manager.py",
+      "sha256": "a5f94106b9ca19c4d629ae65d912821e7af365081fd68e0710faae884eb2e3c9",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/__init__.py",
+      "sha256": "8c5004ccddb8934ab51087361236662219d14358ae6d8f32be4d53adbede1a4f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/cache.py",
+      "sha256": "d3c59882b6cb79d8c8aec9cff04b87ee5d2b95369e53b0119b8541c420139ac6",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/config.py",
+      "sha256": "68c280b2d3a01091bc8c6b67c69fe67119bf381d8034b420908644ef153c3baf",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/coreference_resolver.py",
+      "sha256": "6156dc496f3316068ce2dc4b9dca36c58001698925fc78d1872879d61f9aa884",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/event_detector.py",
+      "sha256": "ef935cb5a803a92868e03b868819ff9bc647a6488d2803ca991f631916ec343e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/extraction_validator.py",
+      "sha256": "1fb98c9ebe45daa12faa435bfd1dd5773a41f7f845261db12f80b28f63240f8b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/llm_extraction.py",
+      "sha256": "aaf01f6d3a2f2029ef4644e80af46c5f4ab80dd04d227ff6f62800d33d4bd574",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/methods.py",
+      "sha256": "f0640db1cd662325b9fa4bb57d5536577f43471c8ada9eebad65949191201851",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/named_entity_recognizer.py",
+      "sha256": "2d162b8fe1c8dede122c7700d348a207d5e1e15ed28894f917258ffe689688cf",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/ner_extractor.py",
+      "sha256": "d1a320ac8a23c1cda185c898745517530f446bf0d7bcfa6151679d39e816229c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/providers.py",
+      "sha256": "14cef6e26942d604cf89b4d1b7a68f91c426fabe20d1ec550c386ad7297cd7c9",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/registry.py",
+      "sha256": "709a7345f0ea0a77b622ffabb3cb58163d8352c8b655f0662d8c4b41c52a1656",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/relation_extractor.py",
+      "sha256": "f7f013a562ee8febb6e847fb3a0541df964d6c189c061dfc70b52611d2f8c10d",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/schema.py",
+      "sha256": "1f4f7a548c2c5fddfc62444648c60b64bd8f693a63b57f72bd542441966c13f0",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/schema_validator.py",
+      "sha256": "f015a358445d3fc1514448ab620fa24f32f6b6a19123464ed70140cf9ed44888",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/schemas.py",
+      "sha256": "deafb123dbbb18dca55cec352c7669f400d7dafc0e1650679657d9dc95fee70d",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/semantic_analyzer.py",
+      "sha256": "322090dfaf07c7232a4712c2545f5d527ddf6f014ad890d852343a8e534ee63b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/semantic_extract_provenance.py",
+      "sha256": "3eea47704dec7c19b74b01d562e2f9370f0acbfafdc92a4faba6abf4139bd53f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/semantic_network_extractor.py",
+      "sha256": "9c7353753828a8d062d9eb4ba70dc302ff75d72f1005383162ed33f3d09c7466",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/triplet_extractor.py",
+      "sha256": "ec20d79534287a933ee707de8c9f7edd1430e7c68d4fd1835ada51e9d645a985",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/semantic_extract/types.py",
+      "sha256": "5ec796e1b8d9dbeca24d06e96f67b91a65453f60483c60049e4030e59d432def",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/server.py",
+      "sha256": "c163e2df5d9f8ce6de2925568264c3ae00700a39f89e80660b3f2c296f53bdda",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/split/__init__.py",
+      "sha256": "1f91850d2a8dd43ac149c2d6718fea81a207241d238122e21b33e3923a13eed0",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/split/config.py",
+      "sha256": "9afa9986d9f15aeaf4388b420cb3b8235dab170cd2907ba137c98a84d9f9f835",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/split/kg_chunkers.py",
+      "sha256": "9acb589ca434de200467c2aa690073fdaa767950a85fcfb0d4368ba09725e569",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/split/methods.py",
+      "sha256": "f6bee3c268d7b022597737856394831ce86ca9e60d61bc886f2fc5726753dcaa",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/split/provenance_tracker.py",
+      "sha256": "4a9705f4dd6994c0fc83c0bebd505d95732a6aafd20133c6413ca6471622bf75",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/split/registry.py",
+      "sha256": "f54096e8fec4a31d5d3c553c702ba5bce95bce1ed7ddfbb0a597104d21e85368",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/split/semantic_chunker.py",
+      "sha256": "a265ea83bad7be893ddb241e142399bad5cae0627fc70723da6640ab4da3719d",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/split/sliding_window_chunker.py",
+      "sha256": "d175551068f43aaf3ad513bc2e2e5350bd60120f0307b3a40e36da470a1001d3",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/split/splitter.py",
+      "sha256": "ce4cb80f1bb8afdb91b73873f8358209c997d063a739bee82c1755ca5d8b2d53",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/split/structural_chunker.py",
+      "sha256": "2774b643fe3beac853e5072c09ff200f7e8a4db44d1ccf20d826e4d2ac28ece9",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/split/table_chunker.py",
+      "sha256": "043a44ec2d93628ea694c174677328a9913892f6d7211b3c6bdd812d5270be16",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/__init__.py",
+      "sha256": "9340d95c9392b6c499e9182cdfb7b2a4e165992d491a676e0f85b3a4d38de300",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/anzo_store.py",
+      "sha256": "4fb9b9a5a9536ebd4c607ba37b22a4c861744c09189f22ab8111a44285a12a7f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/blazegraph_store.py",
+      "sha256": "f3e468c416cc0308289fe01acc81ad1278b46bd7ad47394e0b5391856c93831a",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/bulk_loader.py",
+      "sha256": "4a51c5f08b41229cec9b41493ff8e559115ab4f224712db22c1584a49218473f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/config.py",
+      "sha256": "cd9298d84dd4a148e9f95987721b354df168d238e9c54f64ea50a15a0f33ecf9",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/construct_templates.py",
+      "sha256": "9c4097446d01de2f9310b5cf96cb06628673336dc59f9ab8aabecae6aa8db480",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/jena_store.py",
+      "sha256": "7b8fa813a0e88e2697973056f63085cac558b758589c526b7dafe1274868d055",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/methods.py",
+      "sha256": "9fe88940d64b1305a38160c1614824c5ce6cfab4dd786cd5e59624978fa64476",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/oxigraph_store.py",
+      "sha256": "b5ccfd13624fb479319dea9aafb022b80a95c16470ca24a62b3d840a4b8161ed",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/query_engine.py",
+      "sha256": "27ee7e27beadb57595331fa83b61fd7d2217ed21321149dd1df46d279e918894",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/rdf4j_store.py",
+      "sha256": "a3e6f19da1c0ce4844a3fd1aeea63e4c5d66cb55c382b7dfcba72b44fb78a448",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/registry.py",
+      "sha256": "3625b8b8e71dc78756ae4343d7fed8044d8e38fe301f4e3c60abad9bb798e52f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/sparql_escaping.py",
+      "sha256": "e8e9a5507ebd2a2fbe5708acde25407bd5cce3ed39365027accfb16326c5ba47",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/triplet_store.py",
+      "sha256": "d442a0919ad8c98d17f6e9fd3d5bb8b6dfe761f07e71fb3fa8805d2be70dc4e0",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/triplet_store/triplet_store_provenance.py",
+      "sha256": "03bc5e3e6ece92fcea425ec4ed62c2509a0ffdec2f085198ce656eda28133378",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/utils/__init__.py",
+      "sha256": "754dad2eb215643f0e9ee4144b701a85418002bcaa71f8704db29e1a11a531ea",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/utils/constants.py",
+      "sha256": "43bcdf4c8e97abe9cf8a268b77d61b5f3eff0e1a74bcb746ce267fdaf1c8f841",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/utils/custom_methods.py",
+      "sha256": "d0a44f9692bfd6f18ca2cca4d4391a3d6ae0a6c115e080066deb72cca1bb9139",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/utils/entity_ids.py",
+      "sha256": "31648136bcb90122fbfbb735e49a43f9d287115789794130004c278d222d066d",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/utils/exceptions.py",
+      "sha256": "2cc526ff70338a002ef3f004818c8c2a1629e958643530de39a080ab96fc6c74",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/utils/helpers.py",
+      "sha256": "3a38797b1f668838ada7716327dce487189d6ea433efbb670bb2a44dfaff85ed",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/utils/logging.py",
+      "sha256": "e56a9fd21f88f7ce17e32b97fc4f248f5588d3d36ec498ebb6387e33d5c78185",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/utils/progress_tracker.py",
+      "sha256": "b58189e3f4b4720c55212d4cabb6ef1cb59b3bcc2f4f106281c8b5abfc5af3e5",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/utils/skos.py",
+      "sha256": "06870db663ab31924f1bfcd77b8438f9cac09d59345a980d2cef419a0e2cc661",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/utils/types.py",
+      "sha256": "bccaa6435b75845f8d11ab1c7751750aa537b652fb28597e18f02a796f12ab78",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/utils/validators.py",
+      "sha256": "7241ebe0158d3a7a1331744321fe0bf9a248949dc7c07857d5b7a94d89d06613",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/__init__.py",
+      "sha256": "7edb37aad8f4ad4d49d9518e57bdb751ea7c0b55a1dcbe38bffdedaed1b7098b",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/config.py",
+      "sha256": "69313a401898769011f377adc27964a5316c9460c4de45437aa540f36d9f50f7",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/decision_embedding_pipeline.py",
+      "sha256": "375801ff0c4e13837701407efa30705e38667cd39108be9e0aebc22fde191c6c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/decision_vector_methods.py",
+      "sha256": "347c1d4e31167b301c89dbdba702cf7fa2790a826f248f8eebb7831d3491d263",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/faiss_store.py",
+      "sha256": "6026fe4385a01ca832a42469a278695089d9eb2bad66f224e9bf0a77b308eb36",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/hybrid_search.py",
+      "sha256": "ff14966d299b476400f21c2e40479d5cab31f3b43f80474449d1979804e3e436",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/hybrid_similarity.py",
+      "sha256": "aa8af33562bf90cdc7d937a36f78b9803391c2640dc152542841eb9efb70a0de",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/metadata_store.py",
+      "sha256": "cc63cf5f0d372840ed270e82b28bb98d20723393dcc29d5f978c4125c8cc8410",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/methods.py",
+      "sha256": "0f0bde5d0e8cdc221a02073f21c2a93d411d2ad8eb6b97fdd32ac57c92aaa51e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/milvus_store.py",
+      "sha256": "4818a3bfd1e394fd3d6bbb99cfd09f766a9d8d92ee46c7712936bb75e861c223",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/namespace_manager.py",
+      "sha256": "88f0eacda5a1929110a6f56c359e9bc710f7179330373e66976760a29875b27c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/pgvector_store.py",
+      "sha256": "d5f7121538662ffa9d501b1045e182f099fb17413482371600c5a68d63648814",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/pinecone_store.py",
+      "sha256": "b260eca802c36ff7c0dcb967b60c91e3c5b2e0f3d76128f03e4262367351f73f",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/qdrant_store.py",
+      "sha256": "9a2c5b013cb7c10076474898442dace4bcc6703e3f5a7e52b2d136d0711df30c",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/registry.py",
+      "sha256": "6dfec496fc37f3a5efc15b2ba60fae448910596524705637943a9b2f3c3870a3",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/sqlite_vec_store.py",
+      "sha256": "d796c1acd6e2af46ee4329d6e3671d8f12f63ce973542c7a90b01ca3462fa153",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/vector_store.py",
+      "sha256": "d9f2a262448b0540844c0bcd07143c19e74ec03f0e15d13619a6c6c988f68922",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/vector_store_provenance.py",
+      "sha256": "c96730ec130cf01427ab0d627302e02cbb03eaa111fb64e56fd5971d65292fb3",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/vector_store/weaviate_store.py",
+      "sha256": "4c469787a8feac1ff89ffc62bdaaca178f4fe4025e4233253ef459c5cdfdee28",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/__init__.py",
+      "sha256": "0e78f419de3cbad889220bea166fb84963a26bec987f272af715358374403313",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/analytics_visualizer.py",
+      "sha256": "2aeba155097f160b4c44b0536777c3c5f06ff79a16a3a7a856004d8601bd2822",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/config.py",
+      "sha256": "2c20d3c383df941b127c2b88343b88960e618e5f8997b16537b7b2106db99a8a",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/embedding_visualizer.py",
+      "sha256": "19f2e9d4d85844d5c5fe57cf691b61fad0aac5df6faea60432500020ae52c9ad",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/kg_visualizer.py",
+      "sha256": "616a81ada114d5064b2a489fcfe299aeb0bc5226ec427b05d6b32fbb6b4c1cf4",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/methods.py",
+      "sha256": "390cca58e098ebe6af993ddd517c2392c60004d53327b67b7dcd8dbd0813db54",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/ontology_visualizer.py",
+      "sha256": "51e5ab33d13d352bbd5a021d4e1f7d42c1002baf7c24b0c6badf830dd86d7371",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/registry.py",
+      "sha256": "c7c2754f1f1c14c46337b922f0ee1cf671ccd82c4a2e4c36de1ee14733bf3e05",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/semantic_network_visualizer.py",
+      "sha256": "375a2fec106815e140da4deadb366f6697c0cb9b3bb1bc8e293bbe027cf6ebd9",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/temporal_visualizer.py",
+      "sha256": "31eda334c0e7c28d1c5431a76e3950e30985984e46f805fc2129cd4d43760f4e",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/utils/__init__.py",
+      "sha256": "87b0ab8c3f00e9e356dce846a1dc9e63e7525844a8cce2a2e5aad9eaca1119e0",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/utils/color_schemes.py",
+      "sha256": "68ca801ec33a0ae44b69a6adb26325169e79d14a7363d85cedc9a5912e35f9bf",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/utils/export_formats.py",
+      "sha256": "47ff7b0ee743d03074fe82f553f67d93f6f4f05e2a03f995f45acd2029ac09e4",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/utils/layout_algorithms.py",
+      "sha256": "eddc2723dc4a3ea1dab0895a136e79cf416b2fd27385e8d08fcc00a7348e8aa6",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/visualization/visualization_provenance.py",
+      "sha256": "2d5a02332806d6dab0ef2e311491e0188769fea7cad4522b1be7a248edec8993",
+      "matches_official_download_cache": true
+    },
+    {
+      "file": "semantica/worker.py",
+      "sha256": "3f3868abfd341f417ac5585f26f1f68ad156b77ce15c70c34105d4372d294f3e",
+      "matches_official_download_cache": true
+    }
+  ],
+  "official_cached_source_comparison_passed": true,
+  "wheel_archive_sha256_independently_verified": false,
+  "scope": "installed Python source hashes compared with previously downloaded official cache; not a dependency lock or clean environment proof"
+}

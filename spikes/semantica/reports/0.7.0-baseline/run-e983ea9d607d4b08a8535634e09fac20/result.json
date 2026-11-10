@@ -1,0 +1,36 @@
+{
+  "entities": [
+    {
+      "confidence": 0.7,
+      "end_char": 37,
+      "label": "DATE",
+      "metadata": {
+        "extraction_method": "pattern"
+      },
+      "start_char": 33,
+      "text": "2024"
+    }
+  ],
+  "event_method": "fixed_native_keyword_patterns_not_llm",
+  "events": [
+    {
+      "confidence": 0.7,
+      "end_char": 14,
+      "event_type": "launch",
+      "location": "Paris",
+      "metadata": {
+        "context": "Alice released Atlas in Paris in 2024."
+      },
+      "participants": [
+        "Alice",
+        "Atlas",
+        "Paris"
+      ],
+      "start_char": 6,
+      "text": "released",
+      "time": "2024"
+    }
+  ],
+  "relations": [],
+  "text": "Alice released Atlas in Paris in 2024."
+}

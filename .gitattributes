@@ -1,0 +1,2 @@
+# Preserve exact native evidence bytes/hashes, including serializer EOF blank lines.
+spikes/semantica/reports/** whitespace=-blank-at-eof
