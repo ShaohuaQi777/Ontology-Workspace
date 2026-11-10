@@ -1,0 +1,34 @@
+[project]
+name = "ontology-workspace"
+version = "0.1.0"
+description = "Tool-only enterprise ontology workspace with a Semantica native backend"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "semantica[documents,parse-pdf,shacl,tripletstore-oxigraph]==0.7.0+ontologyworkspace.3",
+  "pydantic==2.14.3",
+  "jsonschema==4.26.0",
+  "PyYAML==6.0.3",
+  "SQLAlchemy==2.1.8",
+  "rdflib==7.6.0",
+  "spacy==3.8.18",
+  "en-core-web-sm==3.8.0",
+]
+
+[dependency-groups]
+dev = ["pytest==9.2.0"]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+semantica = { path = "vendor/wheels/semantica-0.7.0+ontologyworkspace.3-py3-none-any.whl" }
+en-core-web-sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl" }
+
+[[tool.uv.index]]
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "src"]

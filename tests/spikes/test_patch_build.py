@@ -9,13 +9,26 @@ from zipfile import ZipFile
 import pytest
 from scripts.build_semantica_patch import build_patch
 
-BASE = Path('.cache/uv/archive-v0/MJdIOXhjvucbhRDB')
 import json
 VERSION = json.loads(Path('patches/semantica/manifest.json').read_text())['version']
 
 
-def test_patch_wheel_version_record_and_module(tmp_path):
-    wheel = build_patch(BASE, tmp_path)
+@pytest.fixture(scope='module')
+def base_dir(tmp_path_factory):
+    wheel = Path('vendor/upstream/semantica-0.7.0-py3-none-any.whl')
+    assert hashlib.sha256(wheel.read_bytes()).hexdigest() == 'faf27d6259ae813ddb44c5213e2f8867592f27e6e3d6b47cea10f1844513799f'
+    base = tmp_path_factory.mktemp('verified-semantic-base')
+    with ZipFile(wheel) as archive:
+        for name in archive.namelist():
+            assert not Path(name).is_absolute() and '..' not in Path(name).parts
+        archive.extractall(base)
+    return base
+
+
+def test_patch_wheel_version_record_and_module(tmp_path, base_dir):
+    wheel = build_patch(base_dir, tmp_path)
+    bundled = Path(f'vendor/wheels/semantica-{VERSION}-py3-none-any.whl')
+    assert wheel.read_bytes() == bundled.read_bytes()
     with ZipFile(wheel) as archive:
         names = archive.namelist()
         assert 'semantica/ontology/document.py' in names
@@ -36,9 +49,9 @@ def test_patch_wheel_version_record_and_module(tmp_path):
                 assert size == str(len(data))
 
 
-def test_build_is_deterministic(tmp_path):
-    first = build_patch(BASE, tmp_path / 'first')
-    second = build_patch(BASE, tmp_path / 'second')
+def test_build_is_deterministic(tmp_path, base_dir):
+    first = build_patch(base_dir, tmp_path / 'first')
+    second = build_patch(base_dir, tmp_path / 'second')
     assert first.read_bytes() == second.read_bytes()
 
 
@@ -52,9 +65,9 @@ def test_bad_inventory_rejected(tmp_path):
     assert not (tmp_path / 'output').exists()
 
 
-def test_tampered_source_rejected(tmp_path):
+def test_tampered_source_rejected(tmp_path, base_dir):
     base = tmp_path / 'tampered'
-    shutil.copytree(BASE, base)
+    shutil.copytree(base_dir, base)
     (base / 'semantica' / '__init__.py').write_text('synthetic-tamper')
     with pytest.raises(ValueError):
         build_patch(base, tmp_path / 'output')
