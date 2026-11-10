@@ -25,4 +25,6 @@ SQLite 为开发元数据基线，PostgreSQL 为交付演练配置，通过 Repo
 
 ## Evidence
 
+[原生实测](../../spikes/semantica/reports/0.7.0-ontologyworkspace.3/README.md)：SQLite只读接入、三元组保真与制品hash通过。此证据不覆盖元数据Repository/PostgreSQL迁移或S3实现。
+
 [批准设计](../superpowers/specs/2026-11-10-ontology-workspace-design.md) 和 [总体计划](../superpowers/plans/2026-11-10-ontology-workspace-roadmap.md)。本 ADR 未进行数据库迁移或部署验证。

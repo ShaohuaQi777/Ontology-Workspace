@@ -23,4 +23,6 @@ Task: A0-04.
 
 ## Evidence
 
+[原生探针通过与边界](../../spikes/semantica/reports/0.7.0-ontologyworkspace.3/README.md)：真实 Semantica .3 的17原生能力通过；这不证明FastAPI/React模块化单体已交付。
+
 [批准设计](../superpowers/specs/2026-11-10-ontology-workspace-design.md)。Semantica 可调用能力以 A0-02 真实探针为准，本 ADR 不宣称已经通过。

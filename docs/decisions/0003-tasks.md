@@ -25,4 +25,6 @@ V1 单应用/单 Worker，元数据持久化任务表记录 input revision、run
 
 ## Evidence
 
+[真实探针](../../spikes/semantica/reports/0.7.0-ontologyworkspace.3/README.md)保留run_id/source/参数/制品与失败基线；探针同步运行不证明持久Worker领取、重启或取消已实现。
+
 [批准设计](../superpowers/specs/2026-11-10-ontology-workspace-design.md)。探针 CLI 与产品 Worker 是不同范围，A0 不宣称任务恢复已实现。

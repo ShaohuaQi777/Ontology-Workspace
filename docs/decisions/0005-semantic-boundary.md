@@ -1,6 +1,6 @@
 # ADR 0005: 固定 Semantica 与 fail-closed 企业适配
 
-Status: accepted boundary; candidate 0.7.0 under installation/probe, not yet certified compatible.
+Status: accepted boundary; native G0 verified for authorized patched 0.7.0+ontologyworkspace.3; full enterprise Adapter/G-P0 compatibility pending.
 Task: A0-04; depends on A0-02/03/06/07/08.
 
 ## Context
@@ -27,4 +27,4 @@ Fake 仅单元/契约测试，产品工厂拒绝 Fake。不支持/依赖缺失/�
 
 ## Evidence
 
-[固定版本探针计划](../superpowers/plans/2026-11-10-ontology-workspace-a0.md)。实际证据将在 A0-02 输出；当前没有“已兼容”声明。
+[固定版本探针计划](../superpowers/plans/2026-11-10-ontology-workspace-a0.md)、[保留原始失败](../../spikes/semantica/reports/0.7.0-baseline/README.md)、[真实补丁G0通过](../../spikes/semantica/reports/0.7.0-ontologyworkspace.3/README.md)、[锁/干净安装](../operations/a0-environment.md)。用户授权原生无损文档补丁，实际分发与源码hash固定.3；RDFLib本地parser是Semantica SDK内部实现，不是平台另造语义引擎。XML/JSONLD在安全完整支持前明确拒绝。17/17 native G0及独立freshvenv103测试通过，但完整Adapter/shared/upgrade门禁未完成，不能称企业适配兼容已完成。

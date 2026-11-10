@@ -25,4 +25,6 @@ Release Manifest 固定 workspace_revision、backend/adapter 版本、制品 has
 
 ## Evidence
 
+[原生query/provenance实测](../../spikes/semantica/reports/0.7.0-ontologyworkspace.3/README.md)只证明嵌入式PyOxigraph SELECT/ASK和来源输出；独立Oxigraph HTTP部署、命名图健康与回滚仍待P5实测。
+
 [批准设计](../superpowers/specs/2026-11-10-ontology-workspace-design.md)。Oxigraph 未在 A0 部署，不宣称健康/回滚已验证。
