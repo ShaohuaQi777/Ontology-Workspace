@@ -1,0 +1,25 @@
+{
+  "case_id": "parse_pdf",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.3",
+  "api_symbol": "semantica.parse.pdf_parser.PDFParser.parse",
+  "run_id": "run-e816c6a1d0a344b8a1b2635277dd1eb4",
+  "source_refs": [
+    "urn:technical-probe:parse_pdf"
+  ],
+  "parameters": {
+    "format": "pdf"
+  },
+  "artifact_hashes": {
+    "result": "fbf2d3175f18b3bc501cdd44267802d75f7a612299f413bb54719a95b434f55c",
+    "technical.pdf": "19b6c27c9c02ba6b768d21a9d6ee363e67010dca4cceaedb0addb9cef3cb93dd"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "text": true,
+    "pages": true,
+    "page_number": true,
+    "metadata_page_count": true
+  },
+  "error_code": null
+}

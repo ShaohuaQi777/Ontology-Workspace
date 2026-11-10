@@ -1,0 +1,24 @@
+{
+  "case_id": "shacl_pass",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.3",
+  "api_symbol": "semantica.ontology.ontology_validator.run_shacl_validation",
+  "run_id": "run-51aa951ed1534b609807ea04e1bf7017",
+  "source_refs": [
+    "urn:technical-probe:shacl_pass"
+  ],
+  "parameters": {
+    "format": "turtle"
+  },
+  "artifact_hashes": {
+    "result": "bbb8dae4c96024172ad526245b2116c6eb0926cdaddb48c8e14a8742e84350e1",
+    "shapes.ttl": "b8fc1fef02c323a2c94d4b71cb003857723d992584f347041f42f5685ff9a44a",
+    "data.ttl": "9e5fc502e1ded1ed8da00e9961c6622abb1d794d2703d77d7bc5cc409ffe109d"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "conforms": true,
+    "count": true
+  },
+  "error_code": null
+}

@@ -6,7 +6,11 @@ from spikes.semantica.runner import run_case
 
 
 def test_version_is_installed_distribution_version():
-    assert importlib.metadata.version('semantica') == '0.7.0'
+    import json
+    from pathlib import Path
+    import semantica
+    expected = json.loads(Path('patches/semantica/manifest.json').read_text())['version']
+    assert importlib.metadata.version('semantica') == semantica.__version__ == expected
 
 
 @pytest.mark.parametrize('case_id', REQUIRED_CASES)

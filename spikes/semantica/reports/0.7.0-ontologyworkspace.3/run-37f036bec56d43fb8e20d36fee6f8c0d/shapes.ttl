@@ -1,0 +1,4 @@
+@prefix ex: <https://example.invalid/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+ex:S a sh:NodeShape; sh:targetNode ex:n1;
+ sh:property [sh:path ex:p; sh:minCount 1] .

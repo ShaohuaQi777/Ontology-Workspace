@@ -1,0 +1,450 @@
+{
+  "evidence": [
+    {
+      "case_id": "ingest_csv",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.parse.csv_parser.CSVParser.parse",
+      "run_id": "run-df02500d8209432795006a9133ebb7ce",
+      "source_refs": [
+        "urn:technical-probe:ingest_csv"
+      ],
+      "parameters": {
+        "format": "csv"
+      },
+      "artifact_hashes": {
+        "result": "bc67525141afdc5d2e4b39d1f175c6b33a452cb6130de669ae42c6611cd890fe",
+        "technical.csv": "09980070fe0ec62900bbf44517b31b95131de6e9b4d1bddd9678de9ec0533c10"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "original_bytes": true,
+        "file_type": true,
+        "headers": true,
+        "rows": true,
+        "row_count": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "ingest_json",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.parse.json_parser.JSONParser.parse",
+      "run_id": "run-6f1c16dd7ddf47399fb17f77fcbac011",
+      "source_refs": [
+        "urn:technical-probe:ingest_json"
+      ],
+      "parameters": {
+        "format": "json"
+      },
+      "artifact_hashes": {
+        "result": "9e4526bf4477621bcbc553073804a33c97ad32b2a68ee0666f824ff2d7a84a75",
+        "technical.json": "f9f402f4d1d7995f1e3d34965cb89146de3b9c2442a3d10a68b2272239842afe"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "original_bytes": true,
+        "object_type": true,
+        "data": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "ingest_sqlite",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.ingest.db_ingestor.DBIngestor.ingest_database",
+      "run_id": "run-ac5c3287035548899bccd59d0df76ca0",
+      "source_refs": [
+        "urn:technical-probe:ingest_sqlite"
+      ],
+      "parameters": {
+        "format": "sqlite"
+      },
+      "artifact_hashes": {
+        "result": "0928969e243d67340a37478c91a7501bb83f676f958d5d6931e7fbe8375a3d4c",
+        "technical.sqlite": "915d12af2046fe8e2f8be32bcc7aa86809e6c43b12d72719676947820e365abd"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "tables": true,
+        "rows": true,
+        "row_count": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "parse_pdf",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.parse.pdf_parser.PDFParser.parse",
+      "run_id": "run-e816c6a1d0a344b8a1b2635277dd1eb4",
+      "source_refs": [
+        "urn:technical-probe:parse_pdf"
+      ],
+      "parameters": {
+        "format": "pdf"
+      },
+      "artifact_hashes": {
+        "result": "fbf2d3175f18b3bc501cdd44267802d75f7a612299f413bb54719a95b434f55c",
+        "technical.pdf": "19b6c27c9c02ba6b768d21a9d6ee363e67010dca4cceaedb0addb9cef3cb93dd"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "text": true,
+        "pages": true,
+        "page_number": true,
+        "metadata_page_count": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "parse_docx",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.parse.docx_parser.DOCXParser.parse",
+      "run_id": "run-720ddcbb285646cdbab9baad906d6568",
+      "source_refs": [
+        "urn:technical-probe:parse_docx"
+      ],
+      "parameters": {
+        "format": "docx"
+      },
+      "artifact_hashes": {
+        "result": "b24e4c4d65a6174a2e34495d2ffe3688a4390c71d74322e259bfa760e32fe2fb",
+        "technical.docx": "08ef082b3b861bbd69740aa5034cb9a9ef3dfe8414ca4b144b21c7d60d0c1fbf"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "text": true,
+        "paragraphs": true,
+        "count": true,
+        "tables": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "extract_entities_relations_events",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.semantic_extract.methods.extract_entities_ml",
+      "run_id": "run-d20a3ff561034fb0834dbdad12032045",
+      "source_refs": [
+        "urn:technical-probe:extract_entities_relations_events"
+      ],
+      "parameters": {
+        "format": "json"
+      },
+      "artifact_hashes": {
+        "result": "391570dbc88fdff008f58d45eb18b89103a66ae8b927e69c3ad29218802adc37"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "entities": true,
+        "entity_spans": true,
+        "ml_provenance": true,
+        "relations": true,
+        "dependency_provenance": true,
+        "events": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "build_graph",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.kg.graph_builder.GraphBuilder.build",
+      "run_id": "run-74201ad785674ab7b111092630345e09",
+      "source_refs": [
+        "urn:technical-probe:build_graph"
+      ],
+      "parameters": {
+        "format": "json"
+      },
+      "artifact_hashes": {
+        "result": "4d8c948bc9e43259a104da6e338db893cea5ef8c473318d61951662b0c589fff"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "entity_ids": true,
+        "relationships": true,
+        "entity_count": true,
+        "relation_count": true,
+        "no_resolution": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "ontology_generate",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.ontology.ontology_generator.OntologyGenerator.generate_ontology",
+      "run_id": "run-7574a73d5ffb4aaea418986626e53153",
+      "source_refs": [
+        "urn:technical-probe:ontology_generate"
+      ],
+      "parameters": {
+        "format": "turtle"
+      },
+      "artifact_hashes": {
+        "result": "0ec3775fbdaf54ed416105f8f1ba4ff59db477476d61e106cb9339d85ad95f78",
+        "generated.ttl": "f4b271c8f0087108091a17f97bf36f9de8fa0acefdc81d5f85c01d96fa946716"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "name": true,
+        "class": true,
+        "class_count": true,
+        "property": true,
+        "no_imports": true,
+        "owl_output": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "ontology_roundtrip",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.ontology.document.OntologyDocument.serialize",
+      "run_id": "run-8d2e0646ea35481a921d16f06383826e",
+      "source_refs": [
+        "urn:technical-probe:ontology_roundtrip"
+      ],
+      "parameters": {
+        "format": "turtle"
+      },
+      "artifact_hashes": {
+        "result": "03af1a8700324d070f9ae98c5349aecddf6739f9078c427f86b62d349dac9f51",
+        "complex.ttl": "abcb4fb8db4269d5c8ec483db7166a082c1c88c452ade3c1a8050396032cef2b",
+        "roundtrip.ttl": "24122dc997dfffe8467ee57c9910779b93dea5dbd89f3b0c0fedcdc188fb9b52"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "isomorphic": true,
+        "blank_nodes": true,
+        "imports": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "ontology_edit",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.ontology.document.OntologyDocument.with_label",
+      "run_id": "run-de41b1f25c6b4d8d91036db1de18218b",
+      "source_refs": [
+        "urn:technical-probe:ontology_edit"
+      ],
+      "parameters": {
+        "format": "turtle"
+      },
+      "artifact_hashes": {
+        "result": "03af1a8700324d070f9ae98c5349aecddf6739f9078c427f86b62d349dac9f51",
+        "edited.ttl": "409613da96281fb413d247676ba004be1135e317b2b3e9811633d7f1f95d5fe9"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "label_only": true,
+        "original_unchanged": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "shacl_pass",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.ontology.ontology_validator.run_shacl_validation",
+      "run_id": "run-51aa951ed1534b609807ea04e1bf7017",
+      "source_refs": [
+        "urn:technical-probe:shacl_pass"
+      ],
+      "parameters": {
+        "format": "turtle"
+      },
+      "artifact_hashes": {
+        "result": "bbb8dae4c96024172ad526245b2116c6eb0926cdaddb48c8e14a8742e84350e1",
+        "shapes.ttl": "b8fc1fef02c323a2c94d4b71cb003857723d992584f347041f42f5685ff9a44a",
+        "data.ttl": "9e5fc502e1ded1ed8da00e9961c6622abb1d794d2703d77d7bc5cc409ffe109d"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "conforms": true,
+        "count": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "shacl_fail",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.ontology.ontology_validator.run_shacl_validation",
+      "run_id": "run-37f036bec56d43fb8e20d36fee6f8c0d",
+      "source_refs": [
+        "urn:technical-probe:shacl_fail"
+      ],
+      "parameters": {
+        "format": "turtle"
+      },
+      "artifact_hashes": {
+        "result": "d2708e4e49c5cb1d3e4b607c3960b0f1cd5818ed00bef4ec9184bc6c0e35b9a9",
+        "shapes.ttl": "b8fc1fef02c323a2c94d4b71cb003857723d992584f347041f42f5685ff9a44a",
+        "data.ttl": "e358a9e763c2662aef2e58f4c3876a8a4c8fd027dd1c5abd9270b834e7bbcf26"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "conforms": true,
+        "count": true,
+        "focus_node": true,
+        "path": true,
+        "constraint": true,
+        "min_count": true,
+        "raw_report": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "reason_forward",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.reasoning.reasoner.Reasoner.infer_with_results",
+      "run_id": "run-68d1c4bb8a044adb8c8091e96e4208d0",
+      "source_refs": [
+        "urn:technical-probe:reason_forward"
+      ],
+      "parameters": {
+        "format": "json"
+      },
+      "artifact_hashes": {
+        "result": "fb8c5bf04b6bd3fb91c230fe59183a531c866a15b2290120d07087963d69c705",
+        "asserted.json": "70ebd9991c0328da5898c312dee16ff9a8ba32a916bc992036842105a91c5076"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "conclusion": true,
+        "rule": true,
+        "premises": true,
+        "separate": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "conflict_evidence",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.conflicts.conflict_detector.ConflictDetector.detect_value_conflicts",
+      "run_id": "run-6be6161dfeae48cdaeb19d2cd85fe1c0",
+      "source_refs": [
+        "urn:technical-probe:conflict_evidence"
+      ],
+      "parameters": {
+        "format": "json"
+      },
+      "artifact_hashes": {
+        "result": "64b282b7a1c160c759edb559d1739ce91aa88cc3d24cc4d1d4d66caf6f90f3de"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "count": true,
+        "type": true,
+        "values": true,
+        "sources": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "provenance_export",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.provenance.manager.ProvenanceManager.export_prov",
+      "run_id": "run-0e44f8e616204085a4d41cdff396cf43",
+      "source_refs": [
+        "urn:technical-probe:provenance_export"
+      ],
+      "parameters": {
+        "format": "turtle"
+      },
+      "artifact_hashes": {
+        "result": "f1396b88988156e49456636c35d6854656c044f7a0d19289e3c2a0424730091b",
+        "provenance.ttl": "f230745dccaf3d4c32599004da3da2be36357f59804b249e4f79557beec873c2"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "stored": true,
+        "entity": true,
+        "derived": true,
+        "generated": true,
+        "used": true,
+        "agent": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "query_select_ask",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.reasoning.sparql_reasoner.SPARQLReasoner.execute_query",
+      "run_id": "run-df7ec3746b3d4978bbae1a075d1ecd44",
+      "source_refs": [
+        "urn:technical-probe:query_select_ask"
+      ],
+      "parameters": {
+        "format": "json"
+      },
+      "artifact_hashes": {
+        "result": "6c4f44f6491385ec92bac21d366bfec4272ac6bf6566975506a75744260201af"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "variables": true,
+        "row_count": true,
+        "native_uri_binding": true,
+        "ask_true": true,
+        "ask_false": true
+      },
+      "error_code": null
+    },
+    {
+      "case_id": "normalize_align",
+      "status": "passed",
+      "backend_version": "0.7.0+ontologyworkspace.3",
+      "api_symbol": "semantica.normalize.entity_normalizer.EntityNormalizer.link_entities",
+      "run_id": "run-7501a5af2c624b3abb7ea40f967dfb5b",
+      "source_refs": [
+        "urn:technical-probe:normalize_align"
+      ],
+      "parameters": {
+        "format": "json"
+      },
+      "artifact_hashes": {
+        "result": "6b309f4f88b2f2d2df1e7fdbd123b538d7fa14f0e4f2913cf5a5831ba29c83a3"
+      },
+      "checks": {
+        "native_api_invoked": true,
+        "unicode": true,
+        "aliases": true,
+        "source_keys": true
+      },
+      "error_code": null
+    }
+  ],
+  "gate": {
+    "passed": true,
+    "missing_cases": [],
+    "duplicate_cases": [],
+    "failed_cases": [],
+    "invalid_entry_count": 0,
+    "unexpected_case_count": 0,
+    "backend_versions": [
+      "0.7.0+ontologyworkspace.3"
+    ],
+    "required_case_count": 17,
+    "scope": "native_probe_evidence_only",
+    "not_yet_verified": [
+      "locked_clean_install",
+      "shared_contracts",
+      "adapter_isolation",
+      "upgrade_compatibility"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "model": "en_core_web_sm",
+  "version": "3.8.0",
+  "source_url": "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl",
+  "official_metadata_url": "https://raw.githubusercontent.com/explosion/spacy-models/master/meta/en_core_web_sm-3.8.0.json",
+  "official_release_url": "https://github.com/explosion/spacy-models/releases/tag/en_core_web_sm-3.8.0",
+  "license": "MIT",
+  "bytes": 12806118,
+  "published_wheel_checksum": "1932429db727d4bff3deed6b34cfc05df17794f4a52eeb26cf8928f7c1a0fb85",
+  "download_sha256_matches_published_checksum": true,
+  "spacy_constraint": ">=3.8.0,<3.9.0",
+  "installed_spacy_version": "3.8.18",
+  "method": "CPU tok2vec/parser/ner; no vectors/transformers/torch",
+  "scope": "Small official offline model only; no training or scenario simulation. Model installation is not evidence of native extraction success.",
+  "verification_note": "Actual wheel SHA256 and exact byte size match official published checksum and HEAD length. Official source labels checksum_whl but does not explicitly name its algorithm; API asset digest not fetched (rate limited)."
+}

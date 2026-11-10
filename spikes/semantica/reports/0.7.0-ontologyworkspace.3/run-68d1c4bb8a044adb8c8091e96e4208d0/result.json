@@ -1,0 +1,15 @@
+{
+  "asserted": [
+    "Token(x)"
+  ],
+  "inferred": [
+    {
+      "conclusion": "Mark(x)",
+      "confidence": 1.0,
+      "premises": [
+        "Token(x)"
+      ],
+      "rule_id": "r1"
+    }
+  ]
+}

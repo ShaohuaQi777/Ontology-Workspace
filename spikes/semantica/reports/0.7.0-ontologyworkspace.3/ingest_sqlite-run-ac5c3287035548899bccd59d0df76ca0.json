@@ -1,0 +1,24 @@
+{
+  "case_id": "ingest_sqlite",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.3",
+  "api_symbol": "semantica.ingest.db_ingestor.DBIngestor.ingest_database",
+  "run_id": "run-ac5c3287035548899bccd59d0df76ca0",
+  "source_refs": [
+    "urn:technical-probe:ingest_sqlite"
+  ],
+  "parameters": {
+    "format": "sqlite"
+  },
+  "artifact_hashes": {
+    "result": "0928969e243d67340a37478c91a7501bb83f676f958d5d6931e7fbe8375a3d4c",
+    "technical.sqlite": "915d12af2046fe8e2f8be32bcc7aa86809e6c43b12d72719676947820e365abd"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "tables": true,
+    "rows": true,
+    "row_count": true
+  },
+  "error_code": null
+}

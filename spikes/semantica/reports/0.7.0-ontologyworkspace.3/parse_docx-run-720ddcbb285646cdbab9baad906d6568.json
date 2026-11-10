@@ -1,0 +1,25 @@
+{
+  "case_id": "parse_docx",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.3",
+  "api_symbol": "semantica.parse.docx_parser.DOCXParser.parse",
+  "run_id": "run-720ddcbb285646cdbab9baad906d6568",
+  "source_refs": [
+    "urn:technical-probe:parse_docx"
+  ],
+  "parameters": {
+    "format": "docx"
+  },
+  "artifact_hashes": {
+    "result": "b24e4c4d65a6174a2e34495d2ffe3688a4390c71d74322e259bfa760e32fe2fb",
+    "technical.docx": "08ef082b3b861bbd69740aa5034cb9a9ef3dfe8414ca4b144b21c7d60d0c1fbf"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "text": true,
+    "paragraphs": true,
+    "count": true,
+    "tables": true
+  },
+  "error_code": null
+}

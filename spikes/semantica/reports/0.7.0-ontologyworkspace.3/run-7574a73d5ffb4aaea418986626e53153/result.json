@@ -1,0 +1,40 @@
+{
+  "classes": [
+    {
+      "@type": "owl:Class",
+      "comment": "Class representing node entities",
+      "entity_count": 2,
+      "label": "Node",
+      "metadata": {
+        "inferred_count": 2,
+        "inferred_from": "Node"
+      },
+      "name": "Node",
+      "properties": [],
+      "uri": "https://example.invalid/ontology/Node"
+    }
+  ],
+  "imports": [],
+  "name": "ProbeOntology",
+  "properties": [
+    {
+      "@type": "owl:ObjectProperty",
+      "comment": "Object property representing linksTo relationships",
+      "domain": [
+        "Node"
+      ],
+      "label": "linksTo",
+      "metadata": {
+        "inferred_from": "linksTo",
+        "occurrence_count": 1
+      },
+      "name": "linksTo",
+      "range": [
+        "Node"
+      ],
+      "type": "object",
+      "uri": "https://example.invalid/ontology/linksTo"
+    }
+  ],
+  "uri": "https://example.invalid/ontology/"
+}

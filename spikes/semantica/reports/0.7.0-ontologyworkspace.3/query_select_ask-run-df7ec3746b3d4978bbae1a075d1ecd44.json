@@ -1,0 +1,25 @@
+{
+  "case_id": "query_select_ask",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.3",
+  "api_symbol": "semantica.reasoning.sparql_reasoner.SPARQLReasoner.execute_query",
+  "run_id": "run-df7ec3746b3d4978bbae1a075d1ecd44",
+  "source_refs": [
+    "urn:technical-probe:query_select_ask"
+  ],
+  "parameters": {
+    "format": "json"
+  },
+  "artifact_hashes": {
+    "result": "6c4f44f6491385ec92bac21d366bfec4272ac6bf6566975506a75744260201af"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "variables": true,
+    "row_count": true,
+    "native_uri_binding": true,
+    "ask_true": true,
+    "ask_false": true
+  },
+  "error_code": null
+}

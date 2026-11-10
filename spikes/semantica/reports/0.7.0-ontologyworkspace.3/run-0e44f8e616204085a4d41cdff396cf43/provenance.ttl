@@ -1,0 +1,45 @@
+@prefix ex: <urn:probe:> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:output a prov:Entity ;
+    prov:generatedAtTime "2026-11-10T10:24:30.376291+00:00"^^xsd:dateTime ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent ex:native-probe ;
+            prov:hadRole ex:role_generator ] ;
+    prov:qualifiedDerivation [ a prov:Derivation ;
+            prov:entity ex:input ;
+            prov:hadActivity ex:extract ] ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity ex:extract ;
+            prov:atTime "2026-11-10T10:24:30.376291+00:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo ex:native-probe ;
+    prov:wasDerivedFrom ex:input ;
+    prov:wasGeneratedBy ex:extract .
+
+ex:entity_tracking a prov:Activity ;
+    prov:wasAssociatedWith ex:semantica .
+
+ex:extract a prov:Activity ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity ex:input ] ;
+    prov:used ex:input ;
+    prov:wasAssociatedWith ex:native-probe .
+
+ex:native-probe a prov:Agent,
+        prov:SoftwareAgent .
+
+ex:semantica a prov:Agent,
+        prov:SoftwareAgent .
+
+ex:input a prov:Entity ;
+    prov:generatedAtTime "2026-11-10T10:24:30.376266+00:00"^^xsd:dateTime ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent ex:semantica ;
+            prov:hadRole ex:role_generator ] ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity ex:entity_tracking ;
+            prov:atTime "2026-11-10T10:24:30.376266+00:00"^^xsd:dateTime ] ;
+    prov:wasAttributedTo ex:semantica ;
+    prov:wasGeneratedBy ex:entity_tracking .
+

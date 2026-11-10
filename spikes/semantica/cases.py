@@ -124,20 +124,19 @@ def ontology_generate(work):
 
 
 def ontology_roundtrip(work):
-    from semantica.ingest.ontology_ingestor import OntologyIngestor
-    from semantica.ontology.owl_generator import OWLGenerator
+    from semantica.ontology.document import OntologyDocument
     from rdflib import BNode, Graph, URIRef
     from rdflib.compare import isomorphic
     from rdflib.namespace import OWL
     path = work / 'complex.ttl'
     path.write_text(COMPLEX_TTL, encoding='utf-8')
-    data = OntologyIngestor().ingest_ontology(path, format='turtle')
-    exported = OWLGenerator().generate_owl(data.data, format='turtle')
+    data = OntologyDocument.from_rdf(COMPLEX_TTL, format='turtle')
+    exported = data.serialize(format='turtle')
     output = work / 'roundtrip.ttl'
     output.write_text(exported, encoding='utf-8')
     source_graph = Graph().parse(data=COMPLEX_TTL, format='turtle')
     result_graph = Graph().parse(data=exported, format='turtle')
-    return record(work, 'ontology_roundtrip', 'semantica.ingest.ontology_ingestor.OntologyIngestor.ingest_ontology',
+    return record(work, 'ontology_roundtrip', 'semantica.ontology.document.OntologyDocument.serialize',
                   {'input_triples': len(source_graph), 'output_triples': len(result_graph)},
                   {'isomorphic': isomorphic(source_graph, result_graph),
                    'blank_nodes': any(isinstance(node, BNode) for triple in result_graph for node in triple),
@@ -146,10 +145,25 @@ def ontology_roundtrip(work):
 
 
 def ontology_edit(work):
-    from semantica.ontology.engine import OntologyEngine
-    if not hasattr(OntologyEngine, 'edit_ontology'):
-        raise NativeAPIUnavailable()
-    raise NotImplementedError('Unverified edit signature cannot count as successful native evidence')
+    from semantica.ontology.document import OntologyDocument
+    from rdflib import Graph, Literal, URIRef
+    from rdflib.namespace import RDFS
+    from rdflib.compare import isomorphic
+    original = OntologyDocument.from_rdf(COMPLEX_TTL)
+    edited = original.with_label('https://example.invalid/probe/Node', 'Changed technical label')
+    before = Graph().parse(data=COMPLEX_TTL, format='turtle')
+    expected = Graph().parse(data=COMPLEX_TTL, format='turtle')
+    subject = URIRef('https://example.invalid/probe/Node')
+    expected.remove((subject, RDFS.label, Literal('Technical node')))
+    expected.add((subject, RDFS.label, Literal('Changed technical label')))
+    after = Graph().parse(data=edited.serialize(), format='turtle')
+    output = work / 'edited.ttl'
+    output.write_text(edited.serialize(), encoding='utf-8')
+    return record(work, 'ontology_edit', 'semantica.ontology.document.OntologyDocument.with_label',
+                  {'input_triples': len(before), 'output_triples': len(after)},
+                  {'label_only': isomorphic(expected, after),
+                   'original_unchanged': isomorphic(before, Graph().parse(data=original.serialize(), format='turtle'))},
+                  [output], 'turtle')
 
 
 def shacl(work, expect_conforms):

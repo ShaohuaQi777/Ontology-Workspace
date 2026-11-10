@@ -1,0 +1,26 @@
+{
+  "case_id": "ingest_csv",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.3",
+  "api_symbol": "semantica.parse.csv_parser.CSVParser.parse",
+  "run_id": "run-df02500d8209432795006a9133ebb7ce",
+  "source_refs": [
+    "urn:technical-probe:ingest_csv"
+  ],
+  "parameters": {
+    "format": "csv"
+  },
+  "artifact_hashes": {
+    "result": "bc67525141afdc5d2e4b39d1f175c6b33a452cb6130de669ae42c6611cd890fe",
+    "technical.csv": "09980070fe0ec62900bbf44517b31b95131de6e9b4d1bddd9678de9ec0533c10"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "original_bytes": true,
+    "file_type": true,
+    "headers": true,
+    "rows": true,
+    "row_count": true
+  },
+  "error_code": null
+}

@@ -72,6 +72,14 @@
 - [ ] Run `.venv-candidate/bin/python -m spikes.semantica.runner --output .runtime/a0-candidate`，17 项 native 全通过方可 exit0。
 - [ ] Commit `test(A0-02E3): verify candidate native document and complete G0`，若仍有失败，保留并诊断，不写 DONE。
 
+## Actual execution record
+
+E1/E2/E3: DONE for the bounded native G0 extension, actual version `0.7.0+ontologyworkspace.3`. Original baseline and intermediate wheels/evidence retained. Real `.3` full tests: 101 passed +14 subtests, CLI17/17 passed/exit0; document/review regressions26 passed/exit0. Independent review REQUEST CHANGES issues were reproduced, fixed with TDD, then APPROVE on actual installed `.3` code and term identity.
+
+Ruling: temporarily allow only safe Turtle/NT, explicitly reject XML/JSONLD until dataset/lexical/network safety is implemented; the original spec expressly requires unsupported formats to fail closed. Future P2 format support remains outstanding. Local RDFLib parser adapters preserve numeric/typed/token/normalizedString lexical forms without mutating globals; NT serialization is valid Turtle subset and may use equivalent raw TAB escaping. Maintained manifest/version hashes updated after each code change; package versions `.1`/`.2` were never silently reused after source fixes.
+
+Small CPU spaCy3.8.18/en_core_web_sm3.8.0 installed only after source/license/size/checksum checks; real ML/dependency probe passes without fallback. No large model, transformers/torch, training or business simulation.
+
 ## Return to Approved A0 Plan
 
 E3/G0 成功才返回 A0-03 干净锁安装、A0-05 contracts、A0-06 完整 Adapter、A0-07 共享 Fake/真实契约及产品工厂拒 Fake、A0-08 升级隔离；阶段结束独立全分支 review。保持原 inline 执行方式，用户只在新的必要范围/权限决策处确认。

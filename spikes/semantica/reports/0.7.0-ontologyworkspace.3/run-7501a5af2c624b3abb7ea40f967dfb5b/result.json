@@ -1,0 +1,9 @@
+{
+  "aliases": {
+    " NODE-A ": "Canonical Node",
+    "node-a": "Canonical Node"
+  },
+  "alignment_kind": "explicit_alias_map",
+  "cross_ontology_semantics": false,
+  "normalized": "é"
+}
