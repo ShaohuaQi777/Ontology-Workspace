@@ -1,0 +1,1096 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ontology-workspace.invalid/contracts/backend-operation.schema.json",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "0.1.0"
+        },
+        "operation": {
+          "enum": [
+            "ingest",
+            "parse",
+            "extract",
+            "normalize",
+            "align",
+            "build_graph",
+            "import_ontology",
+            "edit_ontology",
+            "generate_ontology",
+            "validate",
+            "reason",
+            "detect_conflicts",
+            "export",
+            "capabilities"
+          ]
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+            "maxLength": 512
+          },
+          "maxItems": 1000
+        },
+        "parameters": {
+          "type": "object",
+          "maxProperties": 100
+        },
+        "object_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "https://ontology-workspace.invalid/contracts/common.schema.json#/$defs/object_ref"
+          }
+        },
+        "certification_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+            "maxLength": 512
+          },
+          "maxItems": 1000
+        },
+        "scope_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+          "maxLength": 512
+        },
+        "adapter_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "inputs": {
+          "type": "object",
+          "properties": {
+            "source_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "graph_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "schema_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "suite_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "ruleset_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "release_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema_version",
+        "operation",
+        "run_id",
+        "source_refs",
+        "parameters",
+        "inputs"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "ingest"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "source_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "parse"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "source_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "extract"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "source_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "normalize"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "source_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "align"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "source_id",
+                  "schema_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "build_graph"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "graph_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "import_ontology"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "source_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "edit_ontology"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "schema_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "generate_ontology"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "graph_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "validate"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "graph_id",
+                  "suite_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "reason"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "graph_id",
+                  "ruleset_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "detect_conflicts"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "graph_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "export"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "release_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "capabilities"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "0.1.0"
+        },
+        "operation": {
+          "enum": [
+            "ingest",
+            "parse",
+            "extract",
+            "normalize",
+            "align",
+            "build_graph",
+            "import_ontology",
+            "edit_ontology",
+            "generate_ontology",
+            "validate",
+            "reason",
+            "detect_conflicts",
+            "export",
+            "capabilities"
+          ]
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+            "maxLength": 512
+          },
+          "maxItems": 1000
+        },
+        "parameters": {
+          "type": "object",
+          "maxProperties": 100
+        },
+        "object_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "https://ontology-workspace.invalid/contracts/common.schema.json#/$defs/object_ref"
+          }
+        },
+        "certification_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+            "maxLength": 512
+          },
+          "maxItems": 1000
+        },
+        "scope_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+          "maxLength": 512
+        },
+        "adapter_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "backend_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "status": {
+          "enum": [
+            "succeeded",
+            "failed",
+            "unavailable"
+          ]
+        },
+        "artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+            "maxLength": 512
+          },
+          "maxItems": 1000
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096
+              },
+              "kind": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096
+              },
+              "state": {
+                "const": "DRAFT"
+              },
+              "confidence": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              },
+              "object_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "https://ontology-workspace.invalid/contracts/common.schema.json#/$defs/object_ref"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "state",
+              "confidence"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "error": {
+          "$ref": "https://ontology-workspace.invalid/contracts/common.schema.json#/$defs/error"
+        }
+      },
+      "required": [
+        "schema_version",
+        "operation",
+        "run_id",
+        "source_refs",
+        "parameters",
+        "backend_version",
+        "status",
+        "artifact_refs"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "succeeded"
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "required": [
+                "error"
+              ]
+            }
+          },
+          "else": {
+            "required": [
+              "error"
+            ],
+            "not": {
+              "required": [
+                "candidates"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "$defs": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "0.1.0"
+        },
+        "operation": {
+          "enum": [
+            "ingest",
+            "parse",
+            "extract",
+            "normalize",
+            "align",
+            "build_graph",
+            "import_ontology",
+            "edit_ontology",
+            "generate_ontology",
+            "validate",
+            "reason",
+            "detect_conflicts",
+            "export",
+            "capabilities"
+          ]
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+            "maxLength": 512
+          },
+          "maxItems": 1000
+        },
+        "parameters": {
+          "type": "object",
+          "maxProperties": 100
+        },
+        "object_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "https://ontology-workspace.invalid/contracts/common.schema.json#/$defs/object_ref"
+          }
+        },
+        "certification_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+            "maxLength": 512
+          },
+          "maxItems": 1000
+        },
+        "scope_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+          "maxLength": 512
+        },
+        "adapter_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "inputs": {
+          "type": "object",
+          "properties": {
+            "source_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "graph_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "schema_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "suite_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "ruleset_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "release_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema_version",
+        "operation",
+        "run_id",
+        "source_refs",
+        "parameters",
+        "inputs"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "ingest"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "source_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "parse"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "source_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "extract"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "source_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "normalize"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "source_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "align"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "source_id",
+                  "schema_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "build_graph"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "graph_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "import_ontology"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "source_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "edit_ontology"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "schema_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "generate_ontology"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "graph_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "validate"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "graph_id",
+                  "suite_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "reason"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "graph_id",
+                  "ruleset_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "detect_conflicts"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "graph_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "export"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": [
+                  "release_id"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "const": "capabilities"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputs": {
+                "required": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "0.1.0"
+        },
+        "operation": {
+          "enum": [
+            "ingest",
+            "parse",
+            "extract",
+            "normalize",
+            "align",
+            "build_graph",
+            "import_ontology",
+            "edit_ontology",
+            "generate_ontology",
+            "validate",
+            "reason",
+            "detect_conflicts",
+            "export",
+            "capabilities"
+          ]
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+            "maxLength": 512
+          },
+          "maxItems": 1000
+        },
+        "parameters": {
+          "type": "object",
+          "maxProperties": 100
+        },
+        "object_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "https://ontology-workspace.invalid/contracts/common.schema.json#/$defs/object_ref"
+          }
+        },
+        "certification_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+            "maxLength": 512
+          },
+          "maxItems": 1000
+        },
+        "scope_ref": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+          "maxLength": 512
+        },
+        "adapter_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "backend_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "status": {
+          "enum": [
+            "succeeded",
+            "failed",
+            "unavailable"
+          ]
+        },
+        "artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+            "maxLength": 512
+          },
+          "maxItems": 1000
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096
+              },
+              "kind": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096
+              },
+              "state": {
+                "const": "DRAFT"
+              },
+              "confidence": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              },
+              "object_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "https://ontology-workspace.invalid/contracts/common.schema.json#/$defs/object_ref"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "state",
+              "confidence"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "error": {
+          "$ref": "https://ontology-workspace.invalid/contracts/common.schema.json#/$defs/error"
+        }
+      },
+      "required": [
+        "schema_version",
+        "operation",
+        "run_id",
+        "source_refs",
+        "parameters",
+        "backend_version",
+        "status",
+        "artifact_refs"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "succeeded"
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "required": [
+                "error"
+              ]
+            }
+          },
+          "else": {
+            "required": [
+              "error"
+            ],
+            "not": {
+              "required": [
+                "candidates"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

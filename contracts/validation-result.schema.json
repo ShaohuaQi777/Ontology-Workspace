@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ontology-workspace.invalid/contracts/validation-result.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "workspace_revision": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "graph_build_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "backend_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "suite_revision": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "status": {
+      "enum": [
+        "passed",
+        "failed",
+        "unavailable"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "severity": {
+            "enum": [
+              "info",
+              "warning",
+              "error"
+            ]
+          },
+          "code": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "resource": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+              "maxLength": 512
+            },
+            "maxItems": 1000
+          },
+          "inferred": {
+            "type": "boolean"
+          },
+          "rule_version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "premise_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+              "maxLength": 512
+            },
+            "maxItems": 1000,
+            "minItems": 1
+          }
+        },
+        "required": [
+          "severity",
+          "code",
+          "resource",
+          "message",
+          "source_refs"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "inferred": {
+                  "const": true
+                }
+              },
+              "required": [
+                "inferred"
+              ]
+            },
+            "then": {
+              "required": [
+                "rule_version",
+                "premise_refs"
+              ]
+            }
+          }
+        ]
+      },
+      "maxItems": 10000
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+        "maxLength": 512
+      },
+      "maxItems": 1000
+    },
+    "error": {
+      "$ref": "https://ontology-workspace.invalid/contracts/common.schema.json#/$defs/error"
+    },
+    "object_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "https://ontology-workspace.invalid/contracts/common.schema.json#/$defs/object_ref"
+      }
+    },
+    "certification_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+        "maxLength": 512
+      },
+      "maxItems": 1000
+    },
+    "scope_ref": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+      "maxLength": 512
+    },
+    "adapter_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "workspace_revision",
+    "graph_build_id",
+    "backend_version",
+    "suite_revision",
+    "status",
+    "findings",
+    "evidence"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "passed"
+          }
+        }
+      },
+      "then": {
+        "not": {
+          "required": [
+            "error"
+          ]
+        },
+        "properties": {
+          "findings": {
+            "not": {
+              "contains": {
+                "properties": {
+                  "severity": {
+                    "const": "error"
+                  }
+                },
+                "required": [
+                  "severity"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

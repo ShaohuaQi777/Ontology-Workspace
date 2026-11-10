@@ -1,0 +1,477 @@
+openapi: 3.1.0
+info:
+  title: Ontology Workspace semantic backend contract proposal
+  version: 0.1.0
+  description: Documentation contract only; not an implemented HTTP service or mutually
+    frozen enterprise interface.
+paths:
+  /semantic/ingest:
+    post:
+      operationId: ingest
+      summary: ingest versioned semantic operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/BackendRequest'
+              - properties:
+                  operation:
+                    const: ingest
+      responses:
+        '200':
+          description: Versioned success result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '422':
+          description: Platform error result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '503':
+          description: Unavailable native operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+  /semantic/parse:
+    post:
+      operationId: parse
+      summary: parse versioned semantic operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/BackendRequest'
+              - properties:
+                  operation:
+                    const: parse
+      responses:
+        '200':
+          description: Versioned success result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '422':
+          description: Platform error result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '503':
+          description: Unavailable native operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+  /semantic/extract:
+    post:
+      operationId: extract
+      summary: extract versioned semantic operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/BackendRequest'
+              - properties:
+                  operation:
+                    const: extract
+      responses:
+        '200':
+          description: Versioned success result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '422':
+          description: Platform error result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '503':
+          description: Unavailable native operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+  /semantic/normalize:
+    post:
+      operationId: normalize
+      summary: normalize versioned semantic operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/BackendRequest'
+              - properties:
+                  operation:
+                    const: normalize
+      responses:
+        '200':
+          description: Versioned success result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '422':
+          description: Platform error result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '503':
+          description: Unavailable native operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+  /semantic/align:
+    post:
+      operationId: align
+      summary: align versioned semantic operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/BackendRequest'
+              - properties:
+                  operation:
+                    const: align
+      responses:
+        '200':
+          description: Versioned success result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '422':
+          description: Platform error result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '503':
+          description: Unavailable native operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+  /semantic/build_graph:
+    post:
+      operationId: build_graph
+      summary: build_graph versioned semantic operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/BackendRequest'
+              - properties:
+                  operation:
+                    const: build_graph
+      responses:
+        '200':
+          description: Versioned success result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '422':
+          description: Platform error result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '503':
+          description: Unavailable native operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+  /semantic/import_ontology:
+    post:
+      operationId: import_ontology
+      summary: import_ontology versioned semantic operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/BackendRequest'
+              - properties:
+                  operation:
+                    const: import_ontology
+      responses:
+        '200':
+          description: Versioned success result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '422':
+          description: Platform error result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '503':
+          description: Unavailable native operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+  /semantic/edit_ontology:
+    post:
+      operationId: edit_ontology
+      summary: edit_ontology versioned semantic operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/BackendRequest'
+              - properties:
+                  operation:
+                    const: edit_ontology
+      responses:
+        '200':
+          description: Versioned success result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '422':
+          description: Platform error result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '503':
+          description: Unavailable native operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+  /semantic/generate_ontology:
+    post:
+      operationId: generate_ontology
+      summary: generate_ontology versioned semantic operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/BackendRequest'
+              - properties:
+                  operation:
+                    const: generate_ontology
+      responses:
+        '200':
+          description: Versioned success result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '422':
+          description: Platform error result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '503':
+          description: Unavailable native operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+  /semantic/validate:
+    post:
+      operationId: validate
+      summary: validate versioned semantic operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/BackendRequest'
+              - properties:
+                  operation:
+                    const: validate
+      responses:
+        '200':
+          description: Versioned success result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '422':
+          description: Platform error result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '503':
+          description: Unavailable native operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+  /semantic/reason:
+    post:
+      operationId: reason
+      summary: reason versioned semantic operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/BackendRequest'
+              - properties:
+                  operation:
+                    const: reason
+      responses:
+        '200':
+          description: Versioned success result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '422':
+          description: Platform error result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '503':
+          description: Unavailable native operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+  /semantic/detect_conflicts:
+    post:
+      operationId: detect_conflicts
+      summary: detect_conflicts versioned semantic operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/BackendRequest'
+              - properties:
+                  operation:
+                    const: detect_conflicts
+      responses:
+        '200':
+          description: Versioned success result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '422':
+          description: Platform error result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '503':
+          description: Unavailable native operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+  /semantic/export:
+    post:
+      operationId: export
+      summary: export versioned semantic operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/BackendRequest'
+              - properties:
+                  operation:
+                    const: export
+      responses:
+        '200':
+          description: Versioned success result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '422':
+          description: Platform error result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '503':
+          description: Unavailable native operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+  /semantic/capabilities:
+    post:
+      operationId: capabilities
+      summary: capabilities versioned semantic operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/BackendRequest'
+              - properties:
+                  operation:
+                    const: capabilities
+      responses:
+        '200':
+          description: Versioned success result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '422':
+          description: Platform error result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+        '503':
+          description: Unavailable native operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendResponse'
+components:
+  schemas:
+    BackendRequest:
+      $ref: backend-operation.schema.json#/$defs/request
+    BackendResponse:
+      $ref: backend-operation.schema.json#/$defs/response
+    BackendError:
+      $ref: common.schema.json#/$defs/error

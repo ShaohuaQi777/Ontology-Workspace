@@ -6,6 +6,8 @@ from collections import Counter
 import json
 from pathlib import Path
 import re
+import subprocess
+import sys
 from typing import Any
 
 REQUIRED_CASES = (
@@ -69,14 +71,32 @@ def evaluate_gate(evidence: list[Any]) -> dict[str, Any]:
     }
 
 
+def evaluate_contract_gate(evidence: list[Any], contract_exit_code: int) -> dict[str, Any]:
+    result = evaluate_gate(evidence)
+    result['contract_exit_code'] = contract_exit_code
+    result['passed'] = result['passed'] and type(contract_exit_code) is int and contract_exit_code == 0
+    result['scope'] = 'native_and_contract_evidence_only'
+    return result
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--evidence', type=Path, required=True)
+    parser.add_argument('--verify-contracts', action='store_true', help='Run the actual local contract suite, not a caller-provided verdict')
     args = parser.parse_args()
     try:
         data = json.loads(args.evidence.read_text(encoding='utf-8'))
         evidence = data.get('evidence') if isinstance(data, dict) else data
         result = evaluate_gate(evidence)
+        if args.verify_contracts:
+            try:
+                completed = subprocess.run([sys.executable, '-m', 'pytest', 'tests/contract', '-q'],
+                                           cwd=Path(__file__).resolve().parents[1],
+                                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=120)
+                contract_code = completed.returncode
+            except (OSError, subprocess.TimeoutExpired):
+                contract_code = 124
+            result = evaluate_contract_gate(evidence, contract_code)
     except (OSError, UnicodeError, ValueError, TypeError):
         result = {'passed': False, 'error_code': 'INVALID_EVIDENCE'}
     print(json.dumps(result, ensure_ascii=False, indent=2))

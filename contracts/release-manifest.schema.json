@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ontology-workspace.invalid/contracts/release-manifest.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "release_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:\\+[a-zA-Z0-9.-]+)?$"
+    },
+    "workspace_revision": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "backend_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "size": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 67108864
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "revision": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          }
+        },
+        "required": [
+          "path",
+          "sha256",
+          "size",
+          "kind",
+          "revision"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 1000
+    },
+    "validation_run_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 4096
+      },
+      "minItems": 1
+    },
+    "approval_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "object_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "https://ontology-workspace.invalid/contracts/common.schema.json#/$defs/object_ref"
+      }
+    },
+    "certification_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+        "maxLength": 512
+      },
+      "maxItems": 1000
+    },
+    "scope_ref": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+      "maxLength": 512
+    },
+    "adapter_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    }
+  },
+  "required": [
+    "schema_version",
+    "release_id",
+    "version",
+    "workspace_revision",
+    "created_at",
+    "backend_version",
+    "artifacts",
+    "validation_run_ids",
+    "approval_id"
+  ],
+  "additionalProperties": false
+}

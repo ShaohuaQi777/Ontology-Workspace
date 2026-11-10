@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ontology-workspace.invalid/contracts/scenario-pack.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "pack_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:\\+[a-zA-Z0-9.-]+)?$"
+    },
+    "domain": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "ontology_entrypoint": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "kind": {
+            "enum": [
+              "file",
+              "sql",
+              "document",
+              "rdf",
+              "api"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "credential_ref": {
+            "type": "string",
+            "pattern": "^cred:[^\\s]+$",
+            "maxLength": 512
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "path"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 1000
+    },
+    "object_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "https://ontology-workspace.invalid/contracts/common.schema.json#/$defs/object_ref"
+      }
+    },
+    "certification_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+        "maxLength": 512
+      },
+      "maxItems": 1000
+    },
+    "scope_ref": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*:[^\\s]+$",
+      "maxLength": 512
+    },
+    "adapter_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "constraints_entrypoint": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "mappings": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "rules": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "competency_questions": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "expected": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "evaluation": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "extensions": {
+      "type": "object",
+      "maxProperties": 100
+    }
+  },
+  "required": [
+    "schema_version",
+    "pack_id",
+    "version",
+    "domain",
+    "ontology_entrypoint",
+    "sources"
+  ],
+  "additionalProperties": false
+}
