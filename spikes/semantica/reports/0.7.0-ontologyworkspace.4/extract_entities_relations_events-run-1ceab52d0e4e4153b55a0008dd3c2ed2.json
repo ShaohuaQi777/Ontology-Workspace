@@ -1,0 +1,26 @@
+{
+  "case_id": "extract_entities_relations_events",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.4",
+  "api_symbol": "semantica.semantic_extract.methods.extract_entities_ml",
+  "run_id": "run-1ceab52d0e4e4153b55a0008dd3c2ed2",
+  "source_refs": [
+    "urn:technical-probe:extract_entities_relations_events"
+  ],
+  "parameters": {
+    "format": "json"
+  },
+  "artifact_hashes": {
+    "result": "391570dbc88fdff008f58d45eb18b89103a66ae8b927e69c3ad29218802adc37"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "entities": true,
+    "entity_spans": true,
+    "ml_provenance": true,
+    "relations": true,
+    "dependency_provenance": true,
+    "events": true
+  },
+  "error_code": null
+}

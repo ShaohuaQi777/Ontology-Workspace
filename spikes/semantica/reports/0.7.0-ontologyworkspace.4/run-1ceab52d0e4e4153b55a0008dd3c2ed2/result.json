@@ -1,0 +1,184 @@
+{
+  "entities": [
+    {
+      "confidence": null,
+      "end_char": 5,
+      "label": "PERSON",
+      "metadata": {
+        "confidence_source": "unavailable",
+        "extraction_method": "ml",
+        "lemma": "Alice",
+        "model": "en_core_web_sm"
+      },
+      "start_char": 0,
+      "text": "Alice"
+    },
+    {
+      "confidence": null,
+      "end_char": 20,
+      "label": "PERSON",
+      "metadata": {
+        "confidence_source": "unavailable",
+        "extraction_method": "ml",
+        "lemma": "Atlas",
+        "model": "en_core_web_sm"
+      },
+      "start_char": 15,
+      "text": "Atlas"
+    },
+    {
+      "confidence": null,
+      "end_char": 29,
+      "label": "GPE",
+      "metadata": {
+        "confidence_source": "unavailable",
+        "extraction_method": "ml",
+        "lemma": "Paris",
+        "model": "en_core_web_sm"
+      },
+      "start_char": 24,
+      "text": "Paris"
+    },
+    {
+      "confidence": null,
+      "end_char": 37,
+      "label": "DATE",
+      "metadata": {
+        "confidence_source": "unavailable",
+        "extraction_method": "ml",
+        "lemma": "2024",
+        "model": "en_core_web_sm"
+      },
+      "start_char": 33,
+      "text": "2024"
+    }
+  ],
+  "event_method": "fixed_native_keyword_patterns_not_llm",
+  "events": [
+    {
+      "confidence": 0.7,
+      "end_char": 14,
+      "event_type": "launch",
+      "location": "Paris",
+      "metadata": {
+        "context": "Alice released Atlas in Paris in 2024."
+      },
+      "participants": [
+        "Alice",
+        "Atlas",
+        "Paris"
+      ],
+      "start_char": 6,
+      "text": "released",
+      "time": "2024"
+    }
+  ],
+  "relations": [
+    {
+      "confidence": 0.8,
+      "context": "Alice released Atlas in Paris in 2024.",
+      "metadata": {
+        "dependency_path": "ROOT -> ... -> dobj",
+        "extraction_method": "dependency"
+      },
+      "object": {
+        "confidence": null,
+        "end_char": 20,
+        "label": "PERSON",
+        "metadata": {
+          "confidence_source": "unavailable",
+          "extraction_method": "ml",
+          "lemma": "Atlas",
+          "model": "en_core_web_sm"
+        },
+        "start_char": 15,
+        "text": "Atlas"
+      },
+      "predicate": "release",
+      "subject": {
+        "confidence": null,
+        "end_char": 5,
+        "label": "PERSON",
+        "metadata": {
+          "confidence_source": "unavailable",
+          "extraction_method": "ml",
+          "lemma": "Alice",
+          "model": "en_core_web_sm"
+        },
+        "start_char": 0,
+        "text": "Alice"
+      }
+    },
+    {
+      "confidence": 0.8,
+      "context": "Alice released Atlas in Paris in 2024.",
+      "metadata": {
+        "dependency_path": "ROOT -> ... -> pobj",
+        "extraction_method": "dependency"
+      },
+      "object": {
+        "confidence": null,
+        "end_char": 29,
+        "label": "GPE",
+        "metadata": {
+          "confidence_source": "unavailable",
+          "extraction_method": "ml",
+          "lemma": "Paris",
+          "model": "en_core_web_sm"
+        },
+        "start_char": 24,
+        "text": "Paris"
+      },
+      "predicate": "release",
+      "subject": {
+        "confidence": null,
+        "end_char": 5,
+        "label": "PERSON",
+        "metadata": {
+          "confidence_source": "unavailable",
+          "extraction_method": "ml",
+          "lemma": "Alice",
+          "model": "en_core_web_sm"
+        },
+        "start_char": 0,
+        "text": "Alice"
+      }
+    },
+    {
+      "confidence": 0.8,
+      "context": "Alice released Atlas in Paris in 2024.",
+      "metadata": {
+        "dependency_path": "ROOT -> ... -> pobj",
+        "extraction_method": "dependency"
+      },
+      "object": {
+        "confidence": null,
+        "end_char": 37,
+        "label": "DATE",
+        "metadata": {
+          "confidence_source": "unavailable",
+          "extraction_method": "ml",
+          "lemma": "2024",
+          "model": "en_core_web_sm"
+        },
+        "start_char": 33,
+        "text": "2024"
+      },
+      "predicate": "release",
+      "subject": {
+        "confidence": null,
+        "end_char": 5,
+        "label": "PERSON",
+        "metadata": {
+          "confidence_source": "unavailable",
+          "extraction_method": "ml",
+          "lemma": "Alice",
+          "model": "en_core_web_sm"
+        },
+        "start_char": 0,
+        "text": "Alice"
+      }
+    }
+  ],
+  "text": "Alice released Atlas in Paris in 2024."
+}

@@ -32,6 +32,7 @@ def test_patch_wheel_version_record_and_module(tmp_path, base_dir):
     with ZipFile(wheel) as archive:
         names = archive.namelist()
         assert 'semantica/ontology/document.py' in names
+        assert 'semantica/parse/bounded_pdf.py' in names
         assert f'__version__ = "{VERSION}"' in archive.read('semantica/__init__.py').decode()
         assert f'Version: {VERSION}\n' in archive.read(f'semantica-{VERSION}.dist-info/METADATA').decode()
         assert any(name.endswith('licenses/LICENSE') for name in names)

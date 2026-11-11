@@ -1,0 +1,21 @@
+{
+  "backend_version": "0.7.0+ontologyworkspace.4",
+  "wheel_sha256": "56a2450c3dcd2457e338048e6054b7937e3e314859c424274a31bae0c91193cb",
+  "fresh_environment": ".runtime/pdf04-clean",
+  "locked_sync_exit": 0,
+  "fresh_native_adapter_tests": {
+    "passed": 63,
+    "seconds": 59.42,
+    "exit": 0
+  },
+  "full_regression": {
+    "passed": 211,
+    "subtests_passed": 14,
+    "seconds": 19.43,
+    "exit": 0
+  },
+  "native_probe_cases": 17,
+  "contract_gate_exit": 0,
+  "independent_pdf_review": "pending",
+  "g_p0_complete": false
+}

@@ -1,0 +1,24 @@
+{
+  "case_id": "conflict_evidence",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.4",
+  "api_symbol": "semantica.conflicts.conflict_detector.ConflictDetector.detect_value_conflicts",
+  "run_id": "run-3a455ea567fa4503ae3c330a76b45363",
+  "source_refs": [
+    "urn:technical-probe:conflict_evidence"
+  ],
+  "parameters": {
+    "format": "json"
+  },
+  "artifact_hashes": {
+    "result": "64b282b7a1c160c759edb559d1739ce91aa88cc3d24cc4d1d4d66caf6f90f3de"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "count": true,
+    "type": true,
+    "values": true,
+    "sources": true
+  },
+  "error_code": null
+}

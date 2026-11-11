@@ -1,0 +1,27 @@
+{
+  "case_id": "ontology_generate",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.4",
+  "api_symbol": "semantica.ontology.ontology_generator.OntologyGenerator.generate_ontology",
+  "run_id": "run-cbe159fe4d914e67a5ba133db4c7a228",
+  "source_refs": [
+    "urn:technical-probe:ontology_generate"
+  ],
+  "parameters": {
+    "format": "turtle"
+  },
+  "artifact_hashes": {
+    "result": "0ec3775fbdaf54ed416105f8f1ba4ff59db477476d61e106cb9339d85ad95f78",
+    "generated.ttl": "f4b271c8f0087108091a17f97bf36f9de8fa0acefdc81d5f85c01d96fa946716"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "name": true,
+    "class": true,
+    "class_count": true,
+    "property": true,
+    "no_imports": true,
+    "owl_output": true
+  },
+  "error_code": null
+}

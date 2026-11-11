@@ -1,0 +1,29 @@
+{
+  "base_version": "0.7.0",
+  "version": "0.7.0+ontologyworkspace.4",
+  "base_record_sha256": "fe093e0861495f0d1cd4495d9f9aa522d7267f1d0b355725343357e039842c86",
+  "base_source": "official PyPI 0.7.0 downloaded archive cache; installed Python sources independently match cache",
+  "license": "MIT",
+  "patches": {
+    "semantica/ontology/document.py": {
+      "source": "patches/semantica/ontology_document.py",
+      "sha256": "9e03741741de706073efcfbfc2122790b6e121e6ffccb7510d111b0ff89b8c5e"
+    },
+    "semantica/ontology/lexical_parsers.py": {
+      "source": "patches/semantica/lexical_parsers.py",
+      "sha256": "318a5a5d164657eb2429d7cd06b4892f8bfc9a8cfeba663c72efa77a28733ecb"
+    },
+    "semantica/parse/bounded_pdf.py": {
+      "source": "patches/semantica/bounded_pdf.py",
+      "sha256": "74fddb5ecd490aa57dd9aa19714877ba85c5e9373689a9f433396c7876ebfd9c"
+    }
+  },
+  "formats": [
+    "turtle",
+    "nt"
+  ],
+  "deferred_formats": {
+    "xml": "lexical preservation not yet safe",
+    "json-ld": "dataset/lexical preservation and remote-context preflight not yet safe"
+  }
+}

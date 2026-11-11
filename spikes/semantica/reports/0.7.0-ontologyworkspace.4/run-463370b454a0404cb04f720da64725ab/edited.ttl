@@ -1,0 +1,9 @@
+<https://example.invalid/probe/> <http://www.w3.org/2002/07/owl#imports> <https://example.invalid/not-authorized> .
+<https://example.invalid/probe/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://example.invalid/probe/p> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:n9de2b89e0c9342afa50cbc103ff08c38b1 <http://www.w3.org/2002/07/owl#onProperty> <https://example.invalid/probe/p> .
+<https://example.invalid/probe/Node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n9de2b89e0c9342afa50cbc103ff08c38b1 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://example.invalid/probe/Node> .
+<https://example.invalid/probe/Node> <http://www.w3.org/2000/01/rdf-schema#label> "Changed technical label" .
+_:n9de2b89e0c9342afa50cbc103ff08c38b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://example.invalid/probe/Node> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n9de2b89e0c9342afa50cbc103ff08c38b1 .
