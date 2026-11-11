@@ -11,20 +11,24 @@ from starlette.exceptions import HTTPException
 from ontology_platform.domain.service_errors import ServiceError
 from ontology_platform.application.accounts import AccountService,UserSummary
 from ontology_platform.application.workspaces import WorkspaceService
+from ontology_platform.application.connections import ConnectionService
+from ontology_platform.domain.connections import TargetRegistry
 from ontology_platform.application.jobs import JobService
 from ontology_platform.application.worker import NativeJobWorker
 from .auth import actor,COOKIE
 from .middleware import BoundaryMiddleware
-from .models import Login,AccountCreate,ProjectCreate,LayerSave,JobSubmit,Replay,Membership
+from .models import Login,AccountCreate,ProjectCreate,LayerSave,JobSubmit,Replay,Membership,ConnectionCreate,ConnectionUpdate
 
-STATUS={'UNAUTHENTICATED':401,'AUTHENTICATION_FAILED':401,'FORBIDDEN':403,'LOGIN_RATE_LIMIT':429,'SECRET_UNAVAILABLE':503,'STALE_REVISION':409,'NAMESPACE_CONFLICT':409,'IDEMPOTENCY_CONFLICT':409,'ACCOUNT_EXISTS':409,'INVALID_SOURCE':404,'INVALID_JOB':404,'INVALID_ACCOUNT':422}
+STATUS={'UNAUTHENTICATED':401,'AUTHENTICATION_FAILED':401,'FORBIDDEN':403,'LOGIN_RATE_LIMIT':429,'SECRET_UNAVAILABLE':503,'STALE_REVISION':409,'NAMESPACE_CONFLICT':409,'IDEMPOTENCY_CONFLICT':409,'ACCOUNT_EXISTS':409,'INVALID_SOURCE':404,'INVALID_JOB':404,'INVALID_ACCOUNT':422,'CONNECTION_NOT_FOUND':404}
 
 
-def create_app(store,artifact_root,secret_provider,allowed_origins,secure_cookies=True):
+def create_app(store,artifact_root,secret_provider,allowed_origins,secure_cookies=True,connection_targets=None):
     app=FastAPI(docs_url=None,redoc_url=None,openapi_url=None,debug=False)
     validated_boundary=BoundaryMiddleware(app,allowed_origins)
     accounts=AccountService(store,secret_provider); accounts.initialize()
     work=WorkspaceService(store,accounts,artifact_root); work.initialize()
+    connections=ConnectionService(store,accounts,connection_targets if connection_targets is not None else TargetRegistry({},{})); connections.initialize()
+    app.state.connections=connections
     jobs=JobService(store,accounts,work); jobs.initialize()
     app.state.accounts=accounts; app.state.workspaces=work; app.state.jobs=jobs; app.state.worker=NativeJobWorker(jobs)
     app.add_middleware(BoundaryMiddleware,allowed_origins=validated_boundary.allowed)
@@ -43,6 +47,22 @@ def create_app(store,artifact_root,secret_provider,allowed_origins,secure_cookie
 
     @app.exception_handler(Exception)
     async def internal_error(request,exc): return failure(request,'INTERNAL_ERROR',500)
+
+    @app.get('/api/projects/{project_id}/connections')
+    def list_connections(project_id:str,current=Depends(actor)):
+        return [asdict(value) for value in connections.list(current,project_id)]
+
+    @app.post('/api/projects/{project_id}/connections',status_code=201)
+    def create_connection(project_id:str,payload:ConnectionCreate,current=Depends(actor)):
+        return asdict(connections.create(current,project_id,payload.name,payload.target_alias))
+
+    @app.get('/api/projects/{project_id}/connections/{connection_id}')
+    def get_connection(project_id:str,connection_id:str,current=Depends(actor)):
+        return asdict(connections.get(current,project_id,connection_id))
+
+    @app.put('/api/projects/{project_id}/connections/{connection_id}')
+    def update_connection(project_id:str,connection_id:str,payload:ConnectionUpdate,current=Depends(actor)):
+        return asdict(connections.update(current,project_id,connection_id,payload.base_revision,payload.name,payload.target_alias))
 
     @app.get('/healthz')
     def health(): return {'status':'ok'}

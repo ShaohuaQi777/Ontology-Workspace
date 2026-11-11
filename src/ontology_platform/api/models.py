@@ -22,6 +22,15 @@ class ProjectCreate(Model):
     namespace:str=Field(min_length=1,max_length=1024)
 
 
+class ConnectionCreate(Model):
+    name:str=Field(min_length=1,max_length=200)
+    target_alias:str=Field(min_length=1,max_length=128,pattern=r'^[A-Za-z][A-Za-z0-9_.-]*$')
+
+
+class ConnectionUpdate(ConnectionCreate):
+    base_revision:str=Field(min_length=1,max_length=128)
+
+
 class LayerSave(Model):
     base_revision:str=Field(min_length=1,max_length=128)
     content:dict[str,JsonValue]

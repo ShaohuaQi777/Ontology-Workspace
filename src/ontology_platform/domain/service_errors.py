@@ -17,6 +17,9 @@ MESSAGES={
     'INVALID_DEPENDENCY':'Revision dependency is invalid or outside the project',
     'INVALID_SOURCE':'Source artifact is invalid or outside the project',
     'INVALID_JOB':'Semantic job input is invalid or outside the project',
+    'INVALID_CONNECTION':'Source connection input is invalid',
+    'CONNECTION_NOT_FOUND':'Source connection is unavailable in this project',
+    'TARGET_CHANGED':'Trusted source target configuration has changed',
     'IDEMPOTENCY_CONFLICT':'Idempotency key is bound to different input',
     'UNSAFE_REPLAY':'Job is not eligible for explicit safe replay',
 }

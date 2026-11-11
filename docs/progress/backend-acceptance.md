@@ -9,12 +9,12 @@
 | 可信会话/项目RBAC | B1-02本地模块DONE：14RED+并发1RED→GREEN、全331+14subtests117.05s；B1-05 Cookie/Origin/错误脱敏/stream限额及显式成员审计DONE；21 HTTP/CLI测试与全388+14subtests251.78s | 明文秘密不持久化、撤销/失效/越权拒绝、真实权限路径 |
 | HTTP服务/任务Worker | B1-04本地持久化队列/native Worker DONE：真实七操作、取消/重放家族预算/输入授权复查；全367+14subtests163.14s；B1-05受保护ASGI/API及local CLI DONE，21HTTP/CLI测试、全388+14subtests251.78s；B1-06真实loopback/native后台消费/owner互斥/实际SIGKILL与显式重放、fresh完整400+14subtests255.47s DONE；全波独立review三Important经9RED→GREEN修复，原判保留 | 实际loopbackURL/health/readiness/真实排队执行/取消与恢复 |
 | PDF解析 | .5有界raw/Flate native子集DONE | 项目来源登记、权限/来源定位与产品API；不能把限制隐藏 |
-| OCR解析 | UNKNOWN未真实探针 | 固定原生API/模型依赖，小技术输入真实OCR；不以PDF文本层冒充OCR |
-| Database连接器 | 原生SQLite导入探针存在；统一连接Registry TODO | SQLite/PostgreSQL授权配置、secretref/只读/Schema/实际连接；其他方言独立验收 |
+| OCR解析 | B2-01已实际调用native ImageParser.extract_text，小技术PNG因缺pytesseract/Tesseract拒绝；UNAVAILABLE未验收 | 固定原生API/模型依赖，小技术输入真实OCR；不以PDF文本层冒充OCR |
+| Database连接器 | B2-01 actual native SQLite SELECT/readonly UPDATE拒绝/sourceSHA不变；B2-02 scoped Configured Registry/strict HTTP/CAS/target hash/grant模块DONE，13测试+17API关联30passed13.88s、全416+14subtests310.99s；实际统一接入执行仍TODO B2-03 | SQLite/PostgreSQL授权配置、secretref/只读/Schema/实际连接；其他方言独立验收 |
 | 飞书知识库/SaaS | UNKNOWN未真实探针/实现 | 合规分页/限流/来源定位/ACL、固定SDK或受控connector、SecretProvider、实际授权联调；未联通不可标DONE |
 | Pipeline清洗/治理 | TODO | 版本化DAG/节点Schema、deterministic transform白名单、任务事件/检查点/重放/权限 |
-| RAG | UNKNOWN未真实探针 | 文档chunk/embedding/index/retrieval/context/prompt/model与来源可追溯，未知质量不编金标，模型/外传显式配置 |
-| CLIP对齐 | UNKNOWN未真实探针 | 原生multimodal API/固定模型/真实图文派生证据、置信度及资产位置；不因名称匹配宣称对齐 |
+| RAG | B2-01 native TextEmbedder实际method=fallback；无神经模型，不能计neural RAG完成，chunk/index/retrieval产品链TODO | 文档chunk/embedding/index/retrieval/context/prompt/model与来源可追溯，未知质量不编金标，模型/外传显式配置 |
+| CLIP对齐 | B2-01确认torch/transformers不存在；未实际加载/运行CLIP，UNAVAILABLE未验收 | 原生multimodal API/固定模型/真实图文派生证据、置信度及资产位置；不因名称匹配宣称对齐 |
 | TBox/ABox/SHACL/rules/vocab | B1-03 scoped revision/source及专家证据原语DONE；全348+14subtests163.65s；完整changeset/验证/发布治理仍TODO | 分层immutable/CAS/依赖/草稿/差异/合并/专家认证失效规则 |
 | 业务规则/行业模板 | TODO P6 | versioned声明式工具模板/适用期/来源/编辑认证；不编制造业场景 |
 | 本体抽取/建模/验证/对齐 | 原生技术探针DONE；产品治理TODO | 固定输入/模型/来源、候选审核、专家认证、验证finding与version；所有入口授权 |
