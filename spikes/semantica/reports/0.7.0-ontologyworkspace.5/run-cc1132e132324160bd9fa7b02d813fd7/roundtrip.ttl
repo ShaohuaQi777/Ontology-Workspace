@@ -1,0 +1,9 @@
+_:ndf822b5443fa46d58df5dadd85e96f11b1 <http://www.w3.org/2002/07/owl#onProperty> <https://example.invalid/probe/p> .
+<https://example.invalid/probe/Node> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ndf822b5443fa46d58df5dadd85e96f11b1 .
+<https://example.invalid/probe/> <http://www.w3.org/2002/07/owl#imports> <https://example.invalid/not-authorized> .
+_:ndf822b5443fa46d58df5dadd85e96f11b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://example.invalid/probe/Node> <http://www.w3.org/2000/01/rdf-schema#label> "Technical node" .
+<https://example.invalid/probe/p> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.invalid/probe/Node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:ndf822b5443fa46d58df5dadd85e96f11b1 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://example.invalid/probe/Node> .
+<https://example.invalid/probe/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .

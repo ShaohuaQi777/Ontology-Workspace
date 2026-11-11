@@ -1,0 +1,15 @@
+{
+  "ask_false": false,
+  "ask_true": true,
+  "bindings": [
+    {
+      "o": {
+        "type": "uri",
+        "value": "urn:probe:o"
+      }
+    }
+  ],
+  "variables": [
+    "o"
+  ]
+}

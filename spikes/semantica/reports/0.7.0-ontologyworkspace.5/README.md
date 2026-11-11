@@ -1,0 +1,9 @@
+# Repaired native candidate .5 execution evidence
+
+User-authorized bounded PDF/native document extension scope, important fix pass after independent whole-branch review of .4: URI authority pre-staging rejection, quiet bounded PDF preflight process, orphan/fallback pages rejected and count model matched, stable ontology base, native lexical-preserving upgrade comparison. Existing .4 wheels and original failed/successful evidence remain unchanged. No latest/future upstream SDK was installed.
+
+Genuine current locked Semantica0.7.0+ontologyworkspace.5 native17 probes and shared contract gate both passed/exit0. Full repository locked offline300passed+14subtests162.81s exit0 includes actual fresh-environment G-P0. New random environment installation and both real15-call reports exited0; current.5 self-comparison compatible=true. Separately preserved actual .4 baseline versus actual .5 producer report compares with empty schema/capability/semantic/error differences/exit0. Raw technical reports and artifacts retained. No business/gold-label simulations.
+
+Native .5 wheel SHA8787a8706d63054e003f82d5f4f34eb13f7e97ce29de95c4d498359222ac7245; PDFsource SHAf70c24586ee4c4f78a84da36008abceff6f0998e0355d24371371f402093b8b5, original0.7.0/MIT/RECORD preserved. Source and installed verification distinguished; metadata/schema/key tampering controlled unit tests are not native upgrade execution.
+
+The independent review originally requested changes. Five Important findings were RED→GREEN plus full regression in the authorized main executor's one fix pass; this archive does not claim a second independent review occurred. Minor unsupported-filter error-category M1 remains deferred. G-P0 scope execution-only/release_approved=false: not a product release, frontend/P1–P8 delivery, human expert certification, or RSS/network OS sandbox/production deployment claim.

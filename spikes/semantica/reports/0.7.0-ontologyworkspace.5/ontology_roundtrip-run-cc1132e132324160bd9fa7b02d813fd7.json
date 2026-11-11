@@ -1,0 +1,25 @@
+{
+  "case_id": "ontology_roundtrip",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.5",
+  "api_symbol": "semantica.ontology.document.OntologyDocument.serialize",
+  "run_id": "run-cc1132e132324160bd9fa7b02d813fd7",
+  "source_refs": [
+    "urn:technical-probe:ontology_roundtrip"
+  ],
+  "parameters": {
+    "format": "turtle"
+  },
+  "artifact_hashes": {
+    "result": "03af1a8700324d070f9ae98c5349aecddf6739f9078c427f86b62d349dac9f51",
+    "complex.ttl": "abcb4fb8db4269d5c8ec483db7166a082c1c88c452ade3c1a8050396032cef2b",
+    "roundtrip.ttl": "b11778f618b5f3174a3e3ee454f8ec0fe751fc547fe1a885de30c534eb6ac750"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "isomorphic": true,
+    "blank_nodes": true,
+    "imports": true
+  },
+  "error_code": null
+}

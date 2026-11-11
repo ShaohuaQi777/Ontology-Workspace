@@ -1,0 +1,25 @@
+{
+  "case_id": "build_graph",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.5",
+  "api_symbol": "semantica.kg.graph_builder.GraphBuilder.build",
+  "run_id": "run-697fbd57bafb4f58916fbc94c7eff7ac",
+  "source_refs": [
+    "urn:technical-probe:build_graph"
+  ],
+  "parameters": {
+    "format": "json"
+  },
+  "artifact_hashes": {
+    "result": "e47bf97ba7ec36a6781bc04d0045ee5d29ed36cc463b44ce377c07df028ebac6"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "entity_ids": true,
+    "relationships": true,
+    "entity_count": true,
+    "relation_count": true,
+    "no_resolution": true
+  },
+  "error_code": null
+}

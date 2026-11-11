@@ -1,0 +1,27 @@
+{
+  "entities": [
+    {
+      "id": "n1",
+      "type": "Node"
+    },
+    {
+      "id": "n2",
+      "type": "Node"
+    }
+  ],
+  "metadata": {
+    "entity_resolution_applied": false,
+    "num_entities": 2,
+    "num_relationships": 1,
+    "rejected_relationships": 0,
+    "temporal_enabled": false,
+    "timestamp": "2026-11-11T11:34:09.064233"
+  },
+  "relationships": [
+    {
+      "source": "n1",
+      "target": "n2",
+      "type": "linksTo"
+    }
+  ]
+}

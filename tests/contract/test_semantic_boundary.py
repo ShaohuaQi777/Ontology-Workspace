@@ -57,7 +57,7 @@ def test_request_result_are_json_serializable(tmp_path):
     assert isinstance(backend,SemanticBackend)
     result = backend.ingest(request)
     result.model_dump_json()
-    assert result.backend_version == '0.7.0+ontologyworkspace.4'
+    assert result.backend_version == '0.7.0+ontologyworkspace.5'
     assert result.run_id == request.run_id and result.source_refs == request.source_refs
     assert result.artifact_refs and result.adapter_version
 

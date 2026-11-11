@@ -1,0 +1,23 @@
+{
+  "case_id": "ontology_edit",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.5",
+  "api_symbol": "semantica.ontology.document.OntologyDocument.with_label",
+  "run_id": "run-5f6fb385fc1b4cfea3b1a5596aecf896",
+  "source_refs": [
+    "urn:technical-probe:ontology_edit"
+  ],
+  "parameters": {
+    "format": "turtle"
+  },
+  "artifact_hashes": {
+    "result": "03af1a8700324d070f9ae98c5349aecddf6739f9078c427f86b62d349dac9f51",
+    "edited.ttl": "9fc25ab06686f3659097ea4b4b1a0faa4f8a81bda499af428369870652d72c76"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "label_only": true,
+    "original_unchanged": true
+  },
+  "error_code": null
+}

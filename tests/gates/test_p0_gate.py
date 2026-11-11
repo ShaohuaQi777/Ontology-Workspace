@@ -32,7 +32,7 @@ def test_caller_verdict_cannot_override_failed_native_evidence():
 
 def test_actual_p0_cli_runs_locked_isolation_and_current_version_comparison(tmp_path):
     root=Path(__file__).resolve().parents[2]
-    evidence=root/'spikes/semantica/reports/0.7.0-ontologyworkspace.4/summary.json'
+    evidence=root/'spikes/semantica/reports/0.7.0-ontologyworkspace.5/summary.json'
     result=subprocess.run([sys.executable,str(root/'scripts/verify_a0.py'),'--evidence',str(evidence),'--verify-p0'],cwd=root,capture_output=True,text=True,timeout=240)
     assert result.returncode==0,result.stdout+result.stderr
     value=json.loads(result.stdout)

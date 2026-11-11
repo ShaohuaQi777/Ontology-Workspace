@@ -1,0 +1,25 @@
+{
+  "case_id": "reason_forward",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.5",
+  "api_symbol": "semantica.reasoning.reasoner.Reasoner.infer_with_results",
+  "run_id": "run-9c2e9320dc084d46a33929524d1983b2",
+  "source_refs": [
+    "urn:technical-probe:reason_forward"
+  ],
+  "parameters": {
+    "format": "json"
+  },
+  "artifact_hashes": {
+    "result": "fb8c5bf04b6bd3fb91c230fe59183a531c866a15b2290120d07087963d69c705",
+    "asserted.json": "70ebd9991c0328da5898c312dee16ff9a8ba32a916bc992036842105a91c5076"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "conclusion": true,
+    "rule": true,
+    "premises": true,
+    "separate": true
+  },
+  "error_code": null
+}

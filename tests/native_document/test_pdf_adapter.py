@@ -16,11 +16,11 @@ def request(tmp_path,data):
 
 def test_installed_pdf_extension_version_and_native_adapter(tmp_path):
     from semantica.parse.bounded_pdf import BoundedPDFParser
-    assert importlib.metadata.version('semantica')=='0.7.0+ontologyworkspace.4'
+    assert importlib.metadata.version('semantica')=='0.7.0+ontologyworkspace.5'
     req=request(tmp_path,pdf(compress=True))
     result=SemanticaBackend(tmp_path).parse(req)
     assert 'Native bounded PDF' in result.data['text']
-    assert result.backend_version=='0.7.0+ontologyworkspace.4'
+    assert result.backend_version=='0.7.0+ontologyworkspace.5'
     assert result.artifact_refs
 
 

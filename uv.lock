@@ -603,7 +603,7 @@ requires-dist = [
     { name = "pydantic", specifier = "==2.14.3" },
     { name = "pyyaml", specifier = "==6.0.3" },
     { name = "rdflib", specifier = "==7.6.0" },
-    { name = "semantica", extras = ["documents", "parse-pdf", "shacl", "tripletstore-oxigraph"], path = "vendor/wheels/semantica-0.7.0+ontologyworkspace.4-py3-none-any.whl" },
+    { name = "semantica", extras = ["documents", "parse-pdf", "shacl", "tripletstore-oxigraph"], path = "vendor/wheels/semantica-0.7.0+ontologyworkspace.5-py3-none-any.whl" },
     { name = "spacy", specifier = "==3.8.18" },
     { name = "sqlalchemy", specifier = "==2.1.8" },
 ]
@@ -1135,8 +1135,8 @@ wheels = [
 
 [[package]]
 name = "semantica"
-version = "0.7.0+ontologyworkspace.4"
-source = { path = "vendor/wheels/semantica-0.7.0+ontologyworkspace.4-py3-none-any.whl" }
+version = "0.7.0+ontologyworkspace.5"
+source = { path = "vendor/wheels/semantica-0.7.0+ontologyworkspace.5-py3-none-any.whl" }
 dependencies = [
     { name = "chardet" },
     { name = "click" },
@@ -1162,7 +1162,7 @@ dependencies = [
     { name = "tqdm" },
 ]
 wheels = [
-    { filename = "semantica-0.7.0+ontologyworkspace.4-py3-none-any.whl", hash = "sha256:56a2450c3dcd2457e338048e6054b7937e3e314859c424274a31bae0c91193cb" },
+    { filename = "semantica-0.7.0+ontologyworkspace.5-py3-none-any.whl", hash = "sha256:8787a8706d63054e003f82d5f4f34eb13f7e97ce29de95c4d498359222ac7245" },
 ]
 
 [package.optional-dependencies]

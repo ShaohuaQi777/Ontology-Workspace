@@ -1,0 +1,23 @@
+[
+  {
+    "entity_id": "n1",
+    "property": "value",
+    "sources": [
+      {
+        "document": "src-a",
+        "page": 1,
+        "quote": "A"
+      },
+      {
+        "document": "src-b",
+        "page": 2,
+        "quote": "B"
+      }
+    ],
+    "type": "VALUE_CONFLICT",
+    "values": [
+      "A",
+      "B"
+    ]
+  }
+]

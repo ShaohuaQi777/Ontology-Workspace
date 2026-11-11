@@ -29,7 +29,7 @@ class SemanticaBackend:
             raise ValueError('Invalid backend configuration')
         self.timeout_seconds = timeout_seconds
         self.backend_version = version('semantica')
-        if self.backend_version != '0.7.0+ontologyworkspace.4':
+        if self.backend_version != '0.7.0+ontologyworkspace.5':
             raise ValueError('Unsupported installed semantic backend version')
 
     def _execute(self, operation, request):

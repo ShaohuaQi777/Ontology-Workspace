@@ -1,0 +1,17 @@
+@prefix : <https://example.invalid/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+: a owl:Ontology ;
+    rdfs:label "ProbeOntology" ;
+    owl:versionInfo "1.0" .
+
+:linksTo a owl:ObjectProperty ;
+    rdfs:label "linksTo" ;
+    rdfs:domain :Node ;
+    rdfs:range :Node .
+
+:Node a owl:Class ;
+    rdfs:label "Node" ;
+    rdfs:comment "Class representing node entities" .
+

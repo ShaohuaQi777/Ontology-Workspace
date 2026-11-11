@@ -1,0 +1,27 @@
+{
+  "case_id": "provenance_export",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.5",
+  "api_symbol": "semantica.provenance.manager.ProvenanceManager.export_prov",
+  "run_id": "run-38ff02d270b141dca0b8bf32f7a897d1",
+  "source_refs": [
+    "urn:technical-probe:provenance_export"
+  ],
+  "parameters": {
+    "format": "turtle"
+  },
+  "artifact_hashes": {
+    "result": "f1396b88988156e49456636c35d6854656c044f7a0d19289e3c2a0424730091b",
+    "provenance.ttl": "3020f57399f3b125b799e1168b590c1c4757a849425b275f44f895ab36c4a418"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "stored": true,
+    "entity": true,
+    "derived": true,
+    "generated": true,
+    "used": true,
+    "agent": true
+  },
+  "error_code": null
+}

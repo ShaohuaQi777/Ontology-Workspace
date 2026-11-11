@@ -153,9 +153,18 @@ def validate_pdf_bytes(data:bytes)->dict[str,int]:
             elif kind=='Pages':
                 kids=resolve1(value.get('Kids'))
                 if not isinstance(kids,list) or len(kids)>512: raise ValueError('Invalid PDF page children')
+                before=pages
                 for child in kids: page_tree(child,depth+1)
+                count=resolve1(value.get('Count'))
+                if type(count) is not int or count!=pages-before: raise ValueError('Inconsistent PDF page count')
             else: raise ValueError('Unsupported PDF page structure')
         page_tree(document.catalog.get('Pages'))
+        # Native PDFPage repair scans orphan xref Page objects when the tree is
+        # empty. Those objects must not become a second accepted page model.
+        for objid in ids:
+            value=document.getobj(objid)
+            if isinstance(value,dict) and literal_name(value.get('Type'))=='Page' and objid not in page_seen:
+                raise ValueError('Orphan PDF page/fallback unsupported')
         return {'pages':pages,'objects':len(ids),'decoded_bytes':budget.decoded_bytes}
     except NotImplementedError: raise
     except ValueError: raise
@@ -167,13 +176,15 @@ class BoundedPDFParser:
     def parse(self,path:Path)->dict:
         path=Path(path)
         with path.open('rb') as stream: data=stream.read(INPUT_LIMIT+1)
-        validate_pdf_bytes(data)
+        validated=validate_pdf_bytes(data)
         # Semantica owns text parsing; never reopen the mutable caller path.
         from semantica.parse import PDFParser
         with tempfile.TemporaryDirectory(prefix='semantica-bounded-pdf-') as temporary:
             snapshot=Path(temporary)/'validated.pdf'
             with snapshot.open('xb') as output: output.write(data)
             result=PDFParser().parse(snapshot,extract_tables=False,extract_images=False)
+        if result['total_pages']!=validated['pages'] or result['total_pages']>64:
+            raise ValueError('Native PDF interpretation differs from validated page model')
         if len(result['full_text'].encode('utf-8'))>INPUT_LIMIT:
             raise ValueError('PDF text output exceeds budget')
         return {'text':result['full_text'],'pages':result['total_pages'],'metadata':result['metadata']}

@@ -1,0 +1,24 @@
+{
+  "case_id": "ingest_json",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.5",
+  "api_symbol": "semantica.parse.json_parser.JSONParser.parse",
+  "run_id": "run-133a19832ed74555aca16f54b7cf4baa",
+  "source_refs": [
+    "urn:technical-probe:ingest_json"
+  ],
+  "parameters": {
+    "format": "json"
+  },
+  "artifact_hashes": {
+    "result": "9e4526bf4477621bcbc553073804a33c97ad32b2a68ee0666f824ff2d7a84a75",
+    "technical.json": "f9f402f4d1d7995f1e3d34965cb89146de3b9c2442a3d10a68b2272239842afe"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "original_bytes": true,
+    "object_type": true,
+    "data": true
+  },
+  "error_code": null
+}

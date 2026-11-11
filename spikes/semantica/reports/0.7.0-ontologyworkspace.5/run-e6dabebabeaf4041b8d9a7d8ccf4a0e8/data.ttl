@@ -1,0 +1,1 @@
+@prefix ex: <https://example.invalid/> . ex:n1 ex:p "v" .

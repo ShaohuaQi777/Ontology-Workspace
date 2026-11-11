@@ -1,0 +1,23 @@
+{
+  "case_id": "normalize_align",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.5",
+  "api_symbol": "semantica.normalize.entity_normalizer.EntityNormalizer.link_entities",
+  "run_id": "run-5d940d899c2143ee82eb81f09d835962",
+  "source_refs": [
+    "urn:technical-probe:normalize_align"
+  ],
+  "parameters": {
+    "format": "json"
+  },
+  "artifact_hashes": {
+    "result": "6b309f4f88b2f2d2df1e7fdbd123b538d7fa14f0e4f2913cf5a5831ba29c83a3"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "unicode": true,
+    "aliases": true,
+    "source_keys": true
+  },
+  "error_code": null
+}

@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Tool-only enterprise ontology workspace with a Semantica native backend"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-  "semantica[documents,parse-pdf,shacl,tripletstore-oxigraph]==0.7.0+ontologyworkspace.4",
+  "semantica[documents,parse-pdf,shacl,tripletstore-oxigraph]==0.7.0+ontologyworkspace.5",
   "pydantic==2.14.3",
   "jsonschema==4.26.0",
   "PyYAML==6.0.3",
@@ -30,7 +30,7 @@ namespaces = true
 package = true
 
 [tool.uv.sources]
-semantica = { path = "vendor/wheels/semantica-0.7.0+ontologyworkspace.4-py3-none-any.whl" }
+semantica = { path = "vendor/wheels/semantica-0.7.0+ontologyworkspace.5-py3-none-any.whl" }
 en-core-web-sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl" }
 
 [[tool.uv.index]]

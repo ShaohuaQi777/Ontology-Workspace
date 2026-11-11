@@ -26,6 +26,16 @@ def assemble(objects):
     return data
 
 
+def test_orphan_page_repair_cannot_bypass_native_page_budget(tmp_path):
+    objects=[b'<< /Type /Catalog /Pages 2 0 R >>',b'<< /Type /Pages /Kids [] /Count 0 >>']
+    objects.extend([b'<< /Type /Page /MediaBox [0 0 100 100] >>']*65)
+    data=assemble(objects)
+    assert len(data)<10000
+    with pytest.raises((ValueError,NotImplementedError)): validate_pdf_bytes(data)
+    path=tmp_path/'orphans.pdf'; path.write_bytes(data)
+    with pytest.raises((ValueError,NotImplementedError)): BoundedPDFParser().parse(path)
+
+
 @pytest.mark.parametrize('compress,indirect',[(False,False),(True,False),(True,True)])
 def test_genuine_pdf_native_text_and_budgets(tmp_path,compress,indirect):
     data=pdf(compress=compress,indirect=indirect)

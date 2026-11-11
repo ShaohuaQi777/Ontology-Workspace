@@ -1,6 +1,6 @@
 {
   "base_version": "0.7.0",
-  "version": "0.7.0+ontologyworkspace.4",
+  "version": "0.7.0+ontologyworkspace.5",
   "base_record_sha256": "fe093e0861495f0d1cd4495d9f9aa522d7267f1d0b355725343357e039842c86",
   "base_source": "official PyPI 0.7.0 downloaded archive cache; installed Python sources independently match cache",
   "license": "MIT",
@@ -15,7 +15,7 @@
     },
     "semantica/parse/bounded_pdf.py": {
       "source": "patches/semantica/bounded_pdf.py",
-      "sha256": "74fddb5ecd490aa57dd9aa19714877ba85c5e9373689a9f433396c7876ebfd9c"
+      "sha256": "f70c24586ee4c4f78a84da36008abceff6f0998e0355d24371371f402093b8b5"
     }
   },
   "formats": [

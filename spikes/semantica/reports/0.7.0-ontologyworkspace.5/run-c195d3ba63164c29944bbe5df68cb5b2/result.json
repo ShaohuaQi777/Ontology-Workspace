@@ -1,0 +1,19 @@
+{
+  "conforms": false,
+  "violations": [
+    {
+      "class_": null,
+      "constraint": "MinCountConstraintComponent",
+      "datatype": null,
+      "explanation": null,
+      "focus_node": "https://example.invalid/n1",
+      "max_count": null,
+      "message": "Less than 1 values on ex:n1->ex:p",
+      "min_count": 1,
+      "result_path": "https://example.invalid/p",
+      "severity": "Violation",
+      "shape": "n84fc9f62642c45aab5b44be7481fa43bb1",
+      "value": null
+    }
+  ]
+}

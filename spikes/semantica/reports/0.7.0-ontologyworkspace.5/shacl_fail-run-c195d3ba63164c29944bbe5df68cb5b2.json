@@ -1,0 +1,29 @@
+{
+  "case_id": "shacl_fail",
+  "status": "passed",
+  "backend_version": "0.7.0+ontologyworkspace.5",
+  "api_symbol": "semantica.ontology.ontology_validator.run_shacl_validation",
+  "run_id": "run-c195d3ba63164c29944bbe5df68cb5b2",
+  "source_refs": [
+    "urn:technical-probe:shacl_fail"
+  ],
+  "parameters": {
+    "format": "turtle"
+  },
+  "artifact_hashes": {
+    "result": "ba586eb05017ad799d3e96afeef1d66bd33ab7b6e9721101461c8bcf2c990e52",
+    "shapes.ttl": "b8fc1fef02c323a2c94d4b71cb003857723d992584f347041f42f5685ff9a44a",
+    "data.ttl": "e358a9e763c2662aef2e58f4c3876a8a4c8fd027dd1c5abd9270b834e7bbcf26"
+  },
+  "checks": {
+    "native_api_invoked": true,
+    "conforms": true,
+    "count": true,
+    "focus_node": true,
+    "path": true,
+    "constraint": true,
+    "min_count": true,
+    "raw_report": true
+  },
+  "error_code": null
+}

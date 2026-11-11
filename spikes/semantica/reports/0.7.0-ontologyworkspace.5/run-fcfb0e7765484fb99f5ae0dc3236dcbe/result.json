@@ -1,0 +1,13 @@
+{
+  "headers": [
+    "id",
+    "value"
+  ],
+  "row_count": 1,
+  "rows": [
+    {
+      "id": "n1",
+      "value": "7"
+    }
+  ]
+}
