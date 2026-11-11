@@ -12,7 +12,7 @@
 'use strict';
 const pages=[
 {id:'overview',group:'工作空间',icon:'▦',name:'项目概览',status:'ready',action:'新建项目',desc:'以工作空间版本为中心，连接数据来源、语义任务与交付证据。不存在的数据保持空状态。',eyebrow:'项目工作空间'},
-{id:'sources',group:'数据工程',icon:'⇩',name:'数据来源',status:'ready',action:'上传来源',desc:'统一登记文件来源，保留来源 ID、不可变版本、大小与哈希；数据库快照尚未接入。',eyebrow:'数据接入'},
+{id:'sources',group:'数据工程',icon:'⇩',name:'数据接入',status:'ready',action:'打开数据工作区',desc:'数据源首页与同源工作区：理解实际内容、检查样本质量，再交接固定来源版本；此模块已独立实现 React。',eyebrow:'数据接入'},
 {id:'parsers',group:'数据工程',icon:'▤',name:'解析器中心',status:'partial',action:'提交解析',desc:'PDF、DOCX、CSV 与 JSON 解析；文本层解析与 OCR 明确分开，执行必须关联真实任务。',eyebrow:'解析与来源片段'},
 {id:'connectors',group:'数据工程',icon:'⌁',name:'连接器中心',status:'partial',action:'新建连接配置',desc:'按项目授权的可信目标别名配置来源；配置已保存不代表已联通数据库或 SaaS。',eyebrow:'可信来源 Registry'},
 {id:'pipeline',group:'数据工程',icon:'⤳',name:'Pipeline 工作台',status:'planned',action:'新建 Pipeline',desc:'版本化 DAG、确定性清洗、RAG 与 CLIP 节点；当前为结构设计，尚无服务端 DAG 执行接口。',eyebrow:'数据加工与编排'},
@@ -46,9 +46,7 @@ body+=panel('从来源到可信交付',`<div class="journey">${[['01','数据接
 body+=panel('当前项目与最近运行',table(['项目 / 任务','版本 / 操作','实际状态','来源证据'],'尚未选择项目','正式页面会读取当前会话可见项目；没有数据时保持空状态。'));
 body+=panel('本阶段可以接入什么',features([['项目 / 会话 / 成员','ready','真实 API 已提供；权限由服务端校验。'],['来源 / 连接配置','ready','上传、不可变来源与连接 CAS；不等于数据库已连接。'],['任务 / 事件 / 制品','ready','读取真实 jobs/events；取消与重放保留原证据。']]));
 }else if(page.id==='sources'){
-body=panel('文件来源登记',`<div class="panel-body"><div class="drop">⇩<strong>选择 CSV、JSON、PDF、DOCX 或已支持的文本来源</strong><p>设计预览不执行上传 · 二进制请求最多 1 MiB · 不保存凭据字段</p><button disabled class="btn small">选择真实来源文件</button></div></div>`);
-body+=panel('来源列表',table(['source_id','格式','source_revision','大小','SHA256'],'尚无来源记录','真实来源字段由 API 返回，不添加虚构文件名、来源 ID 或哈希。'));
-body+=panel('来源预览与定位',`<div class="panel-body">${field('选中来源','尚未选择真实来源')}${empty('来源正文与片段区域','在权限允许时读取真实原文及解析制品；当前不提供示例文档。')}</div>`);
+body=panel('数据准备工作区',`<div class="panel-body"><div class="drop">⇩<strong>数据源首页 → 单源工作区 → 可追溯的数据版本</strong><p>此模块已独立实现 React 页面；原有其他模块保持设计展示，不在本次改动范围。</p><a class="btn primary" href="/data/">打开数据接入工作区 →</a></div><div class="hint-box">文件来源使用真实 API 与原生 parse 结果；数据库、API 与知识库的受控读取尚未实现，配置不冒称已接入。进入后可查看新增向导、登录与项目入口，真实业务列表只从授权项目读取。</div></div>`);
 }else if(page.id==='parsers'){
 body=panel('解析能力',features([['CSV / JSON','ready','真实 parse 操作；严格格式与输入大小校验。'],['PDF 文本层','partial','有界 raw/Flate 子集，不冒称扫描件 OCR。'],['DOCX','ready','真实 parse 任务与制品，不预填提取正文。'],['OCR','planned','Tesseract 与语言依赖未配置，执行入口禁用。'],['来源定位','partial','结果使用真实来源引用和片段；不虚构页码。'],['任务状态','ready','从运行中心读取实际状态，不生成假进度。']]));
 body+=panel('提交解析',`<div class="panel-body"><div class="form-grid">${field('来源快照','从真实来源中选择')}${field('解析格式','CSV / JSON / PDF / DOCX')}${field('参数摘要','以受支持 DTO 字段为准')}${field('工作空间版本','由当前项目返回')}</div><button disabled class="btn primary">提交 parse 任务</button></div>`);
