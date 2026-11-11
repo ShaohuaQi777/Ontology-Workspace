@@ -10,9 +10,13 @@
 
 **Spec:** [Wave2拆分设计](../specs/2026-11-11-backend-wave2-design.md)、[总体设计](../specs/2026-11-10-ontology-workspace-design.md)§8/P2/P8。
 
+## 用户最新停点（2026-11-11）
+
+用户明确选择：**只完成 Task3/B2-03 只读数据库接入后就展示**。完成后执行当前阶段全回归与一次独立审查，先普通推送 GitHub，再启动连接真实后端的阶段前端预览，停止开发等待用户反馈。不继续 Task4–6，也不开发其他后续后端；下列 Task4–6 保留为后续设计、当前 DEFERRED，不计完成。没有现成产品前端，允许的小范围阶段预览不等同完整产品前端或全后端完成；不得虚构运行历史。阶段预览源码单独提交并同步仓库，启动核验实际URL。原先全后端完成才push/前端展示的顺序被此checkpoint覆盖。
+
 ## Global Constraints
 
-- 完整后端先验收再普通GitHub推送，之后全版前端展示确认才开发；当前不写React/页面。
+- 按最新checkpoint：B2-03阶段验收后普通GitHub推送并启动阶段预览，然后停止；完整产品前端仍需后续展示确认，不在本阶段开发所有页面。
 - 无场景模拟/业务金标，真实native成功不冒充专家认证。全部候选DRAFT。
 - 不读取全部环境/secretstore、不请求聊天密码/token、不让URL/query/source/结果含秘密。
 - 无任意server path/URL/SQL/eval/插件脚本，无Fake product factory，no dependency pin/global config changes。
