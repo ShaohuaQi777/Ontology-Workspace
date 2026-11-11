@@ -6,7 +6,7 @@
 |---|---|---|
 | Semantica语义底座 | A0/P0 DONE；native17/共享契约/真实两环境门禁 | 后续产品API仍需授权/持久化/运行验收 |
 | 元数据事务 | B1-01 DONE：10RED→10GREEN；33关联回归；完整310+14subtests114.11s exit0 | 完整后端还需账户/项目/任务schema与重启恢复 |
-| 可信会话/项目RBAC | TODO B1-02 | 明文秘密不持久化、撤销/失效/越权拒绝、真实权限路径 |
+| 可信会话/项目RBAC | B1-02本地模块DONE：14RED+并发1RED→GREEN、全331+14subtests117.05s；HTTP Cookie/Origin边界待B1-05 | 明文秘密不持久化、撤销/失效/越权拒绝、真实权限路径 |
 | HTTP服务/任务Worker | TODO B1-04–06 | 实际loopbackURL/health/readiness/真实排队执行/取消与恢复 |
 | PDF解析 | .5有界raw/Flate native子集DONE | 项目来源登记、权限/来源定位与产品API；不能把限制隐藏 |
 | OCR解析 | UNKNOWN未真实探针 | 固定原生API/模型依赖，小技术输入真实OCR；不以PDF文本层冒充OCR |
