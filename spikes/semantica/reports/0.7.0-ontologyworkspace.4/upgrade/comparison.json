@@ -1,0 +1,9 @@
+{
+  "schema_diffs": [],
+  "capability_diffs": [],
+  "semantic_diffs": [
+    "validate_shacl/ok: semantic/review data"
+  ],
+  "error_diffs": [],
+  "compatible": false
+}

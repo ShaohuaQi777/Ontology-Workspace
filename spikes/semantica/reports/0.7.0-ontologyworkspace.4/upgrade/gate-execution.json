@@ -1,0 +1,17 @@
+{
+  "backend_version": "0.7.0+ontologyworkspace.4",
+  "contract_exit_code": 0,
+  "baseline_report_exit_code": 0,
+  "clean_install_exit_code": 0,
+  "candidate_report_exit_code": 0,
+  "baseline_environment": "/Users/shaohua/DeepSeek Harness/Ontology-Workspace/.worktrees/p0/.venv",
+  "candidate_environment": "/Users/shaohua/DeepSeek Harness/Ontology-Workspace/.worktrees/p0/.runtime/gp0-de6f06cf87f34acdbc26dd019fa8e600/environment",
+  "comparison": {
+    "schema_diffs": [],
+    "capability_diffs": [],
+    "semantic_diffs": [],
+    "error_diffs": [],
+    "compatible": true
+  },
+  "evidence_directory": ".runtime/gp0-de6f06cf87f34acdbc26dd019fa8e600"
+}

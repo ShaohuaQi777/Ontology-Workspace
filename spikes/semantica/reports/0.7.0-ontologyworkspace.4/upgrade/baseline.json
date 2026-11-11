@@ -1,0 +1,2336 @@
+{
+  "report_version": "0.1.0",
+  "backend_kind": "real",
+  "backend_version": "0.7.0+ontologyworkspace.4",
+  "adapter_version": "0.1.0",
+  "contract_version": "0.1.0",
+  "environment_id": "/Users/shaohua/DeepSeek Harness/Ontology-Workspace/.worktrees/p0/.venv",
+  "schemas": {
+    "ingest": {
+      "request": {
+        "$defs": {
+          "ArtifactRef": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 1024,
+                "minLength": 1,
+                "title": "Path",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "title": "Sha256",
+                "type": "string"
+              },
+              "size": {
+                "maximum": 1048576,
+                "minimum": 0,
+                "title": "Size",
+                "type": "integer"
+              },
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "size",
+              "kind",
+              "revision"
+            ],
+            "title": "ArtifactRef",
+            "type": "object"
+          },
+          "JsonValue": {}
+        },
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workspace_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Workspace Revision",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 1000,
+            "minItems": 1,
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "scope_ref": {
+            "maxLength": 512,
+            "pattern": "^scope:[^\\s]+$",
+            "title": "Scope Ref",
+            "type": "string"
+          },
+          "parameters": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Parameters",
+            "type": "object"
+          },
+          "source": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "source_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "format": {
+            "enum": [
+              "csv",
+              "json",
+              "sqlite",
+              "pdf",
+              "docx",
+              "turtle",
+              "nt"
+            ],
+            "title": "Format",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "workspace_revision",
+          "source_refs",
+          "scope_ref",
+          "source",
+          "source_revision",
+          "format"
+        ],
+        "title": "IngestRequest",
+        "type": "object"
+      },
+      "result": {
+        "$defs": {
+          "ArtifactRef": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 1024,
+                "minLength": 1,
+                "title": "Path",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "title": "Sha256",
+                "type": "string"
+              },
+              "size": {
+                "maximum": 1048576,
+                "minimum": 0,
+                "title": "Size",
+                "type": "integer"
+              },
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "size",
+              "kind",
+              "revision"
+            ],
+            "title": "ArtifactRef",
+            "type": "object"
+          },
+          "JsonValue": {},
+          "ObjectRef": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "id": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Id",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "id",
+              "revision"
+            ],
+            "title": "ObjectRef",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workspace_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Workspace Revision",
+            "type": "string"
+          },
+          "backend_version": {
+            "title": "Backend Version",
+            "type": "string"
+          },
+          "adapter_version": {
+            "title": "Adapter Version",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "artifact_refs": {
+            "items": {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            "title": "Artifact Refs",
+            "type": "array"
+          },
+          "object_refs": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            "title": "Object Refs",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Data",
+            "type": "object"
+          }
+        },
+        "required": [
+          "run_id",
+          "workspace_revision",
+          "backend_version",
+          "adapter_version",
+          "source_refs",
+          "artifact_refs",
+          "data"
+        ],
+        "title": "IngestResult",
+        "type": "object"
+      }
+    },
+    "parse": {
+      "request": {
+        "$defs": {
+          "ArtifactRef": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 1024,
+                "minLength": 1,
+                "title": "Path",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "title": "Sha256",
+                "type": "string"
+              },
+              "size": {
+                "maximum": 1048576,
+                "minimum": 0,
+                "title": "Size",
+                "type": "integer"
+              },
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "size",
+              "kind",
+              "revision"
+            ],
+            "title": "ArtifactRef",
+            "type": "object"
+          },
+          "JsonValue": {}
+        },
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workspace_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Workspace Revision",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 1000,
+            "minItems": 1,
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "scope_ref": {
+            "maxLength": 512,
+            "pattern": "^scope:[^\\s]+$",
+            "title": "Scope Ref",
+            "type": "string"
+          },
+          "parameters": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Parameters",
+            "type": "object"
+          },
+          "source": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "source_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "format": {
+            "enum": [
+              "csv",
+              "json",
+              "pdf",
+              "docx"
+            ],
+            "title": "Format",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "workspace_revision",
+          "source_refs",
+          "scope_ref",
+          "source",
+          "source_revision",
+          "format"
+        ],
+        "title": "ParseRequest",
+        "type": "object"
+      },
+      "result": {
+        "$defs": {
+          "ArtifactRef": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 1024,
+                "minLength": 1,
+                "title": "Path",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "title": "Sha256",
+                "type": "string"
+              },
+              "size": {
+                "maximum": 1048576,
+                "minimum": 0,
+                "title": "Size",
+                "type": "integer"
+              },
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "size",
+              "kind",
+              "revision"
+            ],
+            "title": "ArtifactRef",
+            "type": "object"
+          },
+          "JsonValue": {},
+          "ObjectRef": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "id": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Id",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "id",
+              "revision"
+            ],
+            "title": "ObjectRef",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workspace_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Workspace Revision",
+            "type": "string"
+          },
+          "backend_version": {
+            "title": "Backend Version",
+            "type": "string"
+          },
+          "adapter_version": {
+            "title": "Adapter Version",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "artifact_refs": {
+            "items": {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            "title": "Artifact Refs",
+            "type": "array"
+          },
+          "object_refs": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            "title": "Object Refs",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Data",
+            "type": "object"
+          }
+        },
+        "required": [
+          "run_id",
+          "workspace_revision",
+          "backend_version",
+          "adapter_version",
+          "source_refs",
+          "artifact_refs",
+          "data"
+        ],
+        "title": "ParseResult",
+        "type": "object"
+      }
+    },
+    "extract": {
+      "request": {
+        "$defs": {
+          "ArtifactRef": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 1024,
+                "minLength": 1,
+                "title": "Path",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "title": "Sha256",
+                "type": "string"
+              },
+              "size": {
+                "maximum": 1048576,
+                "minimum": 0,
+                "title": "Size",
+                "type": "integer"
+              },
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "size",
+              "kind",
+              "revision"
+            ],
+            "title": "ArtifactRef",
+            "type": "object"
+          },
+          "JsonValue": {}
+        },
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workspace_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Workspace Revision",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 1000,
+            "minItems": 1,
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "scope_ref": {
+            "maxLength": 512,
+            "pattern": "^scope:[^\\s]+$",
+            "title": "Scope Ref",
+            "type": "string"
+          },
+          "parameters": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Parameters",
+            "type": "object"
+          },
+          "source": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "source_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Source Revision",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "workspace_revision",
+          "source_refs",
+          "scope_ref",
+          "source",
+          "source_revision"
+        ],
+        "title": "ExtractRequest",
+        "type": "object"
+      },
+      "result": {
+        "$defs": {
+          "ArtifactRef": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 1024,
+                "minLength": 1,
+                "title": "Path",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "title": "Sha256",
+                "type": "string"
+              },
+              "size": {
+                "maximum": 1048576,
+                "minimum": 0,
+                "title": "Size",
+                "type": "integer"
+              },
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "size",
+              "kind",
+              "revision"
+            ],
+            "title": "ArtifactRef",
+            "type": "object"
+          },
+          "JsonValue": {},
+          "ObjectRef": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "id": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Id",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "id",
+              "revision"
+            ],
+            "title": "ObjectRef",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workspace_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Workspace Revision",
+            "type": "string"
+          },
+          "backend_version": {
+            "title": "Backend Version",
+            "type": "string"
+          },
+          "adapter_version": {
+            "title": "Adapter Version",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "artifact_refs": {
+            "items": {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            "title": "Artifact Refs",
+            "type": "array"
+          },
+          "object_refs": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            "title": "Object Refs",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Data",
+            "type": "object"
+          }
+        },
+        "required": [
+          "run_id",
+          "workspace_revision",
+          "backend_version",
+          "adapter_version",
+          "source_refs",
+          "artifact_refs",
+          "data"
+        ],
+        "title": "ExtractionResult",
+        "type": "object"
+      }
+    },
+    "build_graph": {
+      "request": {
+        "$defs": {
+          "ArtifactRef": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 1024,
+                "minLength": 1,
+                "title": "Path",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "title": "Sha256",
+                "type": "string"
+              },
+              "size": {
+                "maximum": 1048576,
+                "minimum": 0,
+                "title": "Size",
+                "type": "integer"
+              },
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "size",
+              "kind",
+              "revision"
+            ],
+            "title": "ArtifactRef",
+            "type": "object"
+          },
+          "JsonValue": {}
+        },
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workspace_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Workspace Revision",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 1000,
+            "minItems": 1,
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "scope_ref": {
+            "maxLength": 512,
+            "pattern": "^scope:[^\\s]+$",
+            "title": "Scope Ref",
+            "type": "string"
+          },
+          "parameters": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Parameters",
+            "type": "object"
+          },
+          "source": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "graph_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Graph Revision",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "workspace_revision",
+          "source_refs",
+          "scope_ref",
+          "source",
+          "graph_revision"
+        ],
+        "title": "GraphBuildRequest",
+        "type": "object"
+      },
+      "result": {
+        "$defs": {
+          "ArtifactRef": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 1024,
+                "minLength": 1,
+                "title": "Path",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "title": "Sha256",
+                "type": "string"
+              },
+              "size": {
+                "maximum": 1048576,
+                "minimum": 0,
+                "title": "Size",
+                "type": "integer"
+              },
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "size",
+              "kind",
+              "revision"
+            ],
+            "title": "ArtifactRef",
+            "type": "object"
+          },
+          "JsonValue": {},
+          "ObjectRef": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "id": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Id",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "id",
+              "revision"
+            ],
+            "title": "ObjectRef",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workspace_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Workspace Revision",
+            "type": "string"
+          },
+          "backend_version": {
+            "title": "Backend Version",
+            "type": "string"
+          },
+          "adapter_version": {
+            "title": "Adapter Version",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "artifact_refs": {
+            "items": {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            "title": "Artifact Refs",
+            "type": "array"
+          },
+          "object_refs": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            "title": "Object Refs",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Data",
+            "type": "object"
+          }
+        },
+        "required": [
+          "run_id",
+          "workspace_revision",
+          "backend_version",
+          "adapter_version",
+          "source_refs",
+          "artifact_refs",
+          "data"
+        ],
+        "title": "GraphResult",
+        "type": "object"
+      }
+    },
+    "ontology": {
+      "request": {
+        "$defs": {
+          "ArtifactRef": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 1024,
+                "minLength": 1,
+                "title": "Path",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "title": "Sha256",
+                "type": "string"
+              },
+              "size": {
+                "maximum": 1048576,
+                "minimum": 0,
+                "title": "Size",
+                "type": "integer"
+              },
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "size",
+              "kind",
+              "revision"
+            ],
+            "title": "ArtifactRef",
+            "type": "object"
+          },
+          "JsonValue": {}
+        },
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workspace_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Workspace Revision",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 1000,
+            "minItems": 1,
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "scope_ref": {
+            "maxLength": 512,
+            "pattern": "^scope:[^\\s]+$",
+            "title": "Scope Ref",
+            "type": "string"
+          },
+          "parameters": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Parameters",
+            "type": "object"
+          },
+          "source": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "schema_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Schema Revision",
+            "type": "string"
+          },
+          "action": {
+            "enum": [
+              "import",
+              "edit",
+              "generate",
+              "export"
+            ],
+            "title": "Action",
+            "type": "string"
+          },
+          "format": {
+            "default": "turtle",
+            "enum": [
+              "turtle",
+              "nt"
+            ],
+            "title": "Format",
+            "type": "string"
+          },
+          "subject_uri": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Subject Uri"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "maxLength": 4096,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Label"
+          },
+          "language": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Language"
+          },
+          "name": {
+            "default": "WorkspaceOntology",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Name",
+            "type": "string"
+          },
+          "base_uri": {
+            "default": "urn:ontology-workspace:",
+            "pattern": "^(https?://|urn:)[^\\s]+$",
+            "title": "Base Uri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "workspace_revision",
+          "source_refs",
+          "scope_ref",
+          "source",
+          "schema_revision",
+          "action"
+        ],
+        "title": "OntologyRequest",
+        "type": "object"
+      },
+      "result": {
+        "$defs": {
+          "ArtifactRef": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 1024,
+                "minLength": 1,
+                "title": "Path",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "title": "Sha256",
+                "type": "string"
+              },
+              "size": {
+                "maximum": 1048576,
+                "minimum": 0,
+                "title": "Size",
+                "type": "integer"
+              },
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "size",
+              "kind",
+              "revision"
+            ],
+            "title": "ArtifactRef",
+            "type": "object"
+          },
+          "JsonValue": {},
+          "ObjectRef": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "id": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Id",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "id",
+              "revision"
+            ],
+            "title": "ObjectRef",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workspace_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Workspace Revision",
+            "type": "string"
+          },
+          "backend_version": {
+            "title": "Backend Version",
+            "type": "string"
+          },
+          "adapter_version": {
+            "title": "Adapter Version",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "artifact_refs": {
+            "items": {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            "title": "Artifact Refs",
+            "type": "array"
+          },
+          "object_refs": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            "title": "Object Refs",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Data",
+            "type": "object"
+          }
+        },
+        "required": [
+          "run_id",
+          "workspace_revision",
+          "backend_version",
+          "adapter_version",
+          "source_refs",
+          "artifact_refs",
+          "data"
+        ],
+        "title": "OntologyResult",
+        "type": "object"
+      }
+    },
+    "validate_shacl": {
+      "request": {
+        "$defs": {
+          "ArtifactRef": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 1024,
+                "minLength": 1,
+                "title": "Path",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "title": "Sha256",
+                "type": "string"
+              },
+              "size": {
+                "maximum": 1048576,
+                "minimum": 0,
+                "title": "Size",
+                "type": "integer"
+              },
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "size",
+              "kind",
+              "revision"
+            ],
+            "title": "ArtifactRef",
+            "type": "object"
+          },
+          "JsonValue": {}
+        },
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workspace_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Workspace Revision",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 1000,
+            "minItems": 1,
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "scope_ref": {
+            "maxLength": 512,
+            "pattern": "^scope:[^\\s]+$",
+            "title": "Scope Ref",
+            "type": "string"
+          },
+          "parameters": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Parameters",
+            "type": "object"
+          },
+          "source": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "shapes": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "graph_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Graph Revision",
+            "type": "string"
+          },
+          "shapes_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Shapes Revision",
+            "type": "string"
+          },
+          "suite_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Suite Revision",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "workspace_revision",
+          "source_refs",
+          "scope_ref",
+          "source",
+          "shapes",
+          "graph_revision",
+          "shapes_revision",
+          "suite_revision"
+        ],
+        "title": "SHACLRequest",
+        "type": "object"
+      },
+      "result": {
+        "$defs": {
+          "ArtifactRef": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 1024,
+                "minLength": 1,
+                "title": "Path",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "title": "Sha256",
+                "type": "string"
+              },
+              "size": {
+                "maximum": 1048576,
+                "minimum": 0,
+                "title": "Size",
+                "type": "integer"
+              },
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "size",
+              "kind",
+              "revision"
+            ],
+            "title": "ArtifactRef",
+            "type": "object"
+          },
+          "JsonValue": {},
+          "ObjectRef": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "id": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Id",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "id",
+              "revision"
+            ],
+            "title": "ObjectRef",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workspace_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Workspace Revision",
+            "type": "string"
+          },
+          "backend_version": {
+            "title": "Backend Version",
+            "type": "string"
+          },
+          "adapter_version": {
+            "title": "Adapter Version",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "artifact_refs": {
+            "items": {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            "title": "Artifact Refs",
+            "type": "array"
+          },
+          "object_refs": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            "title": "Object Refs",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Data",
+            "type": "object"
+          }
+        },
+        "required": [
+          "run_id",
+          "workspace_revision",
+          "backend_version",
+          "adapter_version",
+          "source_refs",
+          "artifact_refs",
+          "data"
+        ],
+        "title": "ValidationResult",
+        "type": "object"
+      }
+    },
+    "reason": {
+      "request": {
+        "$defs": {
+          "ArtifactRef": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 1024,
+                "minLength": 1,
+                "title": "Path",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "title": "Sha256",
+                "type": "string"
+              },
+              "size": {
+                "maximum": 1048576,
+                "minimum": 0,
+                "title": "Size",
+                "type": "integer"
+              },
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "size",
+              "kind",
+              "revision"
+            ],
+            "title": "ArtifactRef",
+            "type": "object"
+          },
+          "JsonValue": {}
+        },
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workspace_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Workspace Revision",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 1000,
+            "minItems": 1,
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "scope_ref": {
+            "maxLength": 512,
+            "pattern": "^scope:[^\\s]+$",
+            "title": "Scope Ref",
+            "type": "string"
+          },
+          "parameters": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Parameters",
+            "type": "object"
+          },
+          "source": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "rules": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "graph_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Graph Revision",
+            "type": "string"
+          },
+          "ruleset_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Ruleset Revision",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "workspace_revision",
+          "source_refs",
+          "scope_ref",
+          "source",
+          "rules",
+          "graph_revision",
+          "ruleset_revision"
+        ],
+        "title": "ReasoningRequest",
+        "type": "object"
+      },
+      "result": {
+        "$defs": {
+          "ArtifactRef": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 1024,
+                "minLength": 1,
+                "title": "Path",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "title": "Sha256",
+                "type": "string"
+              },
+              "size": {
+                "maximum": 1048576,
+                "minimum": 0,
+                "title": "Size",
+                "type": "integer"
+              },
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "size",
+              "kind",
+              "revision"
+            ],
+            "title": "ArtifactRef",
+            "type": "object"
+          },
+          "JsonValue": {},
+          "ObjectRef": {
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Kind",
+                "type": "string"
+              },
+              "id": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Id",
+                "type": "string"
+              },
+              "revision": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                "title": "Revision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "id",
+              "revision"
+            ],
+            "title": "ObjectRef",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workspace_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "title": "Workspace Revision",
+            "type": "string"
+          },
+          "backend_version": {
+            "title": "Backend Version",
+            "type": "string"
+          },
+          "adapter_version": {
+            "title": "Adapter Version",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "artifact_refs": {
+            "items": {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            "title": "Artifact Refs",
+            "type": "array"
+          },
+          "object_refs": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            "title": "Object Refs",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": {
+              "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Data",
+            "type": "object"
+          }
+        },
+        "required": [
+          "run_id",
+          "workspace_revision",
+          "backend_version",
+          "adapter_version",
+          "source_refs",
+          "artifact_refs",
+          "data"
+        ],
+        "title": "ReasoningResult",
+        "type": "object"
+      }
+    }
+  },
+  "cases": {
+    "ingest/ok": {
+      "operation": "ingest",
+      "input_sha256": "da9d3a60c79539d702754eeed2b3a77be5e20d691e3bae80bfa0bd59dc40bb25",
+      "outcome": "success",
+      "data": {
+        "file_type": "csv",
+        "size": 14
+      },
+      "source_refs": [
+        "source:s1"
+      ],
+      "object_refs": [],
+      "artifact_hashes": [
+        {
+          "kind": "result",
+          "sha256": "c2a4d778963bf7f74b27125a3f76d9de90db9312d5e64d35606bc70f7401c268",
+          "size": 59
+        }
+      ]
+    },
+    "ingest/hash_mismatch": {
+      "operation": "ingest",
+      "input_sha256": "12f9563ce5c46e75acbc0bbe95ed0f9d8da0055ad14dfc86c76b361c65d50be2",
+      "outcome": "error",
+      "error": {
+        "code": "INVALID_INPUT",
+        "retryable": false
+      }
+    },
+    "parse/ok": {
+      "operation": "parse",
+      "input_sha256": "da9d3a60c79539d702754eeed2b3a77be5e20d691e3bae80bfa0bd59dc40bb25",
+      "outcome": "success",
+      "data": {
+        "headers": [
+          "id",
+          "value"
+        ],
+        "rows": [
+          {
+            "id": "n1",
+            "value": "7"
+          }
+        ],
+        "row_count": 1
+      },
+      "source_refs": [
+        "source:s1"
+      ],
+      "object_refs": [],
+      "artifact_hashes": [
+        {
+          "kind": "result",
+          "sha256": "e16839f34fe6ed9917bbcea6340514c683ded65d0071ac69a751482abd156ea9",
+          "size": 109
+        }
+      ]
+    },
+    "parse/hash_mismatch": {
+      "operation": "parse",
+      "input_sha256": "12f9563ce5c46e75acbc0bbe95ed0f9d8da0055ad14dfc86c76b361c65d50be2",
+      "outcome": "error",
+      "error": {
+        "code": "INVALID_INPUT",
+        "retryable": false
+      }
+    },
+    "extract/ok": {
+      "operation": "extract",
+      "input_sha256": "c1b88b1d6500ca6b0ab098cd766a6ced835e545845e3d491bf0f64b24732b4e8",
+      "outcome": "success",
+      "data": {
+        "entities": [
+          {
+            "text": "Apple",
+            "label": "ORG",
+            "start": 0,
+            "end": 5,
+            "confidence": null,
+            "state": "DRAFT",
+            "method": "ml"
+          },
+          {
+            "text": "Microsoft",
+            "label": "ORG",
+            "start": 15,
+            "end": 24,
+            "confidence": null,
+            "state": "DRAFT",
+            "method": "ml"
+          },
+          {
+            "text": "California",
+            "label": "GPE",
+            "start": 28,
+            "end": 38,
+            "confidence": null,
+            "state": "DRAFT",
+            "method": "ml"
+          }
+        ],
+        "relations": [
+          {
+            "subject": "Apple",
+            "predicate": "acquire",
+            "object": "Microsoft",
+            "confidence": 0.8,
+            "state": "DRAFT",
+            "method": "dependency"
+          },
+          {
+            "subject": "Apple",
+            "predicate": "acquire",
+            "object": "California",
+            "confidence": 0.8,
+            "state": "DRAFT",
+            "method": "dependency"
+          }
+        ],
+        "events": [],
+        "model": "en_core_web_sm",
+        "limitations": [
+          "Event extraction is not part of this request"
+        ]
+      },
+      "source_refs": [
+        "source:s1"
+      ],
+      "object_refs": [],
+      "artifact_hashes": [
+        {
+          "kind": "result",
+          "sha256": "b438defdb52cffe0f388504984762dd978f0bcbc94e2e5b2eedd8c3f1b6de92c",
+          "size": 769
+        }
+      ]
+    },
+    "extract/hash_mismatch": {
+      "operation": "extract",
+      "input_sha256": "555490c0dfb14927a8cb77a14ca5ca9ae3b08a4855481a10170a5c6fdfe09ae7",
+      "outcome": "error",
+      "error": {
+        "code": "INVALID_INPUT",
+        "retryable": false
+      }
+    },
+    "build_graph/ok": {
+      "operation": "build_graph",
+      "input_sha256": "ef55424a3d681e3c4481954e6aff258ba4465cae34b57f6c06177c66b01bcbbe",
+      "outcome": "success",
+      "data": {
+        "entities": [
+          {
+            "type": "Node",
+            "id": "n1",
+            "text": "Technical node",
+            "state": "DRAFT",
+            "confidence": null
+          }
+        ],
+        "relationships": []
+      },
+      "source_refs": [
+        "source:s1"
+      ],
+      "object_refs": [],
+      "artifact_hashes": [
+        {
+          "kind": "result",
+          "sha256": "04d5298b78305f92fcd6cd5c81feecf87647c2b2872fbd31aeeece95a82d1022",
+          "size": 156
+        }
+      ]
+    },
+    "build_graph/hash_mismatch": {
+      "operation": "build_graph",
+      "input_sha256": "721cc71db2b9455dc4d412f8aece937e58ff0a40a7352d4775e9fbfed250abe5",
+      "outcome": "error",
+      "error": {
+        "code": "INVALID_INPUT",
+        "retryable": false
+      }
+    },
+    "ontology/ok": {
+      "operation": "ontology",
+      "input_sha256": "edfd15a8e8504c3a8d34f3ced695af40b45ca384a16d576ef1f3099cb1b39105",
+      "outcome": "success",
+      "data": {
+        "format": "nt",
+        "state": "DRAFT",
+        "action": "import"
+      },
+      "source_refs": [
+        "source:s1"
+      ],
+      "object_refs": [],
+      "artifact_hashes": [
+        {
+          "kind": "result",
+          "sha256": "ee9e94ceb300859eea9d1e11eac388967553cc35b5e5ca7868f7ad2f073f6dc7",
+          "size": 104
+        },
+        {
+          "kind": "tbox",
+          "sha256": "af60c596ec6bb8209d451d89a25e29f0d71c74518b885b89deb2be6114d514a7",
+          "size": 128
+        }
+      ],
+      "rdf": {
+        "format": "nt",
+        "data": "_:n93bb0924720a4b4887e934c6c3a248d1b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .\n"
+      }
+    },
+    "ontology/hash_mismatch": {
+      "operation": "ontology",
+      "input_sha256": "33aea4c5a91960e5660b7dcade671d74f1db39341bc33c6224c84474059e4d84",
+      "outcome": "error",
+      "error": {
+        "code": "INVALID_INPUT",
+        "retryable": false
+      }
+    },
+    "validate_shacl/ok": {
+      "operation": "validate_shacl",
+      "input_sha256": "73a5ae378f98be59e21fa6a9c68a6ae5414c795c94e3cb8fca73cba71a3a61b3",
+      "outcome": "success",
+      "data": {
+        "conforms": false,
+        "violations": [
+          {
+            "focus_node": "urn:n",
+            "result_path": "urn:p",
+            "constraint": "MinCountConstraintComponent",
+            "severity": "Violation",
+            "message": "Less than 2 values on <urn:n>-><urn:p>",
+            "value": null,
+            "shape": "n3e89e44944b24350abb96207697e1427b1",
+            "explanation": null,
+            "min_count": 2,
+            "max_count": null,
+            "datatype": null,
+            "class_": null
+          }
+        ],
+        "findings": [
+          {
+            "focus_node": "urn:n",
+            "result_path": "urn:p",
+            "constraint": "MinCountConstraintComponent",
+            "severity": "Violation",
+            "message": "Less than 2 values on <urn:n>-><urn:p>",
+            "value": null,
+            "shape": "n3e89e44944b24350abb96207697e1427b1",
+            "explanation": null,
+            "min_count": 2,
+            "max_count": null,
+            "datatype": null,
+            "class_": null
+          }
+        ]
+      },
+      "source_refs": [
+        "source:s1"
+      ],
+      "object_refs": [],
+      "artifact_hashes": [
+        {
+          "kind": "result",
+          "sha256": "3e88344166ee5d66dad1053d777748f2c1bbde47918a82bef3e305eb4572fdc8",
+          "size": 726
+        }
+      ]
+    },
+    "validate_shacl/hash_mismatch": {
+      "operation": "validate_shacl",
+      "input_sha256": "c9d25da2210b55cc3b84a87f2d05cb7a8ee9a048384e8b356dc9cf4c0ca5ed9d",
+      "outcome": "error",
+      "error": {
+        "code": "INVALID_INPUT",
+        "retryable": false
+      }
+    },
+    "reason/ok": {
+      "operation": "reason",
+      "input_sha256": "88a43b237d0ba32d71dc362d9ee7255e6074cc9138c18257e9e834450a18eb5b",
+      "outcome": "success",
+      "data": {
+        "asserted": [
+          "Token(x)"
+        ],
+        "inferred": [
+          {
+            "conclusion": "Mark(x)",
+            "rule_version": "rules:v1:r1",
+            "premise_refs": [
+              "fact:g1:10d912e989551424d3ee03eda3961ba66b08647e1b01c9b074135272563d6da8"
+            ],
+            "confidence": null,
+            "state": "DRAFT"
+          }
+        ]
+      },
+      "source_refs": [
+        "source:s1"
+      ],
+      "object_refs": [],
+      "artifact_hashes": [
+        {
+          "kind": "result",
+          "sha256": "9f1912b7c6a3a785d7c5fc878efd0212268d0b5ba162cf443967ba1e0d07aa01",
+          "size": 257
+        }
+      ]
+    },
+    "reason/hash_mismatch": {
+      "operation": "reason",
+      "input_sha256": "786a65517a8573493be3a0a33b78dd64f4a9b5983a224032cb9ca163416f696b",
+      "outcome": "error",
+      "error": {
+        "code": "INVALID_INPUT",
+        "retryable": false
+      }
+    },
+    "reason/invalid_rule": {
+      "operation": "reason",
+      "input_sha256": "bd78638b59dd65d7405373e020841ac3f80deb280e47c1695ae4f3f921794061",
+      "outcome": "error",
+      "error": {
+        "code": "INVALID_INPUT",
+        "retryable": false
+      }
+    }
+  },
+  "capabilities": [
+    {
+      "operation": "ingest",
+      "supported": true,
+      "limitations": [
+        "POSIX bounded local artifacts; scope_ref is context, not completed RBAC"
+      ]
+    },
+    {
+      "operation": "parse",
+      "supported": true,
+      "limitations": [
+        "POSIX bounded local artifacts; scope_ref is context, not completed RBAC"
+      ]
+    },
+    {
+      "operation": "extract",
+      "supported": true,
+      "limitations": [
+        "POSIX bounded local artifacts; scope_ref is context, not completed RBAC"
+      ]
+    },
+    {
+      "operation": "build_graph",
+      "supported": true,
+      "limitations": [
+        "POSIX bounded local artifacts; scope_ref is context, not completed RBAC"
+      ]
+    },
+    {
+      "operation": "ontology",
+      "supported": true,
+      "limitations": [
+        "POSIX bounded local artifacts; scope_ref is context, not completed RBAC"
+      ]
+    },
+    {
+      "operation": "validate_shacl",
+      "supported": true,
+      "limitations": [
+        "POSIX bounded local artifacts; scope_ref is context, not completed RBAC"
+      ]
+    },
+    {
+      "operation": "reason",
+      "supported": true,
+      "limitations": [
+        "POSIX bounded local artifacts; scope_ref is context, not completed RBAC"
+      ]
+    }
+  ]
+}
