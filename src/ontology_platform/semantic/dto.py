@@ -1,6 +1,6 @@
 """Immutable platform values. No native SDK imports or objects."""
 import re
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit,parse_qsl
 from typing import Annotated, Literal
 from pydantic import BaseModel, ConfigDict, Field, JsonValue, field_validator
 
@@ -10,12 +10,15 @@ Identifier = Annotated[str, Field(min_length=1,max_length=128,pattern=r'^[A-Za-z
 def reject_credential_authority(value:str)->str:
     # References may prefix a URI with source:/scope:. Only recognizable URI
     # authority credentials are rejected, not arbitrary identifier/free text.
-    match=re.search(r'[A-Za-z][A-Za-z0-9+.-]*://[^\s]+',value)
-    if match:
-        try: parsed=urlsplit(match.group())
+    forbidden={'password','passwd','secret','token','apikey','accesstoken','refreshtoken','authorization','privatekey','clientsecret','clientpassword','bearertoken','signingkey','recoverycode'}
+    for match in re.finditer(r'[A-Za-z][A-Za-z0-9+.-]*://',value):
+        uri=re.split(r'''[\s<>"'{}\[\]]''',value[match.start():],maxsplit=1)[0]
+        try: parsed=urlsplit(uri)
         except ValueError: raise ValueError('Invalid URI authority') from None
         if parsed.username is not None or parsed.password is not None:
             raise ValueError('Credential-bearing URI authority is forbidden')
+        if any(re.sub(r'[^a-z0-9]','',key.casefold()) in forbidden for key,_ in parse_qsl(parsed.query,keep_blank_values=True)):
+            raise ValueError('Credential-bearing URI query is forbidden')
     return value
 
 

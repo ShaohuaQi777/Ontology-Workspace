@@ -8,7 +8,7 @@ CLI入口为`uv run --locked --offline python -m ontology_platform.api.server`�
 
 `--secret-ref`仅登记明确EnvironmentSecretProvider引用allowlist；不创建.env、不从所有环境变量扫描秘密、不接收聊天密码/token。账户初始化依赖已有受控AccountService的显式bootstrap步骤，HTTP无公开bootstrap端点；尚未初始化真实生产账号。CLI关闭accesslog/默认log_config、proxy_headers/WebSocket，使用asyncio/h11、32连接处理预算/5秒keepalive，固定启动失败信息，不打印配置/正文/密码。
 
-本波尚未启动真实监听URL；ASGI测试入口不是实际部署。CLI此时仅服务HTTP并持久化pending任务，NativeJobWorker可由受控应用调用，后台自动消费/单实例占用/真实进程中断恢复在B1-06实施。不得据此声称全后端完成。
+B1-05验收时尚未启动真实监听URL；ASGI测试入口不是实际部署。B1-05此时CLI仅服务HTTP并持久化pending任务；B1-06已进一步真实验证后台自动消费、单实例占用和进程中断恢复，见[真实服务与恢复](backend-service.md)。不得据此声称全后端完成。
 
 ## 会话、Origin与真实数据限额
 

@@ -34,8 +34,14 @@ def main(argv=None):
         store=MetadataStore(settings.database); store.initialize()
         provider=EnvironmentSecretProvider(set(settings.secret_ref))
         app=create_app(store,settings.artifact_root,provider,settings.origin,secure_cookies=settings.secure_cookies)
-        try: uvicorn.run(app,**server_options(settings))
-        finally: store.close()
+        from ontology_platform.application.runtime import LocalWorkerRuntime
+        runtime=LocalWorkerRuntime(app.state.jobs)
+        app.state.runtime=runtime
+        try:
+            runtime.start()
+            uvicorn.run(app,**server_options(settings))
+        finally:
+            runtime.stop(); store.close()
     except Exception: raise SystemExit('SERVICE_START_FAILED') from None
 
 

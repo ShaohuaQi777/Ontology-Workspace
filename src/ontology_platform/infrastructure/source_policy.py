@@ -1,5 +1,5 @@
 """Bounded platform input policy; native parsing stays inside the Adapter."""
-import io,json,zipfile
+import csv,io,json,zipfile
 from ontology_platform.semantic.dto import reject_credential_authority
 from ontology_platform.infrastructure.semantica_adapter.input_policy import json_input,archive_input
 from ontology_platform.infrastructure.semantica_adapter.pdf_preflight import check_pdf_bytes
@@ -24,7 +24,12 @@ def checked_json(value):
 def check_source(format,data):
     if format not in FORMATS or type(data) is not bytes or not 0<len(data)<=1048576:
         raise ValueError('Invalid bounded source')
-    if format=='json': checked_json(json_input(data,run_id='source-preflight'))
+    if format=='csv':
+        decoded=data.decode('utf-8')
+        headers=next(csv.reader(io.StringIO(decoded)),[])
+        checked_json({key:None for key in headers})
+        reject_credential_authority(decoded)
+    elif format=='json': checked_json(json_input(data,run_id='source-preflight'))
     elif format=='docx':
         archive_input(data)
         with zipfile.ZipFile(io.BytesIO(data)) as archive:

@@ -4,6 +4,7 @@ from importlib.metadata import version
 from fastapi import FastAPI,Request,Response,Depends,Query
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
+from starlette.concurrency import run_in_threadpool
 from pydantic import SecretStr
 from sqlalchemy import text
 from starlette.exceptions import HTTPException
@@ -51,6 +52,7 @@ def create_app(store,artifact_root,secret_provider,allowed_origins,secure_cookie
         try:
             with store.transaction() as connection: connection.execute(text('SELECT 1')).scalar_one()
             if version('semantica')!='0.7.0+ontologyworkspace.5': raise ValueError('Unsupported native version')
+            if hasattr(app.state,'runtime') and not app.state.runtime.healthy: raise ValueError('Worker unavailable')
         except Exception: return failure(request,'NOT_READY',503)
         return {'status':'ready','backend_version':version('semantica')}
 
@@ -124,7 +126,8 @@ def create_app(store,artifact_root,secret_provider,allowed_origins,secure_cookie
 
     @app.post('/api/projects/{project_id}/sources',status_code=201)
     async def upload(project_id:str,request:Request,format:str,current=Depends(actor)):
-        return asdict(work.register_source(current,project_id,format,await request.body()))
+        data=await request.body()
+        return asdict(await run_in_threadpool(work.register_source,current,project_id,format,data))
 
     @app.get('/api/projects/{project_id}/sources')
     def sources(project_id:str,current=Depends(actor)):

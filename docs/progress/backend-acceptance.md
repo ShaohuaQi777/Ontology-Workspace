@@ -7,7 +7,7 @@
 | Semantica语义底座 | A0/P0 DONE；native17/共享契约/真实两环境门禁 | 后续产品API仍需授权/持久化/运行验收 |
 | 元数据事务 | B1-01 DONE：10RED→10GREEN；33关联回归；完整310+14subtests114.11s exit0 | 完整后端还需账户/项目/任务schema与重启恢复 |
 | 可信会话/项目RBAC | B1-02本地模块DONE：14RED+并发1RED→GREEN、全331+14subtests117.05s；B1-05 Cookie/Origin/错误脱敏/stream限额及显式成员审计DONE；21 HTTP/CLI测试与全388+14subtests251.78s | 明文秘密不持久化、撤销/失效/越权拒绝、真实权限路径 |
-| HTTP服务/任务Worker | B1-04本地持久化队列/native Worker DONE：真实七操作、取消/重放家族预算/输入授权复查；全367+14subtests163.14s；B1-05受保护ASGI/API及local CLI DONE，21HTTP/CLI测试、全388+14subtests251.78s；真实loopback/后台消费/进程恢复仍TODO B1-06 | 实际loopbackURL/health/readiness/真实排队执行/取消与恢复 |
+| HTTP服务/任务Worker | B1-04本地持久化队列/native Worker DONE：真实七操作、取消/重放家族预算/输入授权复查；全367+14subtests163.14s；B1-05受保护ASGI/API及local CLI DONE，21HTTP/CLI测试、全388+14subtests251.78s；B1-06真实loopback/native后台消费/owner互斥/实际SIGKILL与显式重放、fresh完整400+14subtests255.47s DONE；全波独立review三Important经9RED→GREEN修复，原判保留 | 实际loopbackURL/health/readiness/真实排队执行/取消与恢复 |
 | PDF解析 | .5有界raw/Flate native子集DONE | 项目来源登记、权限/来源定位与产品API；不能把限制隐藏 |
 | OCR解析 | UNKNOWN未真实探针 | 固定原生API/模型依赖，小技术输入真实OCR；不以PDF文本层冒充OCR |
 | Database连接器 | 原生SQLite导入探针存在；统一连接Registry TODO | SQLite/PostgreSQL授权配置、secretref/只读/Schema/实际连接；其他方言独立验收 |
