@@ -1,8 +1,22 @@
 """Immutable platform values. No native SDK imports or objects."""
+import re
+from urllib.parse import urlsplit
 from typing import Annotated, Literal
 from pydantic import BaseModel, ConfigDict, Field, JsonValue, field_validator
 
 Identifier = Annotated[str, Field(min_length=1,max_length=128,pattern=r'^[A-Za-z0-9][A-Za-z0-9_.:-]*$')]
+
+
+def reject_credential_authority(value:str)->str:
+    # References may prefix a URI with source:/scope:. Only recognizable URI
+    # authority credentials are rejected, not arbitrary identifier/free text.
+    match=re.search(r'[A-Za-z][A-Za-z0-9+.-]*://[^\s]+',value)
+    if match:
+        try: parsed=urlsplit(match.group())
+        except ValueError: raise ValueError('Invalid URI authority') from None
+        if parsed.username is not None or parsed.password is not None:
+            raise ValueError('Credential-bearing URI authority is forbidden')
+    return value
 
 
 class ValueModel(BaseModel):
@@ -42,7 +56,13 @@ class Request(ValueModel):
     def source_references(cls,value):
         if any(not item.startswith('source:') or len(item)>512 or any(c.isspace() for c in item) for item in value):
             raise ValueError('Invalid source reference')
+        for item in value: reject_credential_authority(item)
         return value
+
+    @field_validator('scope_ref')
+    @classmethod
+    def safe_scope_reference(cls,value):
+        return reject_credential_authority(value)
 
 
 class IngestRequest(Request):
@@ -77,6 +97,12 @@ class OntologyRequest(Request):
     language: str | None = None
     name: Identifier = 'WorkspaceOntology'
     base_uri: Annotated[str,Field(pattern=r'^(https?://|urn:)[^\s]+$')] = 'urn:ontology-workspace:'
+
+
+    @field_validator('base_uri','subject_uri')
+    @classmethod
+    def safe_ontology_uri(cls,value):
+        return reject_credential_authority(value) if value is not None else None
 
 
 class SHACLRequest(Request):

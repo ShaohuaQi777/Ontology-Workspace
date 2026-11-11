@@ -70,8 +70,8 @@ def preflight(operation,request,inputs):
         if ref.path.lower().endswith('.docx') or (key=='source' and getattr(request,'format',None)=='docx'):
             archive_input(data)
         if operation=='parse' and key=='source' and request.format=='pdf':
-            from semantica.parse.bounded_pdf import validate_pdf_bytes
-            validate_pdf_bytes(data)
+            from .pdf_preflight import check_pdf_bytes
+            check_pdf_bytes(data)
     if operation=='build_graph' or (operation=='ontology' and request.action=='generate'):
         graph_input(inputs['source'],run_id=request.run_id)
     if operation=='reason':

@@ -139,7 +139,7 @@ def execute(operation,request,paths,work):
             ttl=OWLGenerator().generate_owl(value,format='turtle')
             document=OntologyDocument.from_rdf(ttl)
         else:
-            document=OntologyDocument.from_rdf(source.read_text(encoding='utf-8'),format=request['format'])
+            document=OntologyDocument.from_rdf(source.read_text(encoding='utf-8'),format=request['format'],base_uri=request['base_uri'])
             if request['action']=='edit':
                 if not request['subject_uri'] or request['label'] is None: raise ValueError('Missing label edit fields')
                 document=document.with_label(request['subject_uri'],request['label'],language=request['language'])
@@ -151,8 +151,8 @@ def execute(operation,request,paths,work):
     if operation=='validate_shacl':
         from semantica.ontology.document import OntologyDocument
         from semantica.ontology.ontology_validator import run_shacl_validation
-        graph=OntologyDocument.from_rdf(source.read_text(encoding='utf-8')).serialize()
-        shapes_document=OntologyDocument.from_rdf((work/paths['shapes']).read_text(encoding='utf-8'))
+        graph=OntologyDocument.from_rdf(source.read_text(encoding='utf-8'),base_uri='urn:ontology-workspace:data:'+request['source']['sha256']+':').serialize()
+        shapes_document=OntologyDocument.from_rdf((work/paths['shapes']).read_text(encoding='utf-8'),base_uri='urn:ontology-workspace:shapes:'+request['shapes']['sha256']+':')
         sh='http://www.w3.org/ns/shacl#'
         allowed={'targetNode','targetClass','targetSubjectsOf','targetObjectsOf','property','path','minCount','maxCount',
                  'datatype','class','nodeKind','pattern','flags','minLength','maxLength','minInclusive','maxInclusive',
