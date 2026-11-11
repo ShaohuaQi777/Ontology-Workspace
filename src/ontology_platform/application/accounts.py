@@ -157,6 +157,23 @@ class AccountService:
             connection.execute(text('UPDATE sessions SET revoked=1 WHERE digest=:digest'),{'digest':digest})
             self._audit(connection,row['id'],'logout',None,'succeeded')
 
+    def set_member(self,actor,project_id,user_id,role):
+        if role not in {'engineer','consultant','expert','admin','owner'}: raise ServiceError('FORBIDDEN')
+        with self.store.transaction() as connection:
+            connection.exec_driver_sql('BEGIN IMMEDIATE')
+            self.require_project(actor,project_id,'manage_members')
+            if connection.execute(text('SELECT 1 FROM accounts WHERE id=:user AND disabled=0'),{'user':user_id}).first() is None: raise ServiceError('INVALID_ACCOUNT')
+            connection.execute(text('INSERT OR IGNORE INTO memberships(user_id,project_id,role) VALUES(:user,:project,:role)'),{'user':user_id,'project':project_id,'role':role})
+            self._audit(connection,actor.user_id,'set_member',project_id,'succeeded')
+
+    def remove_member(self,actor,project_id,user_id,role):
+        if role not in {'engineer','consultant','expert','admin','owner'}: raise ServiceError('FORBIDDEN')
+        with self.store.transaction() as connection:
+            connection.exec_driver_sql('BEGIN IMMEDIATE')
+            self.require_project(actor,project_id,'manage_members')
+            connection.execute(text('DELETE FROM memberships WHERE user_id=:user AND project_id=:project AND role=:role'),{'user':user_id,'project':project_id,'role':role})
+            self._audit(connection,actor.user_id,'remove_member',project_id,'succeeded')
+
     def require_project(self,actor,project_id,action):
         with self.store.transaction() as connection:
             user=self._actor(connection,actor)
