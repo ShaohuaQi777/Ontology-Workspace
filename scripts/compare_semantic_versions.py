@@ -1,8 +1,7 @@
 """Conservative real-report upgrade gate; never installs or changes a lock."""
 import argparse,json,re
 from pathlib import Path
-from rdflib import Graph,BNode
-from rdflib.compare import isomorphic
+from ontology_platform.infrastructure.semantica_adapter.compatibility import native_nt_isomorphic
 from rdflib.exceptions import ParserError
 
 OPS=('ingest','parse','extract','build_graph','ontology','validate_shacl','reason')
@@ -70,14 +69,7 @@ def valid_report(report):
 
 def rdf_equal(left,right):
     if not isinstance(left,dict) or not isinstance(right,dict) or left.get('format')!='nt' or right.get('format')!='nt': return False
-    graphs=[]
-    for value in (left,right):
-        data=value.get('data')
-        if not isinstance(data,str) or len(data.encode())>1048576: return False
-        graph=Graph().parse(data=data,format='nt')
-        if len(graph)>128 or len({term for triple in graph for term in triple if isinstance(term,BNode)})>32: return False
-        graphs.append(graph)
-    return isomorphic(*graphs)
+    return native_nt_isomorphic(left.get('data'),right.get('data'))
 
 
 def compare_reports(baseline:dict,candidate:dict)->dict:

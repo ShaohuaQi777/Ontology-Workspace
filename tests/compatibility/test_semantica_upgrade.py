@@ -111,6 +111,13 @@ def test_measured_extraction_score_resampling_does_not_break_contract():
     assert compare(a,b)['compatible']
 
 
+def test_rdf_lexical_integer_change_breaks_compatibility():
+    a=report(); b=deepcopy(a)
+    a['cases']['ontology/ok']['rdf']['data']='_:n <urn:p> "01"^^<http://www.w3.org/2001/XMLSchema#integer> .\n'
+    b['cases']['ontology/ok']['rdf']['data']='_:n <urn:p> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .\n'
+    assert not compare(a,b)['compatible']
+
+
 def test_malformed_rdf_fails_closed_without_parser_exception():
     a=report(); b=deepcopy(a); b['cases']['ontology/ok']['rdf']['data']='this is not RDF'
     assert not compare(a,b)['compatible']

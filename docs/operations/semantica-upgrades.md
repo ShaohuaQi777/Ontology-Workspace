@@ -2,7 +2,7 @@
 
 ## 当前边界
 
-这是仓库内开发验收工具，不是在线安装器或生产发布权限。当前批准并固定的 SDK 是 `0.7.0+ontologyworkspace.4`。没有收到新版本候选，因此当前真实验证仅为同一锁版本在两个独立 Python3.12 环境自对比；受控破坏 JSON 是比较器单元测试，不是运行过未来 SDK 的证据。
+这是仓库内开发验收工具，不是在线安装器或生产发布权限。当前项目锁定的重要审查问题修复候选 SDK 是 `0.7.0+ontologyworkspace.5`（沿用用户授权的有界文档/PDF原生扩展范围，发布尚未批准）。历史`.4`及其失败/成功证据完整保留。没有收到新版本候选，因此当前真实验证仅为同一锁版本在两个独立 Python3.12 环境自对比；受控破坏 JSON 是比较器单元测试，不是运行过未来 SDK 的证据。
 
 ## 可复现入口
 
@@ -21,7 +21,7 @@ uv run --locked --offline python scripts/compare_semantic_versions.py \
   --baseline .runtime/upgrade-baseline.json --candidate .runtime/upgrade-candidate.json \
   --output .runtime/upgrade-comparison.json
 uv run --locked --offline python scripts/verify_a0.py \
-  --evidence spikes/semantica/reports/0.7.0-ontologyworkspace.4/summary.json --verify-p0
+  --evidence spikes/semantica/reports/0.7.0-ontologyworkspace.5/summary.json --verify-p0
 ```
 
 `--verify-p0` 不是接收调用者布尔验收：实际执行共享契约、兼容性、原生文档与探针相关测试；生成当前环境真实报告；在项目内随机独立新目录离线锁定安装，再生成相同用例报告并比较。错误/超时/缺失用例/安装失败全部失败。门禁测试目录不参与内部测试调用，避免递归运行。新环境与所有报告保留在 `.runtime/gp0-*`，实际退出码记录于该目录。离线缓存缺失应报告安装失败，不能模拟 SDK 或偷偷改用网络/latest。
