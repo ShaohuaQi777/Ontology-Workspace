@@ -16,6 +16,9 @@ MESSAGES={
     'STALE_REVISION':'Workspace revision has changed',
     'INVALID_DEPENDENCY':'Revision dependency is invalid or outside the project',
     'INVALID_SOURCE':'Source artifact is invalid or outside the project',
+    'INVALID_JOB':'Semantic job input is invalid or outside the project',
+    'IDEMPOTENCY_CONFLICT':'Idempotency key is bound to different input',
+    'UNSAFE_REPLAY':'Job is not eligible for explicit safe replay',
 }
 
 

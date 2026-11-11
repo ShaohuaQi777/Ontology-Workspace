@@ -1,0 +1,25 @@
+# 持久化语义任务与本地 Native Worker
+
+## 本波实现与真实证据
+
+JobService只接受ingest、parse、extract、build_graph、ontology、validate_shacl、reason七种严格平台请求。NativeJobWorker只使用产品create_backend('semantica',root)，不注册Fake或任意shell/deploy步骤。实际队列Worker已执行所有七种SDK操作，验证CSV解析行、技术实体草稿/null置信度、图实体、本体NT导出、SHACL conforms与技术规则Mark(x)。这些是技术接口验证，不是领域正确性金标或场景演示。
+
+任务创建先验证当前项目权限、typed request、实际登记来源ID/format/revision/hash/size和文件内容。客户端path为登记来源的opaque sourceID，不接受直接服务器路径；source_refs必须恰好对应source/shapes/rules。scope_ref、run_id、workspace/source版本在服务器规范化绑定，不信任客户端身份/scope。metadata只保存会话SHA256digest及账户ID，不保存登录明文；Job DTO不含digest或请求私有内容。
+
+幂等键绑定项目、actor、operation及canonical输入，同键相同内容返回原job，不同操作/输入拒绝409语义错误。输入版本或权限不满足，不因已有幂等记录绕过授权。领取在实际SQLite BEGIN IMMEDIATE事务内pending→running，只能被一个worker领取。
+
+## 运行、取消和重放
+
+Worker运行前重建服务器Principal并复核会话/账户/项目权限、workspace及source绑定，随后descriptor读取大小/hash受限输入，才创建私有job输入目录和调用原生SDK。结束写回再次检查这些条件；running/owner/CAS与cancel_requested决定是否允许succeeded。20秒心跳与领取worker绑定，其他worker不能伪造该任务心跳。
+
+pending取消即cancelled；running取消标记cancel_requested，在当前阻塞原生调用结束/超时的步骤边界写cancelled，不宣称即时杀进程。即使原生调用产出结果，取消后不登记成功manifest或提供result制品。失败、取消、interrupted的私有诊断残留不是可读成功结果。
+
+V1单应用、单worker运行；recover_interrupted(worker_id)仅终止该worker身份的未完成running记录，需在确认旧进程已停止的实际重启生命周期调用，不能把活着的worker当死进程回收。不抢租约、不宣称多实例分布式恢复。没有盲目automatic重试：显式replay创建新job/run_id/replay_of并保留旧记录。replay以当前重新认证的操作者授权，不复活旧会话；原输入/工作空间必须仍一致。部署不在白名单。
+
+重放家族最多三个真实领取attempt，BEGIN IMMEDIATE内计算running事件预算并领取；分支重放和预先排队的分支不能绕过限额，耗尽的pending分支标failed/ATTEMPT_LIMIT。不可重放的操作/状态拒绝UNSAFE_REPLAY。步骤日志用真实job_events，不生成演示历史。
+
+## 制品与边界
+
+制品位于私有project/jobs/jobID根目录，输入使用固定字段名/格式扩展名；返回manifest仅含relative路径、hash/size/revision和后端版本。读取必须授权相同project/job、成功状态与manifest精确命中，再使用Directory dir_fd/O_NOFOLLOW校验size/hash。平台不接受任意artifact path读取。
+
+此处完成持久化本地队列与原生步骤，不是HTTP服务/自动后台消费入口、端到端恢复交付或完整后端。原生调用仍使用既有90秒子进程预算/离线受控环境，未引入新的RSS/cgroup/网络OS沙箱声明。输入与输出文件写入和SQLite提交不构成跨介质原子事务，孤立私有文件需后续运维按登记manifest清点。生产API/Cookie/Origin/服务启动/readiness/真实loopback恢复与整个Wave1独立审查继续B1-05/06。
