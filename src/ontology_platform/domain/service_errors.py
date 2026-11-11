@@ -11,6 +11,11 @@ MESSAGES={
     'UNAUTHENTICATED':'A valid service session is required',
     'LOGIN_RATE_LIMIT':'Authentication temporarily rate limited',
     'FORBIDDEN':'Operation is not permitted',
+    'INVALID_WORKSPACE':'Workspace input is invalid',
+    'NAMESPACE_CONFLICT':'Workspace namespace is already registered',
+    'STALE_REVISION':'Workspace revision has changed',
+    'INVALID_DEPENDENCY':'Revision dependency is invalid or outside the project',
+    'INVALID_SOURCE':'Source artifact is invalid or outside the project',
 }
 
 

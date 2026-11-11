@@ -15,7 +15,7 @@
 | Pipeline清洗/治理 | TODO | 版本化DAG/节点Schema、deterministic transform白名单、任务事件/检查点/重放/权限 |
 | RAG | UNKNOWN未真实探针 | 文档chunk/embedding/index/retrieval/context/prompt/model与来源可追溯，未知质量不编金标，模型/外传显式配置 |
 | CLIP对齐 | UNKNOWN未真实探针 | 原生multimodal API/固定模型/真实图文派生证据、置信度及资产位置；不因名称匹配宣称对齐 |
-| TBox/ABox/SHACL/rules/vocab | native文档能力可用；产品revision B1-03 TODO | 分层immutable/CAS/依赖/草稿/差异/合并/专家认证失效规则 |
+| TBox/ABox/SHACL/rules/vocab | B1-03 scoped revision/source及专家证据原语DONE；全348+14subtests163.65s；完整changeset/验证/发布治理仍TODO | 分层immutable/CAS/依赖/草稿/差异/合并/专家认证失效规则 |
 | 业务规则/行业模板 | TODO P6 | versioned声明式工具模板/适用期/来源/编辑认证；不编制造业场景 |
 | 本体抽取/建模/验证/对齐 | 原生技术探针DONE；产品治理TODO | 固定输入/模型/来源、候选审核、专家认证、验证finding与version；所有入口授权 |
 | 联合发布/部署 | TODO P5 | hash清单/完整认证与验证门禁、真实Oxigraph健康/核心query、失败恢复/上一版回滚 |

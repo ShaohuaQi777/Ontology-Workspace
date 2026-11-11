@@ -28,6 +28,7 @@ class MetadataStore:
             if not stat.S_ISREG(info.st_mode) or stat.S_IMODE(info.st_mode)&0o077:
                 raise ValueError('Private regular metadata file required') from None
         except OSError: raise ValueError('Metadata location is unavailable') from None
+        self.database_path=path
         self._engine=create_engine(parsed,connect_args={'check_same_thread':False})
         self._ready=False
 
