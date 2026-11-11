@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+from subprocess import TimeoutExpired
 from typing import Callable, TypeVar
 
 T = TypeVar('T')
@@ -44,7 +45,7 @@ class BackendError(Exception):
     def from_native(cls, error: Exception, run_id: str) -> 'BackendError':
         if isinstance(error, ImportError):
             code = 'DEPENDENCY_UNAVAILABLE'
-        elif isinstance(error, TimeoutError):
+        elif isinstance(error, (TimeoutError, TimeoutExpired)):
             code = 'TIMEOUT'
         elif isinstance(error, ValueError):
             code = 'INVALID_INPUT'
