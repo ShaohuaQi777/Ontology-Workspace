@@ -6,6 +6,8 @@
 
 CLI入口为`uv run --locked --offline python -m ontology_platform.api.server`，必填`--database`为已有受保护绝对SQLite URL、`--artifact-root`为private目录、至少一个`--origin`精确origin。默认127.0.0.1:8765/HttpOnly/SameSiteStrict/Secure Cookie；本地HTTP测试须明确`--insecure-dev`且全部Origin限loopback。当前只支持loopback host，0.0.0.0或远端绑定直接拒绝，公开TLS部署另属发布运维，不靠改host偷偷暴露。
 
+本地产品原型使用 `--single-user` 时，服务创建内部 `workspace` 身份和有时限的服务端会话，并为本地项目补齐工作台角色。浏览器无需登录 Cookie，所有写操作仍保留 actor、项目权限检查和审计事件。该参数不允许扩大监听地址，也不替代多用户部署的账号认证。
+
 `--secret-ref`仅登记明确EnvironmentSecretProvider引用allowlist；不创建.env、不从所有环境变量扫描秘密、不接收聊天密码/token。账户初始化依赖已有受控AccountService的显式bootstrap步骤，HTTP无公开bootstrap端点；尚未初始化真实生产账号。CLI关闭accesslog/默认log_config、proxy_headers/WebSocket，使用asyncio/h11、32连接处理预算/5秒keepalive，固定启动失败信息，不打印配置/正文/密码。
 
 B1-05验收时尚未启动真实监听URL；ASGI测试入口不是实际部署。B1-05此时CLI仅服务HTTP并持久化pending任务；B1-06已进一步真实验证后台自动消费、单实例占用和进程中断恢复，见[真实服务与恢复](backend-service.md)。不得据此声称全后端完成。

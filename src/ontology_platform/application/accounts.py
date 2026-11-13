@@ -98,6 +98,25 @@ class AccountService:
         with self.store.transaction() as connection: row=self._session(connection,digest)
         return Principal(row['id'],row['username'],row['global_role'],digest,self._proof(row['id'],row['username'],row['global_role'],digest))
 
+    def open_single_user_session(self,username='workspace'):
+        """Create a server-owned local identity for explicit loopback demo mode."""
+        self._username(username); now=int(self.clock()); secret=SecretStr(secrets.token_urlsafe(32)); digest=self._digest(secret)
+        with self.store.transaction() as connection:
+            connection.exec_driver_sql('BEGIN IMMEDIATE')
+            row=connection.execute(text('SELECT id,global_role,disabled FROM accounts WHERE username=:username'),{'username':username}).mappings().first()
+            if row is None:
+                user=self._create(connection,username,secrets.token_bytes(32),'admin'); user_id=user.user_id
+                self._audit(connection,user_id,'single_user_bootstrap',user_id,'succeeded')
+            else:
+                if row['disabled'] or row['global_role']!='admin': raise ServiceError('INVALID_ACCOUNT')
+                user_id=row['id']
+            for project_id in connection.execute(text('SELECT id FROM projects')).scalars():
+                for role in ('owner','expert','admin','engineer'):
+                    connection.execute(text('INSERT OR IGNORE INTO memberships(user_id,project_id,role) VALUES(:user,:project,:role)'),{'user':user_id,'project':project_id,'role':role})
+            connection.execute(text('INSERT INTO sessions(digest,user_id,expires_at) VALUES(:digest,:user,:expires)'),{'digest':digest,'user':user_id,'expires':now+28800})
+            self._audit(connection,user_id,'single_user_session',user_id,'succeeded')
+        return self.resolve_session(secret)
+
     def _actor(self,connection,actor):
         if not isinstance(actor,Principal): raise ServiceError('UNAUTHENTICATED')
         expected=self._proof(actor.user_id,actor.username,actor.global_role,actor._session_hash)

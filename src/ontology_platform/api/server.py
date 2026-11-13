@@ -16,6 +16,7 @@ def parse_args(argv=None):
     parser.add_argument('--port',default=8765,type=int)
     parser.add_argument('--secret-ref',default=[],action='append')
     parser.add_argument('--insecure-dev',action='store_true')
+    parser.add_argument('--single-user',action='store_true',help='Use one audited local workspace identity without a login form')
     settings=parser.parse_args(argv)
     if settings.host not in ('127.0.0.1','::1','localhost') or not 1<=settings.port<=65535: raise ValueError('Only explicit local service binding is supported')
     settings.secure_cookies=not settings.insecure_dev
@@ -33,7 +34,7 @@ def main(argv=None):
         settings=parse_args(argv)
         store=MetadataStore(settings.database); store.initialize()
         provider=EnvironmentSecretProvider(set(settings.secret_ref))
-        app=create_app(store,settings.artifact_root,provider,settings.origin,secure_cookies=settings.secure_cookies)
+        app=create_app(store,settings.artifact_root,provider,settings.origin,secure_cookies=settings.secure_cookies,single_user=settings.single_user)
         from ontology_platform.application.runtime import LocalWorkerRuntime
         runtime=LocalWorkerRuntime(app.state.jobs)
         app.state.runtime=runtime

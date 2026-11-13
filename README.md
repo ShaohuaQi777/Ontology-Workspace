@@ -38,4 +38,16 @@ pnpm test
 pnpm build
 ```
 
+本地原型可以使用单用户模式直接进入工作台：
+
+```bash
+uv run --locked --offline python -m ontology_platform.api.server \
+  --database sqlite:////absolute/path/metadata.db \
+  --artifact-root /absolute/path/artifacts \
+  --origin http://127.0.0.1:58229 \
+  --port 58230 --insecure-dev --single-user
+```
+
+`--single-user` 仅适用于回环地址上的本地原型。服务仍会建立内部工作台身份并记录审计事件；多用户部署继续使用原有会话认证。
+
 开发环境与运行制品保存在 Git 忽略目录中。凭据不得进入源码、日志或发布包。

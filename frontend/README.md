@@ -1,6 +1,6 @@
 # 前端工作台
 
-React/TypeScript 前端包含两个已合并模块：数据接入和本体构建。二者共享真实登录会话、项目选择、来源快照、任务运行与 workspace revision。
+React/TypeScript 前端包含两个已合并模块：数据接入和本体构建。二者共享本地工作台身份、项目选择、来源快照、任务运行与 workspace revision。页面不显示登录表单，后端需使用 `--single-user` 启动本地原型。
 
 ## 页面能力
 

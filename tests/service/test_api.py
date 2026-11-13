@@ -43,6 +43,21 @@ def test_health_ready_cookie_me_logout_and_no_identity_header_trust(tmp_path):
     asyncio.run(run()); store.close()
 
 
+def test_explicit_single_user_mode_opens_workspace_without_login_form_or_cookie(tmp_path):
+    work,accounts,store,actor,root=workspace(tmp_path)
+    module=importlib.import_module('ontology_platform.api.app')
+    app=module.create_app(store,root,TestSecrets(),[ORIGIN],single_user=True)
+    async def run():
+        async with await client(app) as c:
+            me=await c.get('/api/session/me')
+            assert me.status_code==200 and me.json()['username']=='workspace'
+            assert 'set-cookie' not in me.headers
+            project=await c.post('/api/projects',json={'name':'No login workspace','namespace':'urn:single-user:'})
+            assert project.status_code==201
+            assert (await c.get('/api/projects')).json()['items'][0]['project_id']==project.json()['project_id']
+    asyncio.run(run()); store.close()
+
+
 @pytest.mark.parametrize('origin',[None,'https://outside.invalid','null'])
 def test_write_origin_csrf_rejects_before_login(tmp_path,origin):
     app,store,root=api(tmp_path)

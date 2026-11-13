@@ -47,6 +47,12 @@ def service_process(tmp_path,store,root):
     return process,client,origin,args
 
 
+def test_cli_single_user_flag_is_explicit_and_loopback_only(tmp_path):
+    from ontology_platform.api.server import parse_args
+    settings=parse_args(['--database','sqlite:///'+str(tmp_path/'metadata.db'),'--artifact-root',str(tmp_path/'artifacts'),'--origin','http://127.0.0.1:4173','--single-user'])
+    assert settings.single_user is True and settings.host=='127.0.0.1'
+
+
 def stop(process,client):
     if process.poll() is None:
         process.terminate()

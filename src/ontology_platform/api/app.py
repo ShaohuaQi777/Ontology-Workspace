@@ -22,7 +22,7 @@ from .models import Login,AccountCreate,ProjectCreate,LayerSave,JobSubmit,Replay
 STATUS={'UNAUTHENTICATED':401,'AUTHENTICATION_FAILED':401,'FORBIDDEN':403,'LOGIN_RATE_LIMIT':429,'SECRET_UNAVAILABLE':503,'STALE_REVISION':409,'NAMESPACE_CONFLICT':409,'IDEMPOTENCY_CONFLICT':409,'ACCOUNT_EXISTS':409,'INVALID_SOURCE':404,'INVALID_JOB':404,'INVALID_ACCOUNT':422,'CONNECTION_NOT_FOUND':404}
 
 
-def create_app(store,artifact_root,secret_provider,allowed_origins,secure_cookies=True,connection_targets=None):
+def create_app(store,artifact_root,secret_provider,allowed_origins,secure_cookies=True,connection_targets=None,single_user=False):
     app=FastAPI(docs_url=None,redoc_url=None,openapi_url=None,debug=False)
     validated_boundary=BoundaryMiddleware(app,allowed_origins)
     accounts=AccountService(store,secret_provider); accounts.initialize()
@@ -31,6 +31,7 @@ def create_app(store,artifact_root,secret_provider,allowed_origins,secure_cookie
     app.state.connections=connections
     jobs=JobService(store,accounts,work); jobs.initialize()
     app.state.accounts=accounts; app.state.workspaces=work; app.state.jobs=jobs; app.state.worker=NativeJobWorker(jobs)
+    if single_user: app.state.single_user_actor=accounts.open_single_user_session()
     app.add_middleware(BoundaryMiddleware,allowed_origins=validated_boundary.allowed)
 
     def failure(request,code,status): return JSONResponse({'code':code,'run_id':request.state.run_id},status_code=status)
@@ -88,6 +89,7 @@ def create_app(store,artifact_root,secret_provider,allowed_origins,secure_cookie
 
     @app.post('/api/session/logout')
     def logout(request:Request,response:Response,current=Depends(actor)):
+        if getattr(request.app.state,'single_user_actor',None): return {'status':'single_user_retained'}
         accounts.revoke_session(SecretStr(request.cookies[COOKIE])); response.delete_cookie(COOKIE,path='/',httponly=True,secure=secure_cookies,samesite='strict')
         return {'status':'logged_out'}
 
