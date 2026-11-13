@@ -82,6 +82,8 @@ p { margin-bottom: 12px; }
   text-decoration: none;
   overflow-wrap: anywhere;
 }
+.mini-nav button { flex-direction: column; gap: 1px; }
+.mini-nav button small { font-size: 11px; font-weight: 600; }
 .mini-nav a:hover, .mini-nav button:hover { background: #294556; }
 .mini-nav [aria-current="page"] { background: #294556; border-color: #8dd4c9; }
 .mini-nav :focus-visible { outline-color: #99d5ff; }
@@ -336,9 +338,62 @@ pre.mono { max-width: 100%; white-space: pre-wrap; }
   border-top: 1px solid #dce3eb;
 }
 
+/* FDE ontology workflow: one active stage at a time, backed by real project state. */
+.ontology-workspace { padding-bottom: 36px; }
+.stage-switcher {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 8px;
+  border: 1px solid #dce3eb;
+  border-radius: 12px;
+  background: #fff;
+}
+.stage-switcher button {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 0 8px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #526476;
+  text-align: left;
+}
+.stage-switcher button > span { grid-row: 1 / 3; align-self: center; color: #0f766e; font-size: 20px; font-weight: 750; }
+.stage-switcher strong, .stage-switcher small { min-width: 0; overflow-wrap: anywhere; }
+.stage-switcher small { font-size: 12px; }
+.stage-switcher button[aria-current="step"] { border-color: #86c8bc; background: #e8f5f1; color: #115e59; }
+.ontology-section { min-width: 0; }
+.section-heading { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 18px; }
+.section-heading .eyebrow { margin-bottom: 2px; }
+.metric-grid, .card-grid, .delivery-grid { display: grid; gap: 14px; margin-bottom: 18px; }
+.metric-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.metric-grid article { padding: 18px; border: 1px solid #dce3eb; border-radius: 10px; background: #fff; }
+.metric-grid strong { display: block; color: #115e59; font-size: 28px; line-height: 1.2; }
+.metric-grid span { color: #526476; }
+.card-grid, .delivery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.workspace-card { min-width: 0; padding: 18px; border: 1px solid #dce3eb; border-radius: 10px; background: #fff; overflow-wrap: anywhere; }
+.workspace-card .document-text { max-height: 260px; }
+.capability-notice { padding: 16px 18px; margin-top: 18px; border-left: 4px solid #b78a23; border-radius: 0 8px 8px 0; background: #fff8e8; color: #5d491d; }
+.capability-notice p { margin: 4px 0 0; }
+.model-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 16px; align-items: start; }
+.layer-list { display: flex; flex-direction: column; gap: 8px; }
+.layer-list button { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; padding: 12px; border: 1px solid #dce3eb; border-radius: 8px; background: #fff; color: #344658; text-align: left; }
+.layer-list button.active { border-color: #0f766e; background: #e8f5f1; color: #115e59; }
+.layer-list small { overflow-wrap: anywhere; }
+.json-editor { margin-top: 6px; white-space: pre; tab-size: 2; }
+.tag-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 10px 0 16px; }
+.tag-list span { padding: 4px 9px; border-radius: 999px; background: #e8f5f1; color: #115e59; }
+.run-list { display: grid; gap: 14px; }
+
 @media (max-width: 1100px) {
   .workbench-grid { grid-template-columns: 230px minmax(0, 1fr); }
   .workbench-grid > .evidence { grid-column: 1 / -1; }
+  .stage-switcher { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .card-grid, .delivery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 700px) {
   .intake-shell { grid-template-columns: minmax(0, 1fr); }
@@ -370,4 +425,5 @@ pre.mono { max-width: 100%; white-space: pre-wrap; }
   .dialog-actions .button { flex: 1 1 130px; }
   .inline-form { align-items: stretch; }
   .inline-form label { flex-basis: 100%; }
+  .stage-switcher, .metric-grid, .card-grid, .delivery-grid, .model-layout { grid-template-columns: minmax(0, 1fr); }
 }

@@ -1,6 +1,6 @@
 import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest';
 import {api, ApiError} from './api';
-import type {Connection, Job, Project, Source, User} from './types';
+import type {Connection, Job, Project, Revision, Source, User} from './types';
 
 // Domain-neutral fixtures only. Fetch is the external boundary; the API code is real.
 const user: User = {user_id:'user-1',username:'tester',global_role:'engineer'};
@@ -8,6 +8,7 @@ const project: Project = {project_id:'project-1',name:'Workspace',namespace:'urn
 const source: Source = {source_id:'source-1',project_id:'project-1',format:'csv',revision:'source-2',sha256:'a'.repeat(64),size:12};
 const job: Job = {job_id:'job-1',project_id:'project-1',operation:'parse',state:'pending',attempt:1,run_id:'run-1',replay_of:null,error_code:null,result:null};
 const connection: Connection = {connection_id:'connection-1',project_id:'project-1',name:'Configured',target_alias:'local',kind:'sqlite',revision:'connection-2',status:'CONFIGURED'};
+const revision: Revision = {revision_id:'revision-1',project_id:'project-1',layer:'tbox',content:{classes:[]},dependencies:{},sha256:'b'.repeat(64),state:'DRAFT'};
 let transport: ReturnType<typeof vi.fn<typeof fetch>>;
 function reply(value: unknown, status=200) { return new Response(JSON.stringify(value), {status,headers:{'content-type':'application/json'}}); }
 function lastRequest() { const [url,init] = transport.mock.calls.at(-1)!; return {url,init:init!}; }
@@ -62,6 +63,17 @@ describe('same-origin authenticated API contracts', () => {
     const signal=new AbortController().signal; transport.mockResolvedValue(reply([connection]));
     expect(await api.connections('project-1',signal)).toEqual([connection]);
     expect(lastRequest()).toMatchObject({url:'/api/projects/project-1/connections',init:{signal,credentials:'include'}});
+  });
+  it('reads actual workspace layer revisions from the fixed project route', async () => {
+    const signal=new AbortController().signal; transport.mockResolvedValue(reply({items:[revision]}));
+    expect(await api.layers('project-1',signal)).toEqual([revision]);
+    expect(lastRequest()).toMatchObject({url:'/api/projects/project-1/layers',init:{signal,credentials:'include',method:'GET'}});
+  });
+  it('saves a draft layer with the current workspace revision as CAS base', async () => {
+    transport.mockResolvedValue(reply(revision));
+    expect(await api.saveLayer(project,'tbox',{classes:[]},{})).toEqual(revision);
+    expect(lastRequest()).toMatchObject({url:'/api/projects/project-1/layers/tbox',init:{method:'PUT',credentials:'include'}});
+    expect(body()).toEqual({base_revision:'workspace-3',content:{classes:[]},dependencies:{}});
   });
   it('reads actual source bytes through the permission-checked API only', async () => {
     const bytes=new Uint8Array([0,1,255]); const signal=new AbortController().signal;

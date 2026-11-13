@@ -1,4 +1,4 @@
-import type {Connection, Job, Project, Source, User} from './types';
+import type {Connection, Job, Project, Revision, Source, User} from './types';
 
 const JSON_LIMIT = 131072;
 const FILE_LIMIT = 1048576;
@@ -93,6 +93,9 @@ function get<T>(path: string, signal?: AbortSignal): Promise<T> { return json<T>
 async function post<T>(path: string, value: unknown): Promise<T> {
   return json<T>(path, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: jsonBody(value)});
 }
+async function put<T>(path: string, value: unknown): Promise<T> {
+  return json<T>(path, {method: 'PUT', headers: {'Content-Type': 'application/json'}, body: jsonBody(value)});
+}
 
 export const api = {
   me(): Promise<User> { return get('/api/session/me'); },
@@ -117,6 +120,14 @@ export const api = {
   },
   connections(projectId: string, signal?: AbortSignal): Promise<Connection[]> {
     return get(`${projectPath(projectId)}/connections`, signal);
+  },
+  async layers(projectId: string, signal?: AbortSignal): Promise<Revision[]> {
+    return (await get<{items: Revision[]}>(`${projectPath(projectId)}/layers`, signal)).items;
+  },
+  saveLayer(project: Project, layer: Revision['layer'], content: Record<string, unknown>, dependencies: Record<string, string>): Promise<Revision> {
+    return put(`${projectPath(project.project_id)}/layers/${layer}`, {
+      base_revision: project.workspace_revision, content, dependencies,
+    });
   },
   async upload(projectId: string, file: File, format: string): Promise<Source> {
     if (!UPLOAD_FORMATS.has(format)) fail('UNSUPPORTED_FORMAT');

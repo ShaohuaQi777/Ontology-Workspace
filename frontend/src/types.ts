@@ -56,3 +56,14 @@ export interface Connection {
   revision: string;
   status: string;
 }
+
+/** Immutable ontology-layer revision returned by the workspace service. */
+export interface Revision {
+  revision_id: string;
+  project_id: string;
+  layer: 'tbox' | 'abox' | 'shacl' | 'rules' | 'vocabulary';
+  content: Record<string, unknown>;
+  dependencies: Record<string, string>;
+  sha256: string;
+  state: 'DRAFT' | 'CERTIFIED';
+}
